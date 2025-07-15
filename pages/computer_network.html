@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infographic: Mạng Máy Tính & Viễn Thông – Kết Nối Thế Giới Số</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
+		rel="stylesheet">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<style>
+		body {
+			font-family: 'Be Vietnam Pro', sans-serif;
+			background-color: #FFF7ED;
+			/* Orange-50 */
+			color: #7C2D12;
+			/* Orange-900 */
+		}
+
+		.section-title {
+			font-weight: 900;
+			color: #B45309;
+			/* Orange-700 */
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.card {
+			background-color: #FFFFFF;
+			border: 1px solid #FED7AA;
+			/* Orange-200 */
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+			border-radius: 0.75rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.card-content {
+			flex-grow: 1;
+		}
+
+		.card:hover {
+			transform: translateY(-5px);
+			border-color: #EA580C;
+			/* Orange-600 */
+			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+		}
+
+		.icon {
+			color: #EA580C;
+			width: 48px;
+			height: 48px;
+		}
+
+		.tagline {
+			font-style: italic;
+			color: #67E8F9;
+			/* Cyan-300 */
+			font-weight: 500;
+		}
+
+		.header-bg {
+			background-image: url('https://images.unsplash.com/photo-1517420704952-d9f39e95b41e?q=80&w=2070&auto=format&fit=crop');
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		.header-bg::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(124, 45, 18, 0.85);
+		}
+
+		.header-content {
+			position: relative;
+			z-index: 10;
+		}
+
+		.header-content h1,
+		.header-content p {
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+</head>
+
+<body class="antialiased">
+	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
+		<header class="header-bg">
+			<div class="header-content text-center py-16 px-4">
+				<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">MẠNG MÁY TÍNH & VIỄN THÔNG</h1>
+				<p class="text-xl md:text-2xl font-semibold text-cyan-400 mb-4">Computer Network & Telecommunications</p>
+				<p class="text-2xl md:text-3xl font-bold text-cyan-300 mb-6">Xây Dựng "Xa Lộ" Cho Kỷ Nguyên Số</p>
+				<p class="text-lg text-gray-200">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM
+				</p>
+				<p class="tagline text-xl mt-4">"Tiên phong tri thức, kiến tạo tương lai"</p>
+			</div>
+		</header>
+
+		<main class="p-4 md:p-8">
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="network" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Kiến Trúc & Giao Thức Mạng</h3>
+							<p class="text-slate-600">Hiểu rõ cách Internet hoạt động, từ các giao thức nền tảng (TCP/IP) đến kiến
+								trúc của các hệ thống mạng phức tạp. Từ tin nhắn Zalo đến video call đều chạy trên những giao thức này!
+							</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="wifi" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Công Nghệ Không Dây</h3>
+							<p class="text-slate-600">Làm chủ các công nghệ kết nối không dây hiện đại như Wi-Fi 6, 5G, IoT. Tạo nền
+								tảng cho thế giới kết nối vạn vật - từ điện thoại đến smart home!</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="shield-check" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">An Ninh Mạng</h3>
+							<p class="text-slate-600">Học cách thiết kế, triển khai và bảo vệ các hệ thống mạng khỏi các cuộc tấn công
+								và mối đe dọa từ không gian mạng. Trở thành "siêu anh hùng" bảo vệ dữ liệu!</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="cloud" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Điện Toán Đám Mây</h3>
+							<p class="text-slate-600">Nắm vững cách vận hành và quản lý các dịch vụ trên nền tảng đám mây, hạ tầng
+								quan trọng nhất của mọi ứng dụng hiện đại. Netflix, Spotify đều "sống" trên đám mây!</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div class="space-y-6">
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="server" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Nền tảng Hạ tầng</h4>
+							</div>
+							<p class="text-slate-600">Tập trung vào việc xây dựng và duy trì "xương sống" của thế giới số, đảm bảo mọi
+								dữ liệu được truyền đi nhanh chóng, ổn định và an toàn.</p>
+						</div>
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="gauge-circle" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Tối ưu hóa Hiệu năng</h4>
+							</div>
+							<p class="text-slate-600">Luôn tìm cách cải thiện tốc độ, giảm độ trễ và tăng cường độ tin cậy của các hệ
+								thống truyền thông.</p>
+						</div>
+					</div>
+					<div class="card overflow-hidden row-span-2">
+						<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
+							alt="" class="object-cover w-full h-full rounded-lg">
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="globe" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Quy mô Toàn cầu</h4>
+						</div>
+						<p class="text-slate-600">Làm việc với các hệ thống có quy mô lớn, kết nối hàng tỷ người dùng và thiết bị
+							trên toàn thế giới.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="shield" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Tuyến đầu An ninh</h4>
+						</div>
+						<p class="text-slate-600">Là lớp phòng thủ đầu tiên, trực tiếp đối mặt và ngăn chặn các mối đe dọa từ không
+							gian mạng.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">MMT "So Kè" Với Các Ngành Khác</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="code-2" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm (KTPM)</h4>
+						</div>
+						<p class="text-slate-600">KTPM xây dựng "ứng dụng" (xe cộ). MMT xây dựng "hạ tầng" (đường cao tốc, hệ thống
+							đèn tín hiệu) để các ứng dụng đó có thể giao tiếp với nhau một cách hiệu quả và an toàn.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="database-cog" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin (HTTT)</h4>
+						</div>
+						<p class="text-slate-600">HTTT tập trung vào việc quản lý và tối ưu hóa luồng thông tin trong một doanh
+							nghiệp. MMT tập trung vào hạ tầng kỹ thuật để kết nối các hệ thống đó lại với nhau và với thế giới bên
+							ngoài.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="cpu" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính (KHMT)</h4>
+						</div>
+						<p class="text-slate-600">KHMT nghiên cứu các thuật toán và lý thuyết tính toán nền tảng. MMT ứng dụng các
+							lý thuyết đó để giải quyết các bài toán cụ thể về truyền thông, định tuyến và quản lý mạng lưới.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="lock" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. An ninh mạng (Cybersecurity)</h4>
+						</div>
+						<p class="text-slate-600">An ninh mạng là một lĩnh vực rất rộng. An ninh mạng trong MMT là một chuyên ngành
+							sâu, tập trung vào việc bảo vệ chính hạ tầng mạng (tường lửa, phát hiện xâm nhập) khỏi các cuộc tấn công.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="network" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Mạng (Network Engineer)</h4>
+						<p class="text-slate-600 text-sm">Thiết kế, triển khai và quản trị các hệ thống mạng cho doanh nghiệp, nhà
+							cung cấp dịch vụ Internet (ISP).</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="lock" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia An ninh Mạng</h4>
+						<p class="text-slate-600 text-sm">Xây dựng các lớp phòng thủ, giám sát và ứng phó với các cuộc tấn công vào
+							hệ thống mạng.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="cloud-cog" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Điện toán Đám mây</h4>
+						<p class="text-slate-600 text-sm">Làm việc với các nền tảng như AWS, Azure, Google Cloud để xây dựng và vận
+							hành hạ tầng cho ứng dụng.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="server-cog" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản trị viên Hệ thống</h4>
+						<p class="text-slate-600 text-sm">Đảm bảo các máy chủ, hệ thống mạng và các dịch vụ liên quan hoạt động ổn
+							định, hiệu quả và an toàn.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="smartphone-charging" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Viễn thông</h4>
+						<p class="text-slate-600 text-sm">Làm việc với các công nghệ mạng di động 4G/5G, mạng lõi và các hệ thống
+							truyền dẫn quang.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="lightbulb" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Tư vấn Giải pháp Mạng</h4>
+						<p class="text-slate-600 text-sm">Tư vấn cho các doanh nghiệp về các giải pháp mạng và bảo mật phù hợp với
+							nhu cầu kinh doanh.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6 flex items-start">
+						<i data-lucide="facebook" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Mạng Xã Hội Toàn Cầu</h4>
+							<p class="text-slate-600 text-sm">Nền tảng hạ tầng giúp Facebook, Instagram, TikTok kết nối hàng tỷ người
+								dùng.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="youtube" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Xem Phim & Video Trực Tuyến</h4>
+							<p class="text-slate-600 text-sm">Các giao thức truyền dữ liệu hiệu quả cho phép bạn xem Netflix, YouTube
+								không bị gián đoạn.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="cloud-lightning" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Điện Toán Đám Mây</h4>
+							<p class="text-slate-600 text-sm">Xây dựng và vận hành các trung tâm dữ liệu khổng lồ của Amazon Web
+								Services, Google Cloud, Microsoft Azure.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="gamepad-2" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Game Online Đa Người Chơi</h4>
+							<p class="text-slate-600 text-sm">Đảm bảo kết nối có độ trễ thấp, mang lại trải nghiệm mượt mà cho các
+								game thủ.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="tower-control" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Mạng Di Động 4G/5G</h4>
+							<p class="text-slate-600 text-sm">Phát triển và tối ưu hóa hạ tầng mạng di động, cho phép truy cập
+								Internet tốc độ cao mọi lúc mọi nơi.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="home" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Internet Vạn Vật (IoT)</h4>
+							<p class="text-slate-600 text-sm">Kết nối hàng tỷ thiết bị thông minh, từ nhà thông minh, xe tự lái đến
+								các cảm biến công nghiệp.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script>
+		lucide.createIcons();
+	</script>
+</body>
+
+</html>

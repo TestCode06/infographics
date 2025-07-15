@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infographic: Khoa Học Dữ Liệu – Biến Dữ Liệu Thành Quyết Định Vàng</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
+		rel="stylesheet">
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<style>
+		body {
+			font-family: 'Be Vietnam Pro', sans-serif;
+			background-color: #FFF1F2;
+			/* Rose-50 */
+			color: #500724;
+			/* Rose-950 */
+		}
+
+		.section-title {
+			font-weight: 900;
+			color: #BE123C;
+			/* Rose-700 */
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.card {
+			background-color: #FFFFFF;
+			border: 1px solid #FFE4E6;
+			/* Rose-200 */
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+			border-radius: 0.75rem;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.card-content {
+			flex-grow: 1;
+		}
+
+		.card:hover {
+			transform: translateY(-5px);
+			border-color: #E11D48;
+			/* Rose-600 */
+			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+		}
+
+		.icon {
+			color: #E11D48;
+			width: 48px;
+			height: 48px;
+		}
+
+		.tagline {
+			font-style: italic;
+			color: #FBBF24;
+			/* Amber-400 */
+			font-weight: 500;
+		}
+
+		.header-bg {
+			background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		.header-bg::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(136, 19, 55, 0.8);
+			/* Rose-900 with opacity */
+		}
+
+		.header-content {
+			position: relative;
+			z-index: 10;
+		}
+
+		.header-content h1,
+		.header-content p {
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		}
+	</style>
+</head>
+
+<body class="antialiased">
+	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
+		<header class="header-bg">
+			<div class="header-content text-center py-16 px-4">
+				<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">KHOA HỌC DỮ LIỆU</h1>
+				<p class="text-xl md:text-2xl font-semibold text-amber-400 mb-4">Data Science (KHDL)</p>
+				<p class="text-2xl md:text-3xl font-bold text-amber-300 mb-6">Biến Dữ Liệu Thành Quyết Định Vàng</p>
+				<p class="text-lg text-gray-200">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM
+				</p>
+				<p class="tagline text-xl mt-4">"Tiên phong tri thức, kiến tạo tương lai"</p>
+			</div>
+		</header>
+
+		<main class="p-4 md:p-8">
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="search-check" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Khai Phá Dữ Liệu (Mining)</h3>
+							<p class="text-slate-600">Trở thành "thợ săn" kho báu, "đào" sâu vào các mỏ dữ liệu khổng lồ để tìm ra
+								những insight, quy luật ẩn mà mắt thường không thấy được.</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="brain-cog" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Xây Dựng Mô Hình Dự Báo</h3>
+							<p class="text-slate-600">Sử dụng Học máy để xây dựng các mô hình dự đoán tương lai: từ việc dự báo doanh
+								số bán hàng cho Shopee đến dự đoán giá cổ phiếu.</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="area-chart" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">"Kể Chuyện" Bằng Dữ Liệu</h3>
+							<p class="text-slate-600">Biến những con số và dữ liệu khô khan thành các biểu đồ, đồ thị trực quan đẹp
+								mắt. Biến data thành những "story" hấp dẫn mà sếp nào cũng gật gù.</p>
+						</div>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="database" class="icon"></i></div>
+						<div class="card-content">
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Làm Việc Với Big Data</h3>
+							<p class="text-slate-600">Làm chủ các công nghệ và hệ thống được thiết kế để xử lý các tập dữ liệu siêu to
+								khổng lồ - từ hàng tỷ bài post Facebook đến dữ liệu giao dịch toàn cầu.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div class="card overflow-hidden">
+						<img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2070&auto=format&fit=crop"
+							alt="" class="object-cover w-full h-full rounded-lg">
+					</div>
+					<div class="space-y-6">
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="combine" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Giao thoa Đa ngành</h4>
+							</div>
+							<p class="text-slate-600">Là sự kết hợp độc đáo giữa ba lĩnh vực: Khoa học máy tính, Toán - Thống kê và
+								kiến thức chuyên môn của ngành ứng dụng.</p>
+						</div>
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="lightbulb" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Tập trung vào "Câu chuyện"</h4>
+							</div>
+							<p class="text-slate-600">Không chỉ xử lý số liệu, mà còn phải tìm ra ý nghĩa, "câu chuyện" đằng sau chúng
+								để tạo ra giá trị thực tiễn.</p>
+						</div>
+					</div>
+					<div class="space-y-6">
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="target" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Hướng đến Quyết định</h4>
+							</div>
+							<p class="text-slate-600">Mọi phân tích và mô hình đều nhằm mục đích cuối cùng là cung cấp bằng chứng để
+								đưa ra các quyết định kinh doanh hoặc khoa học tốt hơn.</p>
+						</div>
+						<div class="card p-6">
+							<div class="flex items-center mb-4">
+								<i data-lucide="wrench" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">Tư duy Thực nghiệm</h4>
+							</div>
+							<p class="text-slate-600">Luôn đặt ra giả thuyết, tiến hành thí nghiệm với dữ liệu, đo lường kết quả và
+								lặp lại quy trình để tìm ra lời giải tối ưu nhất.</p>
+						</div>
+					</div>
+					<div class="card overflow-hidden">
+						<img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt=""
+							class="object-cover w-full h-full rounded-lg">
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">KHDL "So Kè" Với Các Ngành Khác</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="brain-circuit" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo (AI)</h4>
+						</div>
+						<p class="text-slate-600">KHDL sử dụng các mô hình AI/ML như một công cụ để khai phá dữ liệu. AI là một lĩnh
+							vực rộng hơn, bao gồm cả việc tạo ra các tác nhân thông minh có thể hành động (robot, xe tự lái), không
+							chỉ phân tích.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="cpu" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính (KHMT)</h4>
+						</div>
+						<p class="text-slate-600">KHMT tạo ra các "công cụ" (thuật toán, cơ sở dữ liệu). KHDL là người ứng dụng các
+							công cụ đó vào một bộ dữ liệu cụ thể để trả lời một câu hỏi kinh doanh, khoa học.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="briefcase" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Phân tích Kinh doanh (BI)</h4>
+						</div>
+						<p class="text-slate-600">BI tập trung vào việc phân tích dữ liệu quá khứ ("Chuyện gì đã xảy ra?"). KHDL đi
+							xa hơn, sử dụng các mô hình phức tạp để dự đoán tương lai ("Chuyện gì sẽ xảy ra?").</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4">
+							<i data-lucide="database-cog" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ sư Dữ liệu (Data Engineering)</h4>
+						</div>
+						<p class="text-slate-600">Kỹ sư Dữ liệu xây dựng "đường ống" để vận chuyển và lưu trữ dữ liệu. Nhà khoa học
+							dữ liệu là người sử dụng dữ liệu từ đường ống đó để phân tích và xây dựng mô hình.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="flask-conical" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Nhà khoa học dữ liệu</h4>
+						<p class="text-slate-600 text-sm">Sử dụng các mô hình thống kê và học máy phức tạp để đưa ra các dự báo và
+							giải quyết các bài toán kinh doanh.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="file-pie-chart" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Nhà phân tích dữ liệu</h4>
+						<p class="text-slate-600 text-sm">Thu thập, làm sạch và phân tích dữ liệu quá khứ để tìm ra các xu hướng và
+							trả lời các câu hỏi kinh doanh.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="brain-circuit" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư học máy</h4>
+						<p class="text-slate-600 text-sm">Xây dựng và triển khai các mô hình học máy vào các sản phẩm thực tế, tối
+							ưu hóa hiệu suất và khả năng mở rộng.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="server-cog" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư dữ liệu</h4>
+						<p class="text-slate-600 text-sm">Thiết kế, xây dựng và duy trì các hệ thống đường ống dữ liệu (data
+							pipeline) để đảm bảo dữ liệu luôn sẵn sàng cho việc phân tích.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="briefcase" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Phân tích Kinh doanh (BI)</h4>
+						<p class="text-slate-600 text-sm">Tạo ra các báo cáo, dashboard và công cụ trực quan để giúp các nhà quản lý
+							theo dõi và hiểu rõ hoạt động kinh doanh.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="pie-chart" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia Trực quan hóa Dữ liệu</h4>
+						<p class="text-slate-600 text-sm">Thiết kế các biểu đồ và đồ thị tương tác, giúp truyền tải những câu chuyện
+							phức tạp từ dữ liệu một cách dễ hiểu.</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6 flex items-start">
+						<i data-lucide="shopping-cart" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Thương mại điện tử</h4>
+							<p class="text-slate-600 text-sm">Phân tích giỏ hàng, gợi ý sản phẩm, cá nhân hóa trải nghiệm mua sắm và
+								tối ưu hóa giá.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="heart-pulse" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Y tế</h4>
+							<p class="text-slate-600 text-sm">Dự đoán dịch bệnh, phân tích gen, hỗ trợ chẩn đoán và đề xuất phác đồ
+								điều trị cá nhân hóa.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="landmark" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Tài chính - Ngân hàng</h4>
+							<p class="text-slate-600 text-sm">Phát hiện gian lận thẻ tín dụng, đánh giá rủi ro tín dụng, và dự báo xu
+								hướng thị trường chứng khoán.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="megaphone" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Marketing & Quảng cáo</h4>
+							<p class="text-slate-600 text-sm">Phân khúc khách hàng, tối ưu hóa chiến dịch quảng cáo và đo lường hiệu
+								quả marketing.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="truck" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Logistics & Vận tải</h4>
+							<p class="text-slate-600 text-sm">Tối ưu hóa lộ trình giao hàng, dự báo nhu cầu vận chuyển và quản lý
+								chuỗi cung ứng hiệu quả.</p>
+						</div>
+					</div>
+					<div class="card p-6 flex items-start">
+						<i data-lucide="clapperboard" class="icon mr-4 flex-shrink-0"></i>
+						<div>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Giải trí</h4>
+							<p class="text-slate-600 text-sm">Hệ thống gợi ý phim trên Netflix, gợi ý nhạc trên Spotify, và cá nhân
+								hóa nội dung trên các nền tảng số.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<script>
+		lucide.createIcons();
+	</script>
+</body>
+
+</html>

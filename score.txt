@@ -1,0 +1,33 @@
+Điểm THPTQG 2024:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)	28.5	
+18	7480107	Trí tuệ nhân tạo (Chương trình Chuẩn)	27.7	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)	26	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)	26.75	
+
+Điểm ĐGNL 2024:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)		1052	
+18	7480107	Trí tuệ nhân tạo (Chương trình Chuẩn)		1032	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)		925	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)		945	
+
+Điểm THPTQG 2023:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)	28.05	
+18	7480107	Trí tuệ nhân tạo (Chương trình Chuẩn)	27.0	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)	26	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)	26.5	
+
+Điểm ĐGNL 2023:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)		1035	
+18	7480107	Trí tuệ nhân tạo (Chương trình Chuẩn)		1001	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)		925	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)		940	
+
+Điểm THPTQG 2022:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)	28.2	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)	27.2	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)	27.2
+
+Điểm ĐGNL 2022:
+17	7480101_TT	Khoa học máy tính (Chương trình Tiên tiến)		1001	
+19	7480201_DKD	Công nghệ thông tin (Chương trình Tăng cường tiếng Anh)		880	
+20	7480201_NN	Nhóm ngành máy tính và Công nghệ thông tin (Chương trình Chuẩn)		935
