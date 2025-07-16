@@ -109,6 +109,59 @@
 			gap: 1rem;
 		}
 
+		/* Export mode - fixed layout for PNG generation */
+		.export-mode {
+			width: 1200px !important;
+			height: auto !important;
+			max-width: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			background: white !important;
+		}
+
+		.export-mode .container {
+			padding: 20px !important;
+			max-width: none !important;
+			width: 100% !important;
+		}
+
+		.export-mode .header-section {
+			padding: 60px 24px !important;
+			margin-bottom: 32px !important;
+		}
+
+		.export-mode .header-section h1 {
+			font-size: 4rem !important;
+		}
+
+		.export-mode .header-section p {
+			font-size: 1.5rem !important;
+		}
+
+		.export-mode .grid {
+			display: grid !important;
+			grid-template-columns: 300px 1fr !important;
+			gap: 32px !important;
+		}
+
+		.export-mode .main-container {
+			padding: 24px !important;
+		}
+
+		.export-mode .menu-item {
+			padding: 16px !important;
+		}
+
+		.export-mode .content-frame {
+			height: 800px !important;
+			min-height: 800px !important;
+		}
+
+		.export-mode .download-buttons {
+			display: none !important;
+		}
+
+		/* Responsive styles for normal viewing */
 		@media (max-width: 1024px) {
 			.download-buttons {
 				top: 10px;
@@ -131,49 +184,49 @@
 				grid-template-columns: 1fr;
 			}
 
-			body {
+			body:not(.export-mode) {
 				padding: 0.5rem;
 			}
 
-			.container {
+			body:not(.export-mode) .container {
 				padding: 0.5rem !important;
 			}
 
-			.header-section {
+			body:not(.export-mode) .header-section {
 				padding: 2rem 1rem !important;
 				margin-bottom: 1rem !important;
 			}
 
-			.header-section h1 {
+			body:not(.export-mode) .header-section h1 {
 				font-size: 2rem !important;
 			}
 
-			.header-section p {
+			body:not(.export-mode) .header-section p {
 				font-size: 1rem !important;
 			}
 
-			.main-container {
+			body:not(.export-mode) .main-container {
 				padding: 1rem !important;
 			}
 
-			.menu-item {
+			body:not(.export-mode) .menu-item {
 				padding: 0.75rem !important;
 			}
 
-			.menu-item .icon {
+			body:not(.export-mode) .menu-item .icon {
 				width: 1.5rem !important;
 				height: 1.5rem !important;
 			}
 
-			.menu-item h3 {
+			body:not(.export-mode) .menu-item h3 {
 				font-size: 0.75rem !important;
 			}
 
-			.menu-item p {
+			body:not(.export-mode) .menu-item p {
 				font-size: 0.625rem !important;
 			}
 
-			.download-buttons {
+			body:not(.export-mode) .download-buttons {
 				position: relative;
 				top: auto;
 				right: auto;
@@ -184,73 +237,66 @@
 				gap: 0.5rem;
 			}
 
-			.download-btn {
+			body:not(.export-mode) .download-btn {
 				padding: 0.5rem;
 				border-radius: 0.5rem;
 			}
 
-			.content-frame {
+			body:not(.export-mode) .content-frame {
 				height: 500px !important;
 				min-height: 400px !important;
 			}
 
-			.sidebar-container {
+			body:not(.export-mode) .sidebar-container {
 				min-height: auto !important;
 			}
 		}
 
 		@media (max-width: 480px) {
-			.header-section h1 {
+			body:not(.export-mode) .header-section h1 {
 				font-size: 1.5rem !important;
 				line-height: 1.3 !important;
 			}
 
-			.header-section p {
+			body:not(.export-mode) .header-section p {
 				font-size: 0.875rem !important;
 			}
 
-			.menu-item {
+			body:not(.export-mode) .menu-item {
 				padding: 0.5rem !important;
 			}
 
-			.content-frame {
+			body:not(.export-mode) .content-frame {
 				height: 600px !important;
 				min-height: 500px;
 				max-width: 100%;
 			}
 
-			.download-buttons {
+			body:not(.export-mode) .download-buttons {
 				flex-direction: column;
 				align-items: center;
 			}
 		}
 
-		@media (max-width: 480px) {
-			.content-frame {
-				height: 500px !important;
-				min-height: 400px;
+		@media (max-width: 320px) {
+			body:not(.export-mode) .content-frame {
+				height: 400px !important;
+				min-height: 350px;
 			}
 
-			.main-container {
+			body:not(.export-mode) .main-container {
 				padding: 0.5rem !important;
 				margin: 0.25rem !important;
 			}
 
-			.header-section h1 {
+			body:not(.export-mode) .header-section h1 {
 				font-size: 1.25rem !important;
 			}
 
-			.download-buttons {
+			body:not(.export-mode) .download-buttons {
 				top: 5px;
 				right: 5px;
 				gap: 4px;
-			}
-		}
-
-		@media (max-width: 320px) {
-			.content-frame {
-				height: 400px !important;
-				min-height: 350px;
 			}
 		}
 
@@ -425,7 +471,7 @@
 		}
 		// Default page URL
 		let currentPageUrl = 'pages/computer_science.html';
-		
+
 		// Function to sync iframe height with sidebar
 		function syncIframeHeight() {
 			const sidebar = document.getElementById('sidebar-container');
@@ -559,28 +605,64 @@
 					const exportBtn = iframeDoc.getElementById('export-btn');
 					if (exportBtn) exportBtn.style.display = 'none';
 
-					html2canvas(content, {
-						backgroundColor: config.background,
-						useCORS: true,
-						scale: 2,
-						scrollX: 0,
-						scrollY: 0
-					}).then(canvas => {
-						const image = canvas.toDataURL('image/png', 1.0);
-						const link = document.createElement('a');
-						link.download = config.filename;
-						link.href = image;
-						link.click();
+					// Temporarily add export mode for fixed layout
+					const originalBodyClass = iframeDoc.body.className;
+					iframeDoc.body.classList.add('export-mode');
 
-						// Show export button again
-						if (exportBtn) exportBtn.style.display = 'block';
-						hideProgress();
-					}).catch(err => {
-						console.error('Lỗi khi tạo PNG:', err);
-						alert('Có lỗi xảy ra khi tạo file PNG');
-						if (exportBtn) exportBtn.style.display = 'block';
-						hideProgress();
-					});
+					// Set fixed dimensions for export
+					const originalWidth = content.style.width;
+					const originalMaxWidth = content.style.maxWidth;
+					const originalMargin = content.style.margin;
+					const originalPadding = content.style.padding;
+
+					content.style.width = '1200px';
+					content.style.maxWidth = 'none';
+					content.style.margin = '0';
+					content.style.padding = '20px';
+
+					// Wait for layout to settle
+					setTimeout(() => {
+						html2canvas(content, {
+							backgroundColor: config.background,
+							useCORS: true,
+							scale: 2,
+							scrollX: 0,
+							scrollY: 0,
+							width: 1200,
+							windowWidth: 1200,
+							windowHeight: 800
+						}).then(canvas => {
+							const image = canvas.toDataURL('image/png', 1.0);
+							const link = document.createElement('a');
+							link.download = config.filename;
+							link.href = image;
+							link.click();
+
+							// Restore original styles
+							iframeDoc.body.className = originalBodyClass;
+							content.style.width = originalWidth;
+							content.style.maxWidth = originalMaxWidth;
+							content.style.margin = originalMargin;
+							content.style.padding = originalPadding;
+
+							// Show export button again
+							if (exportBtn) exportBtn.style.display = 'block';
+							hideProgress();
+						}).catch(err => {
+							console.error('Lỗi khi tạo PNG:', err);
+							alert('Có lỗi xảy ra khi tạo file PNG');
+
+							// Restore original styles
+							iframeDoc.body.className = originalBodyClass;
+							content.style.width = originalWidth;
+							content.style.maxWidth = originalMaxWidth;
+							content.style.margin = originalMargin;
+							content.style.padding = originalPadding;
+
+							if (exportBtn) exportBtn.style.display = 'block';
+							hideProgress();
+						});
+					}, 500);
 				} catch (err) {
 					console.error('Lỗi truy cập iframe:', err);
 					alert('Không thể truy cập nội dung trang. Vui lòng thử lại.');
@@ -632,6 +714,7 @@
 				tempFrame.style.left = '-9999px';
 				tempFrame.style.width = '1200px';
 				tempFrame.style.height = '800px';
+				tempFrame.style.border = 'none';
 				tempFrame.src = url;
 
 				document.body.appendChild(tempFrame);
@@ -646,20 +729,35 @@
 							return;
 						}
 
+						// Add export mode class to fix layout for PNG generation
+						iframeDoc.body.classList.add('export-mode');
+
 						// Hide export button
 						const exportBtn = iframeDoc.getElementById('export-btn');
 						if (exportBtn) exportBtn.style.display = 'none';
 
-						html2canvas(content, {
-							backgroundColor: config.background,
-							useCORS: true,
-							scale: 2,
-							scrollX: 0,
-							scrollY: 0
-						}).then(canvas => {
-							document.body.removeChild(tempFrame);
-							resolve(canvas);
-						}).catch(reject);
+						// Set fixed dimensions for export
+						content.style.width = '1200px';
+						content.style.maxWidth = 'none';
+						content.style.margin = '0';
+						content.style.padding = '20px';
+
+						// Wait a bit for layout to settle
+						setTimeout(() => {
+							html2canvas(content, {
+								backgroundColor: config.background,
+								useCORS: true,
+								scale: 2,
+								scrollX: 0,
+								scrollY: 0,
+								width: 1200,
+								windowWidth: 1200,
+								windowHeight: 800
+							}).then(canvas => {
+								document.body.removeChild(tempFrame);
+								resolve(canvas);
+							}).catch(reject);
+						}, 500);
 
 					} catch (err) {
 						document.body.removeChild(tempFrame);
@@ -694,7 +792,16 @@
 			alert('Không thể tải trang. Vui lòng kiểm tra đường dẫn file.');
 		};
 
-		
+		// Mobile download buttons
+		document.getElementById('download-current-mobile').addEventListener('click', function () {
+			document.getElementById('download-current').click();
+		});
+
+		document.getElementById('download-all-mobile').addEventListener('click', function () {
+			document.getElementById('download-all').click();
+		});
+
+
 	</script>
 </body>
 

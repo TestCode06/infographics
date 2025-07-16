@@ -12,7 +12,7 @@
 		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
-	<style>
+		<style>
 		body {
 			font-family: 'Be Vietnam Pro', sans-serif;
 			background-color: #FFF1F2;
@@ -20,6 +20,98 @@
 			color: #500724;
 			/* Rose-950 */
 		}
+
+		/* Export mode - fixed layout for PNG generation */
+		.export-mode #infographic-content {
+			width: 1200px !important;
+			max-width: none !important;
+			margin: 0 !important;
+			padding: 20px !important;
+		}
+		
+		.export-mode .header-bg {
+			padding: 60px 24px !important;
+		}
+		
+		.export-mode .header-content h1 {
+			font-size: 3.5rem !important;
+		}
+		
+		.export-mode .grid {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+			gap: 24px !important;
+		}
+		
+		.export-mode .card {
+			min-height: auto !important;
+		}
+
+		/* Responsive styles for normal viewing */
+		@media (max-width: 1024px) {
+			body:not(.export-mode) #infographic-content {
+				max-width: 100%;
+				padding: 16px;
+			}
+			
+			body:not(.export-mode) .header-bg {
+				padding: 40px 16px !important;
+			}
+			
+			body:not(.export-mode) .header-content h1 {
+				font-size: 2.5rem !important;
+			}
+		}
+
+		@media (max-width: 768px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 12px;
+			}
+			
+			body:not(.export-mode) .header-bg {
+				padding: 32px 12px !important;
+			}
+			
+			body:not(.export-mode) .header-content h1 {
+				font-size: 2rem !important;
+			}
+			
+			body:not(.export-mode) .header-content p {
+				font-size: 1rem !important;
+			}
+			
+			body:not(.export-mode) .grid {
+				grid-template-columns: 1fr !important;
+				gap: 16px !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 8px;
+			}
+			
+			body:not(.export-mode) .header-bg {
+				padding: 24px 8px !important;
+			}
+			
+			body:not(.export-mode) .header-content h1 {
+				font-size: 1.5rem !important;
+				line-height: 1.3 !important;
+			}
+			
+			body:not(.export-mode) .header-content p {
+				font-size: 0.875rem !important;
+			}
+			
+			body:not(.export-mode) .section-title {
+				font-size: 1.25rem !important;
+			}
+			
+			body:not(.export-mode) .card {
+				padding: 12px !important;
+			}
+		}
+
 
 		.section-title {
 			font-weight: 900;
@@ -91,6 +183,7 @@
 		.header-content p {
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
+	
 	</style>
 </head>
 
