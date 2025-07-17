@@ -21,6 +21,39 @@
 			/* Slate-800 */
 		}
 
+		/* Export mode - specific layout for admission info section */
+		.export-mode .lg\\:col-span-2 {
+			grid-column: span 1 !important;
+		}
+
+		.export-mode .lg\\:col-span-3 {
+			grid-column: span 1 !important;
+		}
+
+		.export-mode .space-y-8>*+* {
+			margin-top: 20px !important;
+		}
+
+		/* Export mode - ensure proper alignment for charts and content */
+		.export-mode .relative.h-64 {
+			height: 16rem !important;
+		}
+
+		.export-mode .overflow-x-auto {
+			overflow-x: visible !important;
+		}
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Thông Tin Chung - Khoa Công nghệ Thông tin,
+		Trường ĐH KHTN</title><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
+
+		rel="stylesheet"><script src="https://unpkg.com/lucide@latest"></script><style>body {
+			font-family: 'Be Vietnam Pro', sans-serif;
+			background-color: #F8FAFC;
+			/* Slate-50 */
+			color: #1E293B;
+			/* Slate-800 */
+		}
+
 		/* Export mode - fixed layout for PNG generation */
 		.export-mode #infographic-content {
 			width: 1200px !important;
@@ -40,6 +73,33 @@
 		.export-mode .grid {
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
 			gap: 24px !important;
+		}
+
+		/* Export mode specific grid layouts to match web display */
+		.export-mode .grid.lg\\:grid-cols-5 {
+			grid-template-columns: 2fr 3fr !important;
+			gap: 32px !important;
+		}
+
+		.export-mode .grid.md\\:grid-cols-2 {
+			grid-template-columns: repeat(2, 1fr) !important;
+		}
+
+		.export-mode .grid.md\\:grid-cols-3 {
+			grid-template-columns: repeat(3, 1fr) !important;
+		}
+
+		/* Export mode - specific layout for admission info section */
+		.export-mode .lg\\:col-span-2 {
+			grid-column: span 1 !important;
+		}
+
+		.export-mode .lg\\:col-span-3 {
+			grid-column: span 1 !important;
+		}
+
+		.export-mode .space-y-8>*+* {
+			margin-top: 20px !important;
 		}
 
 		.export-mode .card {
