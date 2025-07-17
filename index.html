@@ -13,7 +13,23 @@
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1						// Set fixed dimensions							width: 854,
+							windowWidth: 854,or export
+						content.style.width = '854px';
+						content.style.maxWidth = 'none';
+						content.style.margin = '0';
+						content.style.padding = '20px';
+
+						// Wait a bit for layout to settle
+						setTimeout(() => {
+							html2canvas(content, {
+								backgroundColor: config.background,
+								useCORS: true,
+								scale: 2,
+								scrollX: 0,
+								scrollY: 0,
+								width: 854,
+								windowWidth: 854,"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 	<style>
 		body {
@@ -130,7 +146,7 @@
 
 		/* Export mode - fixed layout for PNG generation */
 		.export-mode {
-			width: 1200px !important;
+			width: 1096px !important;
 			height: auto !important;
 			max-width: none !important;
 			padding: 0 !important;
@@ -140,22 +156,22 @@
 		}
 
 		.export-mode .container {
-			padding: 20px !important;
+			padding: 16px !important;
 			max-width: none !important;
 			width: 100% !important;
 		}
 
 		.export-mode .header-section {
-			padding: 60px 24px !important;
-			margin-bottom: 32px !important;
+			padding: 40px 16px !important;
+			margin-bottom: 24px !important;
 		}
 
 		.export-mode .header-section h1 {
-			font-size: 4rem !important;
+			font-size: 2.5rem !important;
 		}
 
 		.export-mode .header-section p {
-			font-size: 1.5rem !important;
+			font-size: 1.125rem !important;
 		}
 
 		.export-mode .grid {
@@ -660,10 +676,10 @@
 					const originalMargin = content.style.margin;
 					const originalPadding = content.style.padding;
 
-					content.style.width = '1200px';
+					content.style.width = '854px';
 					content.style.maxWidth = 'none';
 					content.style.margin = '0';
-					content.style.padding = '20px';
+					content.style.padding = '16px';
 
 					// Wait for layout to settle
 					setTimeout(() => {
@@ -673,9 +689,9 @@
 							scale: 2,
 							scrollX: 0,
 							scrollY: 0,
-							width: 1200,
-							windowWidth: 1200,
-							windowHeight: 800
+							width: 854,
+							windowWidth: 854,
+							windowHeight: 600
 						}).then(canvas => {
 							const image = canvas.toDataURL('image/png', 1.0);
 							const link = document.createElement('a');
@@ -757,7 +773,7 @@
 				const tempFrame = document.createElement('iframe');
 				tempFrame.style.position = 'absolute';
 				tempFrame.style.left = '-9999px';
-				tempFrame.style.width = '1200px';
+				tempFrame.style.width = '854px';
 				tempFrame.style.height = '800px';
 				tempFrame.style.border = 'none';
 				tempFrame.src = url;
@@ -782,7 +798,7 @@
 						if (exportBtn) exportBtn.style.display = 'none';
 
 						// Set fixed dimensions for export
-						content.style.width = '1200px';
+						content.style.width = '854px';
 						content.style.maxWidth = 'none';
 						content.style.margin = '0';
 						content.style.padding = '20px';
@@ -795,9 +811,9 @@
 								scale: 2,
 								scrollX: 0,
 								scrollY: 0,
-								width: 1200,
-								windowWidth: 1200,
-								windowHeight: 800
+								width: 854,
+								windowWidth: 854,
+								windowHeight: 600
 							}).then(canvas => {
 								document.body.removeChild(tempFrame);
 								resolve(canvas);

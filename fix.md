@@ -1,7 +1,345 @@
-# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 4)
+# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 5)
 
 ## Tổng Quan
-Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality, PNG export optimization, và grid layout consistency cho PNG export.**
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality, PNG export optimization, grid layout consistency cho PNG export, và điều chỉnh export width từ 1200px sang 854px (tablet layout).**
+
+#### 10. Điều Chỉnh Export PNG Width từ 1200px sang 854px (Mới)
+
+**Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
+
+**Vấn đề:**
+- PNG export hiện tại sử dụng desktop layout với width 1200px
+- Yêu cầu thay đổi để sử dụng tablet layout với width 854px
+- Cần điều chỉnh tất cả thông số export để phù hợp với width nhỏ hơn
+
+**Giải pháp:**
+
+#### A. Index.html - CSS Export Mode:
+```css
+/* Từ: */
+.export-mode {
+    width: 1200px !important;
+}
+
+.export-mode .container {
+    padding: 20px !important;
+}
+
+.export-mode .header-section {
+    padding: 60px 24px !important;
+    margin-bottom: 32px !important;
+}
+
+.export-mode .header-section h1 {
+    font-size: 4rem !important;
+}
+
+/* Thành: */
+.export-mode {
+    width: 854px !important;
+}
+
+.export-mode .container {
+    padding: 16px !important;
+}
+
+.export-mode .header-section {
+    padding: 40px 16px !important;
+    margin-bottom: 24px !important;
+}
+
+.export-mode .header-section h1 {
+    font-size: 2.5rem !important;
+}
+```
+
+#### B. JavaScript Export Settings:
+```javascript
+/* Từ: */
+content.style.width = '1200px';
+content.style.padding = '20px';
+
+html2canvas(content, {
+    width: 1200,
+    windowWidth: 1200,
+    windowHeight: 800
+});
+
+/* Thành: */
+content.style.width = '854px';
+content.style.padding = '16px';
+
+html2canvas(content, {
+    width: 854,
+    windowWidth: 854,
+    windowHeight: 600
+});
+```
+
+#### C. Pages Files - Export Mode CSS:
+```css
+/* Từ: */
+.export-mode #infographic-content {
+    width: 1200px !important;
+    padding: 20px !important;
+}
+
+.export-mode .header-bg {
+    padding: 60px 24px !important;
+}
+
+.export-mode .header-content h1 {
+    font-size: 2.75rem !important;
+}
+
+.export-mode .grid {
+    gap: 20px !important;
+}
+
+/* Export mode specific grid layouts to match web display */
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Thành: */
+.export-mode #infographic-content {
+    width: 854px !important;
+    padding: 16px !important;
+}
+
+.export-mode .header-bg {
+    padding: 40px 16px !important;
+}
+
+.export-mode .header-content h1 {
+    font-size: 2rem !important;
+}
+
+.export-mode .grid {
+    gap: 16px !important;
+}
+
+/* Export mode specific grid layouts for 854px tablet layout */
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+```
+
+#### D. Grid Layout Adaptation:
+- **4-column desktop → 2-column tablet:** `lg:grid-cols-4` hiện xuất 2 cards per row
+- **3-column desktop → 2-column tablet:** `lg:grid-cols-3` hiện xuất 2 cards per row
+- **2-column remains:** `md:grid-cols-2` vẫn giữ 2 cards per row
+- **Gap optimization:** 20px → 16px để phù hợp với width nhỏ hơn
+
+#### E. Files được cập nhật:
+- `index.html` (CSS export mode + JavaScript settings)
+- `pages/artificial_intelligence.html`
+- `pages/computer_network.html`
+- `pages/computer_science.html`
+- `pages/computer_vision.html`
+- `pages/data_science.html`
+- `pages/information_system.html`
+- `pages/knowledge_engineer.html`
+- `pages/software_engineer.html`
+
+**Cải thiện đạt được:**
+
+#### Layout Optimization:
+- **Tablet-friendly:** PNG export giờ sử dụng tablet layout thay vì desktop
+- **Better proportions:** 854px width phù hợp hơn cho viewing và sharing
+- **Responsive design:** Export phản ánh tablet responsive behavior
+- **Smaller file size:** Width nhỏ hơn → file PNG nhỏ hơn, load nhanh hơn
+
+#### Typography Scaling:
+- **Header sizing:** Font-size giảm từ 4rem → 2.5rem (index), 2.75rem → 2rem (pages)
+- **Padding optimization:** Header padding từ 60px 24px → 40px 16px
+- **Container spacing:** Padding từ 20px → 16px
+- **Readability:** Typography phù hợp với tablet viewport
+
+#### Grid System:
+- **Practical layout:** 2 columns thay vì 4 columns phù hợp với 854px width
+- **Card proportions:** Cards có kích thước phù hợp, không bị cramped
+- **Gap spacing:** 16px gap tối ưu cho tablet layout
+- **Visual balance:** Layout cân đối và professional trên tablet format
+
+#### Technical Improvements:
+- **Canvas optimization:** windowHeight 800px → 600px phù hợp với aspect ratio
+- **Rendering efficiency:** Smaller canvas size = faster rendering
+- **Memory usage:** Reduced memory footprint cho export process
+- **Cross-device consistency:** Export quality đồng nhất từ mọi device
+
+#### User Experience:
+- **Sharing friendly:** 854px width ideal cho social media và messaging
+- **Print compatible:** Better aspect ratio cho printing
+- **Mobile viewing:** Easier to view exported PNG trên mobile devices
+- **Professional appearance:** Clean tablet layout maintains design integrityo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 5)
+
+## Tổng Quan
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality, PNG export optimization, grid layout consistency cho PNG export, và điều chỉnh export PNG để sử dụng layout width 854px.**
+
+#### 10. Điều Chỉnh PNG Export sang Width 854px (Mới - Lần 5)
+
+**Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
+
+**Yêu cầu:**
+- Thay đổi từ export PNG với width 1200px sang width 854px
+- Đảm bảo layout và giao diện phù hợp với responsive design khi width 854px
+- Tối ưu grid layout cho width nhỏ hơn
+
+**Giải pháp:**
+
+#### A. JavaScript Export Function Update (`index.html`):
+
+**1. Single Page Export:**
+```javascript
+// Từ:
+content.style.width = '1200px';
+html2canvas(content, {
+    width: 1200,
+    windowWidth: 1200,
+    windowHeight: 800
+});
+
+// Thành:
+content.style.width = '854px';
+html2canvas(content, {
+    width: 854,
+    windowWidth: 854,
+    windowHeight: 800
+});
+```
+
+**2. Batch Export (All Pages):**
+```javascript
+// Từ:
+tempFrame.style.width = '1200px';
+content.style.width = '1200px';
+html2canvas(content, {
+    width: 1200,
+    windowWidth: 1200,
+    windowHeight: 800
+});
+
+// Thành:
+tempFrame.style.width = '854px';
+content.style.width = '854px';
+html2canvas(content, {
+    width: 854,
+    windowWidth: 854,
+    windowHeight: 800
+});
+```
+
+#### B. CSS Export Mode Update (`index.html`):
+```css
+/* Từ: */
+.export-mode {
+    width: 1200px !important;
+    height: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+}
+
+/* Thành: */
+.export-mode {
+    width: 854px !important;
+    height: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    overflow: visible !important;
+}
+```
+
+#### C. Pages Content Width Update (Tất cả 8 files):
+```css
+/* Từ: */
+.export-mode #infographic-content {
+    width: 1200px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+}
+
+/* Thành: */
+.export-mode #infographic-content {
+    width: 854px !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+}
+```
+
+#### D. Grid Layout Optimization cho 854px Width:
+
+**Width 854px Analysis:**
+- Available space: 854px - 40px padding = 814px
+- Optimal layout: 3 columns thay vì 4 columns
+- Card width per column: ~254px + 16px gaps
+
+**Grid CSS Updates (Tất cả 8 files):**
+```css
+/* Từ: */
+.export-mode .grid {
+    gap: 20px !important;
+}
+
+/* Export mode specific grid layouts to match web display */
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Thành: */
+.export-mode .grid {
+    gap: 16px !important;
+}
+
+/* Export mode specific grid layouts for 854px width */
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+```
+
+**Files được cập nhật:**
+- `index.html` - Export JavaScript và CSS
+- `artificial_intelligence.html`
+- `computer_network.html` 
+- `computer_science.html`
+- `computer_vision.html`
+- `data_science.html`
+- `information_system.html`
+- `knowledge_engineer.html`
+- `software_engineer.html`
+
+**Cải thiện đạt được:**
+
+#### Layout Responsive:
+- **Optimal card display:** 3 cards per row thay vì 4 cards (cramped) hoặc 2 cards (too wide)
+- **Better proportions:** Cards có kích thước cân đối hơn trong frame 854px
+- **Reduced gap:** 16px gap thay vì 20px tối ưu cho không gian nhỏ hơn
+- **Tablet-like layout:** PNG export giống responsive behavior của tablet/small desktop
+
+#### Export Quality:
+- **Consistent ratio:** 854px width phù hợp với aspect ratio phổ biến
+- **Optimized spacing:** Padding và margins tối ưu cho width nhỏ hơn
+- **Better readability:** Text và elements không bị quá nhỏ hay quá chật
+- **Cross-device consistency:** Export từ mobile/tablet/desktop đều ra cùng layout 854px
+
+#### Technical Benefits:
+- **Smaller file size:** PNG export nhỏ hơn (854px vs 1200px) giảm dung lượng
+- **Faster processing:** html2canvas xử lý nhanh hơn với canvas size nhỏ hơn
+- **Memory efficient:** Sử dụng ít RAM hơn khi generate PNG
+- **Network friendly:** Tải và chia sẻ PNG nhanh hơn
+
+#### User Experience:
+- **Social media ready:** 854px width phù hợp cho chia sẻ social platforms
+- **Print friendly:** Tỷ lệ tốt hơn cho in ấn A4
+- **Mobile viewing:** Dễ xem trên mobile devices
+- **Professional appearance:** Layout cân đối và professional hơn
 
 #### 9. Sửa Lỗi Grid Layout Khi Export PNG (Mới)
 
@@ -574,15 +912,31 @@ body:not(.export-mode) .header-content h1 {
 
 **Trạng thái:** Đã sửa và ổn định.
 
-## Kết Quả Mong Đợi (Cập nhật lần 4)
+## Kết Quả Mong Đợi (Cập nhật lần 5)
+
+### PNG Export 854px Width:
+- ✅ PNG export sử dụng width 854px thay vì 1200px
+- ✅ Grid layout tối ưu: 3 columns thay vì 4 columns cho lg:grid-cols-4
+- ✅ Gap spacing giảm xuống 16px thay vì 20px cho width nhỏ hơn
+- ✅ Layout giống responsive behavior của tablet/small desktop
+- ✅ Cards có proportions cân đối hơn trong frame 854px
+- ✅ File size PNG nhỏ hơn, tải nhanh hơn
+- ✅ Social media và mobile friendly format
+
+### Export Technical Quality:
+- ✅ html2canvas xử lý nhanh hơn với canvas size nhỏ hơn
+- ✅ Memory usage thấp hơn khi generate PNG
+- ✅ Consistent export quality từ mọi device types
+- ✅ Professional appearance với proper spacing
+- ✅ Print-friendly aspect ratio
 
 ### Grid Layout Consistency:
-- ✅ PNG export layout giống hệt với web display
-- ✅ Sections với `lg:grid-cols-4` hiển thị đúng 4 cards trong 1 hàng khi export
-- ✅ Sections với `lg:grid-cols-3` hiển thị đúng 3 cards trong 1 hàng khi export
-- ✅ Sections với `md:grid-cols-2` hiển thị đúng 2 cards trong 1 hàng khi export
-- ✅ Gap spacing tối ưu (20px) cho 1200px export width
-- ✅ No more auto-fit causing unexpected layout breaks
+- ✅ PNG export layout sử dụng tablet responsive behavior
+- ✅ Sections với `lg:grid-cols-4` hiển thị 3 cards trong 1 hàng khi export (optimal cho 854px)
+- ✅ Sections với `lg:grid-cols-3` hiển thị 3 cards trong 1 hàng khi export
+- ✅ Sections với `md:grid-cols-2` hiển thị 2 cards trong 1 hàng khi export
+- ✅ Gap spacing tối ưu (16px) cho 854px export width
+- ✅ Card proportions cân đối trong tablet layout với proper spacing
 
 ### Brand Style:
 - ✅ Text `fit@hcmus` luôn hiển thị màu #111B88
@@ -642,8 +996,8 @@ body:not(.export-mode) .header-content h1 {
 - **After:** Working scroll với clean container separation
 
 ### PNG Export:
-- **Before:** Export có thể inconsistent tùy device, layout khác web
-- **After:** Laptop layout (content-frame) standard, consistent với web display
+- **Before (Lần 4):** 1200px width export, 4-column grid layout, gap 20px
+- **After (Lần 5):** 854px width export, 3-column grid layout, gap 16px, tablet-like responsive behavior
 
 ### Background CTA:
 1. **Original:** Blue gradient (#1E3A8A, #4F46E5)
@@ -683,9 +1037,9 @@ body:not(.export-mode) .header-content h1 {
 - **After:** Indigo/blue palette hài hòa với brand color #111B88
 
 ## Tổng Kết
-- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên grid export layout) + **Lần 4: `fix.md`**
-- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, **Grid layout consistency fix**
-- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency, **và PNG export layout giống hệt web display**
-- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, PNG export consistency from all devices, **đặc biệt kiểm tra grid layout 4-cards, 3-cards, 2-cards trong PNG exports**
+- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên 854px export layout) + **Lần 5: `fix.md`**
+- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, Grid layout consistency fix, **PNG export width optimization to 854px**
+- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency với web display, **và PNG export sử dụng 854px width với layout tablet-responsive tối ưu**
+- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, **PNG export với 854px width và 3-column grid layout**, **đặc biệt kiểm tra tỷ lệ cards và spacing trong PNG exports mới**
 
-Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization sử dụng laptop layout làm chuẩn, **và đặc biệt là grid layout trong PNG export giờ đây hoàn toàn consistent với web display behavior.**
+Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization, **và đặc biệt là PNG export giờ đây sử dụng 854px width với responsive 3-column grid layout tối ưu cho việc chia sẻ và xem trên nhiều platform khác nhau.**

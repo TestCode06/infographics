@@ -21,20 +21,20 @@
 			/* Cyan-800 */
 		}
 
-		/* Export mode - fixed layout for PNG generation */
+		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
 		.export-mode #infographic-content {
-			width: 1200px !important;
+			width: 854px !important;
 			max-width: none !important;
 			margin: 0 !important;
 			padding: 20px !important;
 		}
 
 		.export-mode .header-bg {
-			padding: 60px 24px !important;
+			padding: 40px 16px !important;
 		}
 
 		.export-mode .header-content h1 {
-			font-size: 2.75rem !important;
+			font-size: 2rem !important;
 		}
 
 
@@ -103,16 +103,16 @@
 		}
 
 		.export-mode .grid {
-			gap: 20px !important;
+			gap: 16px !important;
 		}
 
-		/* Export mode specific grid layouts to match web display */
+		/* Export mode specific grid layouts for 854px tablet layout */
 		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(4, 1fr) !important;
+			grid-template-columns: repeat(2, 1fr) !important;
 		}
 
 		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(3, 1fr) !important;
+			grid-template-columns: repeat(2, 1fr) !important;
 		}
 
 		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
