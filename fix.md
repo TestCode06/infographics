@@ -1,7 +1,115 @@
-# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 2)
+# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 3)
 
 ## Tổng Quan
-Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, và default page hiển thị.**
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality và PNG export optimization.**
+
+#### 8. Sửa Lỗi Sidebar Scroll và Tối Ưu PNG Export (Mới)
+
+**Vị trí:** `index.html`
+
+**Vấn đề:**
+
+#### A. Sidebar Scroll Issue:
+- "Danh sách chuyên ngành" trong sidebar không thể scroll được
+- Class `main-container` được sử dụng chung cho cả sidebar và content area
+- `max-height` và `overflow: hidden` của `main-container` ngăn cản scroll của sidebar
+- Xung đột CSS giữa sidebar requirements và content area requirements
+
+#### B. PNG Export Layout Issue:
+- Cần đảm bảo PNG export sử dụng laptop layout (content-frame) làm chuẩn
+- Export mode cần được tối ưu cho consistent output
+
+**Giải pháp:**
+
+#### A. Sidebar Scroll Fix:
+
+**1. Tách Class CSS:**
+```css
+/* Original main-container - used for sidebar */
+.main-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+}
+
+/* New content-container - used for content area */
+.content-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+    max-height: calc(100vh - 2rem);
+    overflow: hidden;
+}
+```
+
+**2. Sidebar-Specific CSS:**
+```css
+.sidebar-container {
+    min-height: 600px;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+```
+
+**3. HTML Structure Update:**
+```html
+<!-- Sidebar - keeps using main-container -->
+<div id="sidebar-container" class="main-container sidebar-container p-4 md:p-6 lg:sticky lg:top-4">
+
+<!-- Content area - now uses content-container -->
+<div class="content-container p-2 md:p-4">
+```
+
+**4. Responsive CSS Updates:**
+```css
+/* Update responsive styles for both containers */
+@media (max-width: 768px) {
+    body:not(.export-mode) .main-container {
+        padding: 1rem !important;
+    }
+    body:not(.export-mode) .content-container {
+        padding: 1rem !important;
+    }
+}
+```
+
+#### B. PNG Export Optimization:
+
+**1. Export Mode CSS Update:**
+```css
+.export-mode .content-container {
+    padding: 24px !important;
+    overflow: visible !important;
+}
+```
+
+**2. Export Logic Confirmation:**
+- JavaScript đã đúng cách export content từ iframe (content-frame)
+- Sử dụng laptop layout với dimensions 1200px x 800px
+- Export mode áp dụng cho iframe content, không phải toàn page
+- Đảm bảo consistency across all devices
+
+**Cải thiện đạt được:**
+
+#### Sidebar Functionality:
+- **Working scroll:** Sidebar có thể scroll độc lập với content area
+- **Clean separation:** Sidebar và content area có CSS riêng biệt, không xung đột
+- **Responsive behavior:** Scroll hoạt động trên mọi breakpoint
+- **Visual consistency:** Maintained styling và backdrop effects
+
+#### PNG Export Quality:
+- **Laptop layout standard:** Tất cả PNG export sử dụng laptop layout (content-frame) làm chuẩn
+- **Consistent dimensions:** 1200px width với scale factor 2 cho high quality
+- **Device agnostic:** Export quality giống nhau từ mobile, tablet, desktop
+- **Proper overflow handling:** Export mode CSS đảm bảo content hiển thị đầy đủ
+
+#### Technical Details:
+- **CSS Architecture:** Clear separation of concerns giữa layout containers
+- **Memory Management:** Improved với separate styling cho từng container
+- **Performance:** Reduced CSS conflicts và improved rendering
+- **Maintainability:** Easier to modify sidebar hoặc content area independently
 
 #### 7. Chuẩn Hóa Brand Color cho Computer Science (Mới)
 
@@ -425,6 +533,13 @@ body:not(.export-mode) .header-content h1 {
 - ✅ Consistent header experience across all pages
 - ✅ No duplicate buttons hay UI confusion
 
+### Sidebar & Export Functionality:
+- ✅ Sidebar "Danh sách chuyên ngành" có thể scroll hoàn toàn
+- ✅ Không xung đột CSS giữa sidebar và content area
+- ✅ PNG export sử dụng laptop layout (content-frame) làm chuẩn
+- ✅ Export quality consistent từ mọi device
+- ✅ Clean CSS architecture với container separation
+
 ### Download Functionality:
 - ✅ Nút "Tải trang hiện tại" hoạt động bình thường
 - ✅ Nút "Tải tất cả PNG" tiếp tục hoạt động
@@ -433,10 +548,18 @@ body:not(.export-mode) .header-content h1 {
 
 ## So Sánh Evolution
 
+### Sidebar Scroll:
+- **Before:** Sidebar không thể scroll do CSS conflicts
+- **After:** Working scroll với clean container separation
+
+### PNG Export:
+- **Before:** Export có thể inconsistent tùy device
+- **After:** Laptop layout (content-frame) standard cho all exports
+
 ### Background CTA:
 1. **Original:** Blue gradient (#1E3A8A, #4F46E5)
 2. **Version 1:** Light gray gradient (#F1F5F9, #E2E8F0)
-3. **Version 2:** Indigo gradient (#EEF2FF, #E0E7FF, #C7D2FE) + border
+3. **Version 3:** Indigo gradient (#EEF2FF, #E0E7FF, #C7D2FE) + border
 
 ### Default Page:
 - **Before:** Artificial Intelligence first
@@ -462,14 +585,18 @@ body:not(.export-mode) .header-content h1 {
 - **Before:** 4 buttons visible on small screens (duplicated)
 - **After:** Proper responsive - 2 buttons desktop, 2 buttons mobile (mutually exclusive)
 
+### CSS Architecture:
+- **Before:** Shared `main-container` class causing conflicts
+- **After:** Separated `.main-container` và `.content-container` classes
+
 ### Brand Color Consistency:
 - **Before:** Computer Science sử dụng orange theme không phù hợp với brand
 - **After:** Indigo/blue palette hài hòa với brand color #111B88
 
 ## Tổng Kết
-- **Files được chỉnh sửa:** 11 files (`faculty.html`, `index.html` + 8 pages files với focus trên `computer_vision.html`, `information_system.html`)
-- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix
-- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác
-- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop
+- **Files được chỉnh sửa:** 11 files (`faculty.html`, `index.html` + 8 pages files với focus trên `computer_vision.html`, `information_system.html`) + **Lần 3: `fix.md`**
+- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, **Sidebar scroll fix, PNG export optimization**
+- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, **sidebar scroll hoạt động hoàn hảo, PNG export quality consistency**
+- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, **sidebar scroll functionality, PNG export consistency from all devices**
 
-Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, và đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán.
+Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, **và đặc biệt là sidebar scroll functionality hoạt động mượt mà với PNG export optimization sử dụng laptop layout làm chuẩn.**

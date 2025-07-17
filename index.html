@@ -21,6 +21,8 @@
 			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 			color: #1E293B;
 			min-height: 100vh;
+			overflow: hidden;
+			/* Tắt scroll cho toàn page */
 		}
 
 		.main-container {
@@ -28,6 +30,15 @@
 			backdrop-filter: blur(10px);
 			border-radius: 1rem;
 			box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+		}
+
+		.content-container {
+			background-color: rgba(255, 255, 255, 0.95);
+			backdrop-filter: blur(10px);
+			border-radius: 1rem;
+			box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+			max-height: calc(100vh - 2rem);
+			overflow: hidden;
 		}
 
 		.menu-item {
@@ -60,6 +71,14 @@
 
 		.sidebar-container {
 			min-height: 600px;
+			max-height: calc(100vh - 2rem);
+			overflow-y: auto;
+		}
+
+		.content-frame {
+			height: calc(100vh - 4rem) !important;
+			/* Fixed height cho iframe */
+			max-height: calc(100vh - 4rem) !important;
 		}
 
 		.header-section {
@@ -117,6 +136,7 @@
 			padding: 0 !important;
 			margin: 0 !important;
 			background: white !important;
+			overflow: visible !important;
 		}
 
 		.export-mode .container {
@@ -144,8 +164,9 @@
 			gap: 32px !important;
 		}
 
-		.export-mode .main-container {
+		.export-mode .content-container {
 			padding: 24px !important;
+			overflow: visible !important;
 		}
 
 		.export-mode .menu-item {
@@ -155,6 +176,7 @@
 		.export-mode .content-frame {
 			height: 800px !important;
 			min-height: 800px !important;
+			overflow: visible !important;
 		}
 
 		.export-mode .download-buttons {
@@ -232,6 +254,10 @@
 				padding: 1rem !important;
 			}
 
+			body:not(.export-mode) .content-container {
+				padding: 1rem !important;
+			}
+
 			body:not(.export-mode) .menu-item {
 				padding: 0.75rem !important;
 			}
@@ -272,6 +298,8 @@
 
 			body:not(.export-mode) .sidebar-container {
 				min-height: auto !important;
+				max-height: 300px !important;
+				/* Limit sidebar height on mobile */
 			}
 		}
 
@@ -308,6 +336,11 @@
 			}
 
 			body:not(.export-mode) .main-container {
+				padding: 0.5rem !important;
+				margin: 0.25rem !important;
+			}
+
+			body:not(.export-mode) .content-container {
 				padding: 0.5rem !important;
 				margin: 0.25rem !important;
 			}
@@ -462,7 +495,7 @@
 			</div>
 
 			<div class="lg:col-span-3 md:col-span-2 order-1 md:order-2">
-				<div class="main-container p-2 md:p-4">
+				<div class="content-container p-2 md:p-4">
 					<iframe id="content-frame" class="content-frame w-full" src="pages/computer_science.html" frameborder="0">
 					</iframe>
 				</div>
