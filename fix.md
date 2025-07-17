@@ -1,7 +1,84 @@
-# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 3)
+# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 4)
 
 ## Tổng Quan
-Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality và PNG export optimization.**
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality, PNG export optimization, và grid layout consistency cho PNG export.**
+
+#### 9. Sửa Lỗi Grid Layout Khi Export PNG (Mới)
+
+**Vị trí:** Tất cả 8 files trong `/pages/` directory
+
+**Vấn đề:**
+- Khi xem trên web, `lg:grid-cols-4` hiển thị 4 cards trong 1 hàng trên màn hình lớn
+- Khi export PNG với width 1200px, CSS `.export-mode .grid` sử dụng `repeat(auto-fit, minmax(280px, 1fr))` 
+- Dẫn đến chỉ có thể fit 3 cards thay vì 4 cards như trên web:
+  - 1200px width - padding = ~1160px available space
+  - 280px × 4 = 1120px + gaps = vượt quá không gian
+  - Auto-fit chỉ fit được 3 cards
+
+**Giải pháp:**
+
+#### A. Thay Thế Auto-fit Logic bằng Explicit Grid Columns:
+```css
+/* Từ: */
+.export-mode .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 24px !important;
+}
+
+/* Thành: */
+.export-mode .grid {
+    gap: 20px !important;
+}
+
+/* Export mode specific grid layouts to match web display */
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+}
+
+.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+```
+
+#### B. Logic mới:
+- **4-column grids:** `lg:grid-cols-4` → `repeat(4, 1fr)` trong export mode
+- **3-column grids:** `lg:grid-cols-3` → `repeat(3, 1fr)` trong export mode  
+- **2-column grids:** `md:grid-cols-2` (không có lg:grid-cols-3/4) → `repeat(2, 1fr)`
+- **Gap optimization:** Giảm từ 24px → 20px để có thêm không gian cho 4 cards
+
+#### C. Files được cập nhật:
+- `artificial_intelligence.html`
+- `computer_network.html` 
+- `computer_science.html`
+- `computer_vision.html`
+- `data_science.html`
+- `information_system.html`
+- `knowledge_engineer.html`
+- `software_engineer.html`
+
+**Cải thiện đạt được:**
+
+#### Layout Consistency:
+- **Perfect match:** PNG export layout giống hệt web display
+- **4-card rows:** Sections với `lg:grid-cols-4` hiện có đủ 4 cards trong 1 hàng khi export
+- **Responsive accuracy:** Export mode respect Tailwind breakpoint classes
+- **Space optimization:** Gap 20px tối ưu cho 1200px width
+
+#### Technical Improvements:
+- **CSS specificity:** Sử dụng escaped selectors `.md\\:grid-cols-2.lg\\:grid-cols-4`
+- **Fallback logic:** `:not()` pseudo-selectors đảm bảo đúng grid layout
+- **Performance:** Loại bỏ auto-fit calculations, sử dụng explicit columns
+- **Maintainability:** Clear mapping giữa Tailwind classes và export CSS
+
+#### Visual Quality:
+- **Professional appearance:** Layout consistent trên web và PNG export
+- **Better card proportions:** 4 cards có width cân đối trong 1200px frame
+- **Proper spacing:** Cards không bị cramped hay oversized
+- **Export accuracy:** PNG files reflect actual responsive design intent
 
 #### 8. Sửa Lỗi Sidebar Scroll và Tối Ưu PNG Export (Mới)
 
@@ -499,6 +576,14 @@ body:not(.export-mode) .header-content h1 {
 
 ## Kết Quả Mong Đợi (Cập nhật lần 4)
 
+### Grid Layout Consistency:
+- ✅ PNG export layout giống hệt với web display
+- ✅ Sections với `lg:grid-cols-4` hiển thị đúng 4 cards trong 1 hàng khi export
+- ✅ Sections với `lg:grid-cols-3` hiển thị đúng 3 cards trong 1 hàng khi export
+- ✅ Sections với `md:grid-cols-2` hiển thị đúng 2 cards trong 1 hàng khi export
+- ✅ Gap spacing tối ưu (20px) cho 1200px export width
+- ✅ No more auto-fit causing unexpected layout breaks
+
 ### Brand Style:
 - ✅ Text `fit@hcmus` luôn hiển thị màu #111B88
 - ✅ Font Poppins, font-weight 900 được giữ nguyên
@@ -548,13 +633,17 @@ body:not(.export-mode) .header-content h1 {
 
 ## So Sánh Evolution
 
+### Grid Layout Export:
+- **Before:** Auto-fit minmax(280px, 1fr) causing 3 cards per row instead of 4
+- **After:** Explicit grid columns matching web display (4-col, 3-col, 2-col layouts)
+
 ### Sidebar Scroll:
 - **Before:** Sidebar không thể scroll do CSS conflicts
 - **After:** Working scroll với clean container separation
 
 ### PNG Export:
-- **Before:** Export có thể inconsistent tùy device
-- **After:** Laptop layout (content-frame) standard cho all exports
+- **Before:** Export có thể inconsistent tùy device, layout khác web
+- **After:** Laptop layout (content-frame) standard, consistent với web display
 
 ### Background CTA:
 1. **Original:** Blue gradient (#1E3A8A, #4F46E5)
@@ -594,9 +683,9 @@ body:not(.export-mode) .header-content h1 {
 - **After:** Indigo/blue palette hài hòa với brand color #111B88
 
 ## Tổng Kết
-- **Files được chỉnh sửa:** 11 files (`faculty.html`, `index.html` + 8 pages files với focus trên `computer_vision.html`, `information_system.html`) + **Lần 3: `fix.md`**
-- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, **Sidebar scroll fix, PNG export optimization**
-- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, **sidebar scroll hoạt động hoàn hảo, PNG export quality consistency**
-- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, **sidebar scroll functionality, PNG export consistency from all devices**
+- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên grid export layout) + **Lần 4: `fix.md`**
+- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, **Grid layout consistency fix**
+- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency, **và PNG export layout giống hệt web display**
+- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, PNG export consistency from all devices, **đặc biệt kiểm tra grid layout 4-cards, 3-cards, 2-cards trong PNG exports**
 
-Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, **và đặc biệt là sidebar scroll functionality hoạt động mượt mà với PNG export optimization sử dụng laptop layout làm chuẩn.**
+Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization sử dụng laptop layout làm chuẩn, **và đặc biệt là grid layout trong PNG export giờ đây hoàn toàn consistent với web display behavior.**
