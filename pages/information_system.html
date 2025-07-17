@@ -12,7 +12,7 @@
 		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
-		<style>
+	<style>
 		body {
 			font-family: 'Be Vietnam Pro', sans-serif;
 			background-color: #ECFEFF;
@@ -28,20 +28,20 @@
 			margin: 0 !important;
 			padding: 20px !important;
 		}
-		
+
 		.export-mode .header-bg {
 			padding: 60px 24px !important;
 		}
-		
+
 		.export-mode .header-content h1 {
-			font-size: 3.5rem !important;
+			font-size: 2.75rem !important;
 		}
-		
+
 		.export-mode .grid {
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
 			gap: 24px !important;
 		}
-		
+
 		.export-mode .card {
 			min-height: auto !important;
 		}
@@ -52,11 +52,11 @@
 				max-width: 100%;
 				padding: 16px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 40px 16px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
 				font-size: 2.5rem !important;
 			}
@@ -66,19 +66,19 @@
 			body:not(.export-mode) #infographic-content {
 				padding: 12px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 32px 12px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
-				font-size: 2rem !important;
+				font-size: 1.75rem !important;
 			}
-			
+
 			body:not(.export-mode) .header-content p {
 				font-size: 1rem !important;
 			}
-			
+
 			body:not(.export-mode) .grid {
 				grid-template-columns: 1fr !important;
 				gap: 16px !important;
@@ -89,24 +89,24 @@
 			body:not(.export-mode) #infographic-content {
 				padding: 8px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 24px 8px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
-				font-size: 1.5rem !important;
+				font-size: 1.25rem !important;
 				line-height: 1.3 !important;
 			}
-			
+
 			body:not(.export-mode) .header-content p {
 				font-size: 0.875rem !important;
 			}
-			
+
 			body:not(.export-mode) .section-title {
 				font-size: 1.25rem !important;
 			}
-			
+
 			body:not(.export-mode) .card {
 				padding: 12px !important;
 			}
@@ -181,9 +181,14 @@
 
 		.header-content h1,
 		.header-content p {
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
-	
+
+		.header-content h1 {
+			color: #FFFFFF;
+			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+		}
 	</style>
 </head>
 
@@ -191,7 +196,7 @@
 	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
 		<header class="header-bg">
 			<div class="header-content text-center py-16 px-4">
-				<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">HỆ THỐNG THÔNG TIN</h1>
+				<h1 class="text-2xl md:text-4xl font-black text-white leading-snug mb-4">HỆ THỐNG THÔNG TIN</h1>
 				<p class="text-xl md:text-2xl font-semibold text-orange-400 mb-4">Information System (HTTT)</p>
 				<p class="text-2xl md:text-3xl font-bold text-orange-300 mb-6">Cầu Nối Giữa Công Nghệ & Vận Hành Doanh Nghiệp
 				</p>
@@ -246,7 +251,7 @@
 					<!-- Feature 1 -->
 					<div class="grid md:grid-cols-2 gap-8 items-center">
 						<div class="card overflow-hidden">
-							<img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=1974&auto=format&fit=crop"
+							<img src="../imgs/information_mindset.png"
 								alt="Nhóm đang thảo luận về quy trình làm việc" class="object-cover w-full h-full rounded-lg">
 						</div>
 						<div class="card p-6">
@@ -269,8 +274,8 @@
 								giữa ba yếu tố cốt lõi: Con người, Quy trình và Công nghệ.</p>
 						</div>
 						<div class="card overflow-hidden">
-							<img src="../imgs/information_combine.png"
-								alt="Sơ đồ quy trình trên bảng trắng" class="object-cover w-full h-full rounded-lg">
+							<img src="../imgs/information_combine.png" alt="Sơ đồ quy trình trên bảng trắng"
+								class="object-cover w-full h-full rounded-lg">
 						</div>
 					</div>
 					<!-- Feature 3 -->
@@ -312,7 +317,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="code-2" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm (KTPM)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
 						</div>
 						<p class="text-slate-600">HTTT tập trung vào việc "What & Why": Cần xây dựng hệ thống gì để giải quyết vấn
 							đề cho doanh nghiệp? KTPM tập trung vào "How": Xây dựng hệ thống đó như thế nào cho tốt nhất?</p>
@@ -320,7 +325,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="cpu" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính (KHMT)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
 						</div>
 						<p class="text-slate-600">KHMT tạo ra các công nghệ và thuật toán mới. HTTT là người ứng dụng các công nghệ
 							đó để xây dựng các giải pháp thực tiễn, giải quyết các bài toán vận hành và quản lý.</p>
@@ -328,7 +333,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="database-zap" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu (KHDL)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
 						</div>
 						<p class="text-slate-600">HTTT đảm bảo dữ liệu được thu thập, lưu trữ và quản lý một cách chính xác (dữ liệu
 							vận hành). KHDL sử dụng dữ liệu đó để phân tích, tìm kiếm insight và dự báo (dữ liệu phân tích).</p>
@@ -336,7 +341,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="network" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Mạng máy tính (MMT)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Mạng máy tính</h4>
 						</div>
 						<p class="text-slate-600">MMT xây dựng hạ tầng kết nối. HTTT xây dựng các ứng dụng và hệ thống chạy trên hạ
 							tầng đó để phục vụ cho các quy trình nghiệp vụ của một tổ chức.</p>

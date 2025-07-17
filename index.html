@@ -407,13 +407,12 @@
 							<p class="text-xs text-gray-600">Khoa CNTT</p>
 						</div>
 
-						<div class="menu-item p-4 text-center" onclick="loadContent('pages/computer_science.html', this)">
+						<div class="menu-item p-4 text-center active" onclick="loadContent('pages/computer_science.html', this)">
 							<i data-lucide="cpu" class="w-8 h-8 mx-auto mb-2 icon-color-cs"></i>
 							<h3 class="font-bold text-sm">Khoa học Máy tính</h3>
 							<p class="text-xs text-gray-600">KHMT - Computer Science</p>
 						</div>
-						<div class="menu-item p-4 text-center active"
-							onclick="loadContent('pages/artificial_intelligence.html', this)">
+						<div class="menu-item p-4 text-center" onclick="loadContent('pages/artificial_intelligence.html', this)">
 							<i data-lucide="brain-circuit" class="w-8 h-8 mx-auto mb-2 icon-color-ai"></i>
 							<h3 class="font-bold text-sm">Trí tuệ Nhân tạo</h3>
 							<p class="text-xs text-gray-600">TTNT - Artificial Intelligence</p>
@@ -454,8 +453,7 @@
 
 			<div class="lg:col-span-3 md:col-span-2 order-1 md:order-2">
 				<div class="main-container p-2 md:p-4">
-					<iframe id="content-frame" class="content-frame w-full" src="pages/artificial_intelligence.html"
-						frameborder="0">
+					<iframe id="content-frame" class="content-frame w-full" src="pages/computer_science.html" frameborder="0">
 					</iframe>
 				</div>
 			</div>
@@ -566,10 +564,13 @@
 			});
 			element.classList.add('active');
 
-			// Sync height after content loads
-			iframe.onload = function () {
+			// Sync height after content loads using a separate function to avoid conflicts
+			const handleIframeLoad = function () {
 				setTimeout(syncIframeHeight, 200); // Allow time for content to render
+				iframe.removeEventListener('load', handleIframeLoad); // Remove listener to prevent conflicts
 			};
+
+			iframe.addEventListener('load', handleIframeLoad);
 		}
 
 		// Initialize height sync on page load
@@ -590,8 +591,8 @@
 			// Show progress
 			showProgress('Đang tạo file PNG cho trang hiện tại...', 50);
 
-			// Wait for iframe to load
-			iframe.onload = function () {
+			// Process immediately without waiting for onload
+			setTimeout(() => {
 				try {
 					const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 					const content = iframeDoc.getElementById('infographic-content');
@@ -669,7 +670,7 @@
 					alert('Không thể truy cập nội dung trang. Vui lòng thử lại.');
 					hideProgress();
 				}
-			};
+			}, 100);
 		});
 
 		// Download all pages

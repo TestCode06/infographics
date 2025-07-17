@@ -12,7 +12,6 @@
 		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 	<style>
 		body {
 			font-family: 'Be Vietnam Pro', sans-serif;
@@ -45,10 +44,6 @@
 
 		.export-mode .card {
 			min-height: auto !important;
-		}
-
-		.export-mode #export-btn {
-			display: none !important;
 		}
 
 		/* Responsive styles for normal viewing */
@@ -88,20 +83,6 @@
 				grid-template-columns: 1fr !important;
 				gap: 16px !important;
 			}
-
-			body:not(.export-mode) #export-btn {
-				top: 10px;
-				right: 10px;
-			}
-
-			body:not(.export-mode) #export-btn button {
-				padding: 8px 12px;
-				font-size: 0.875rem;
-			}
-
-			body:not(.export-mode) #export-btn span {
-				display: none;
-			}
 		}
 
 		@media (max-width: 480px) {
@@ -128,16 +109,6 @@
 
 			body:not(.export-mode) .card {
 				padding: 12px !important;
-			}
-
-			body:not(.export-mode) #export-btn {
-				top: 5px;
-				right: 5px;
-			}
-
-			body:not(.export-mode) #export-btn button {
-				padding: 6px 8px;
-				font-size: 0.75rem;
 			}
 		}
 
@@ -172,8 +143,10 @@
 		}
 
 		.cta-section {
-			background: linear-gradient(45deg, #1E3A8A, #4F46E5);
-			/* Blue-800 to Indigo-600 */
+			background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%);
+			/* Indigo gradient that complements brand color #111B88 */
+			color: #1E293B;
+			border: 1px solid #C7D2FE;
 		}
 
 		.chart-label {
@@ -189,7 +162,7 @@
 
 		.fit-hcmus-branding {
 			text-transform: lowercase;
-			color: #111B88;
+			color: #111B88 !important;
 			font-family: 'Poppins', 'Be Vietnam Pro', sans-serif;
 			font-weight: 900;
 			display: inline-block;
@@ -202,6 +175,11 @@
 			vertical-align: baseline !important;
 		}
 
+		.branding-font {
+			font-family: 'Poppins', 'Be Vietnam Pro', sans-serif;
+			font-weight: 900;
+		}
+
 		.line-chart-legend span {
 			display: inline-block;
 			width: 12px;
@@ -209,24 +187,11 @@
 			margin-right: 8px;
 			border-radius: 50%;
 		}
-
-		#export-btn {
-			position: fixed;
-			top: 20px;
-			right: 20px;
-			z-index: 1000;
-		}
 	</style>
 </head>
 
 <body class="antialiased">
-	<div id="export-btn">
-		<button id="download-btn"
-			class="bg-indigo-800 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded-full shadow-lg flex items-center gap-2">
-			<i data-lucide="download"></i>
-			<span>Tải xuống PNG</span>
-		</button>
-	</div>
+
 
 	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
 		<main class="p-4 md:p-8">
@@ -484,37 +449,38 @@
 			</section>
 
 			<!-- PHẦN 7: KÊU GỌI HÀNH ĐỘNG -->
-			<section class="my-16 cta-section text-white text-center p-10 rounded-lg">
-				<h2 class="text-2xl md:text-3xl font-bold mb-4">Bạn đam mê nghiên cứu, mong muốn sáng tạo công nghệ thay
+			<section class="my-16 cta-section text-center p-10 rounded-lg">
+				<h2 class="text-2xl md:text-3xl font-bold mb-4 text-slate-800">Bạn đam mê nghiên cứu, mong muốn sáng tạo công
+					nghệ thay
 					đổi thế giới?</h2>
-				<p class="text-lg mb-8">Gia nhập cộng đồng sinh viên Khoa học Máy tính tại <span
-						class="fit-hcmus-branding text-white">fit@hcmus</span> ngay hôm nay!</p>
+				<p class="text-lg mb-8 text-slate-700 branding-font">Gia nhập cộng đồng sinh viên Công nghệ thông tin tại <span
+						class="fit-hcmus-branding">fit@hcmus</span> ngay hôm nay!</p>
 				<div class="flex flex-col md:flex-row items-center justify-center gap-8">
 					<!-- QR Codes -->
 					<div class="flex flex-wrap justify-center items-start gap-6 text-center">
 						<div class="flex flex-col items-center">
 							<img src="imgs/qr_web.png" alt="QR Code Website FIT HCMUS"
-								class="w-28 h-28 rounded-lg border-4 border-white"
+								class="w-28 h-28 rounded-lg border-4 border-slate-300"
 								onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=112x112&data=http://www.fit.hcmus.edu.vn';">
-							<p class="mt-2 text-xs font-semibold">Website<br><a href="http://www.fit.hcmus.edu.vn" target="_blank"
-									class="text-indigo-200 hover:underline">www.fit.hcmus.edu.vn</a></p>
+							<p class="mt-2 text-xs font-semibold text-slate-700">Website<br><a href="http://www.fit.hcmus.edu.vn"
+									target="_blank" class="text-indigo-600 hover:underline">www.fit.hcmus.edu.vn</a></p>
 						</div>
 						<div class="flex flex-col items-center">
 							<img src="imgs/qr_fb.png" alt="QR Code Fanpage Tư vấn tuyển sinh FIT HCMUS"
-								class="w-28 h-28 rounded-lg border-4 border-white"
+								class="w-28 h-28 rounded-lg border-4 border-slate-300"
 								onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=112x112&data=http://fb.com/fit.hcmus';">
-							<p class="mt-2 text-xs font-semibold">Fanpage<br><a href="http://fb.com/fit.hcmus" target="_blank"
-									class="text-indigo-200 hover:underline">fb.com/fit.hcmus</a></p>
+							<p class="mt-2 text-xs font-semibold text-slate-700">Fanpage<br><a href="http://fb.com/fit.hcmus"
+									target="_blank" class="text-indigo-600 hover:underline">fb.com/fit.hcmus</a></p>
 						</div>
 						<div class="flex flex-col items-center">
 							<img src="imgs/qr_zalo.png" alt="QR Code tuyển sinh FIT HCMUS"
-								class="w-28 h-28 rounded-lg border-4 border-white"
+								class="w-28 h-28 rounded-lg border-4 border-slate-300"
 								onerror="this.onerror=null;this.src='https://api.qrserver.com/v1/create-qr-code/?size=112x112&data=https://www.fit.hcmus.edu.vn/vn/images/content/QR-code-TS-2024.png';">
-							<p class="mt-2 text-xs font-semibold">Thông tin tuyển sinh</p>
+							<p class="mt-2 text-xs font-semibold text-slate-700">Thông tin tuyển sinh</p>
 						</div>
 					</div>
 				</div>
-				<div class="mt-8 text-xs text-indigo-200">
+				<div class="mt-8 text-xs text-slate-600">
 					<p>Email: tuyensinh@fit.hcmus.edu.vn | Hỗ trợ tuyển sinh khoa CNTT: 093773 4004</p>
 				</div>
 			</section>
@@ -523,36 +489,6 @@
 
 	<script>
 		lucide.createIcons();
-
-		// Export to PNG logic
-		const downloadBtn = document.getElementById('download-btn');
-		const exportBtnContainer = document.getElementById('export-btn');
-		const contentToExport = document.getElementById('infographic-content');
-
-		downloadBtn.addEventListener('click', () => {
-			// Hide the button before taking the screenshot
-			exportBtnContainer.style.display = 'none';
-
-			html2canvas(contentToExport, {
-				backgroundColor: '#F8FAFC', // Match the new body background
-				useCORS: true, // For external images
-				scale: 2 // Increase resolution for better quality
-			}).then(canvas => {
-				const image = canvas.toDataURL('image/png', 1.0);
-				const link = document.createElement('a');
-				link.download = 'infographic-ai-hcmus.png';
-				link.href = image;
-				link.click();
-
-				// Show the button again after the screenshot is taken
-				exportBtnContainer.style.display = 'block';
-			}).catch(err => {
-				console.error('Oops, something went wrong!', err);
-				// Ensure the button is shown again even if there's an error
-				exportBtnContainer.style.display = 'block';
-			});
-		});
-
 	</script>
 </body>
 

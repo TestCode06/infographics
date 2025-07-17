@@ -12,7 +12,7 @@
 		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
-		<style>
+	<style>
 		body {
 			font-family: 'Be Vietnam Pro', sans-serif;
 			background-color: #F7FEE7;
@@ -28,20 +28,20 @@
 			margin: 0 !important;
 			padding: 20px !important;
 		}
-		
+
 		.export-mode .header-bg {
 			padding: 60px 24px !important;
 		}
-		
+
 		.export-mode .header-content h1 {
-			font-size: 3.5rem !important;
+			font-size: 2.75rem !important;
 		}
-		
+
 		.export-mode .grid {
 			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
 			gap: 24px !important;
 		}
-		
+
 		.export-mode .card {
 			min-height: auto !important;
 		}
@@ -52,11 +52,11 @@
 				max-width: 100%;
 				padding: 16px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 40px 16px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
 				font-size: 2.5rem !important;
 			}
@@ -66,19 +66,19 @@
 			body:not(.export-mode) #infographic-content {
 				padding: 12px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 32px 12px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
-				font-size: 2rem !important;
+				font-size: 1.75rem !important;
 			}
-			
+
 			body:not(.export-mode) .header-content p {
 				font-size: 1rem !important;
 			}
-			
+
 			body:not(.export-mode) .grid {
 				grid-template-columns: 1fr !important;
 				gap: 16px !important;
@@ -89,24 +89,24 @@
 			body:not(.export-mode) #infographic-content {
 				padding: 8px;
 			}
-			
+
 			body:not(.export-mode) .header-bg {
 				padding: 24px 8px !important;
 			}
-			
+
 			body:not(.export-mode) .header-content h1 {
-				font-size: 1.5rem !important;
+				font-size: 1.25rem !important;
 				line-height: 1.3 !important;
 			}
-			
+
 			body:not(.export-mode) .header-content p {
 				font-size: 0.875rem !important;
 			}
-			
+
 			body:not(.export-mode) .section-title {
 				font-size: 1.25rem !important;
 			}
-			
+
 			body:not(.export-mode) .card {
 				padding: 12px !important;
 			}
@@ -181,9 +181,14 @@
 
 		.header-content h1,
 		.header-content p {
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
-	
+
+		.header-content h1 {
+			color: #FFFFFF;
+			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+		}
 	</style>
 </head>
 
@@ -191,9 +196,9 @@
 	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
 		<header class="header-bg">
 			<div class="header-content text-center py-16 px-4">
-				<h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">THỊ GIÁC MÁY TÍNH & ĐIỀU KHIỂN HỌC
+				<h1 class="text-2xl md:text-4xl font-black text-white leading-snug mb-4">THỊ GIÁC MÁY TÍNH &<br>ĐIỀU KHIỂN HỌC
 					THÔNG MINH</h1>
-				<p class="text-xl md:text-2xl font-semibold text-yellow-400 mb-4">Computer Vision & Cognitive Cybernetics</p>
+				<p class="text-xl md:text-2xl font-semibold text-yellow-400 mb-4">Computer Vision & Cognitive Cybernetics (TGMT)</p>
 				<p class="text-2xl md:text-3xl font-bold text-yellow-300 mb-6">Dạy máy tính cách "nhìn", "vẽ" và tương tác với
 					thế giới</p>
 				<p class="text-lg text-gray-100 mt-4">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
@@ -264,8 +269,8 @@
 						</div>
 					</div>
 					<div class="card overflow-hidden">
-						<img src="../imgs/robot_arm.jpg"
-							alt="Một bàn tay robot đang tương tác với giao diện số" class="object-cover w-full h-full rounded-lg">
+						<img src="../imgs/robot_arm.jpg" alt="Một bàn tay robot đang tương tác với giao diện số"
+							class="object-cover w-full h-full rounded-lg">
 					</div>
 				</div>
 			</section>
@@ -276,7 +281,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="brain-circuit" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo (AI)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo</h4>
 						</div>
 						<p class="text-slate-600">Thị giác máy tính là một chuyên ngành ứng dụng của AI. Nếu AI là bộ não, thì TGMT
 							chính là "đôi mắt", chuyên xử lý thông tin hình ảnh để bộ não ra quyết định.</p>
@@ -284,7 +289,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="code-2" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm (KTPM)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
 						</div>
 						<p class="text-slate-600">KTPM tập trung vào quy trình xây dựng phần mềm nói chung. TGMT tập trung vào việc
 							phát triển các thuật toán và mô hình chuyên biệt để giải quyết các bài toán về thị giác và đồ họa.</p>
@@ -292,7 +297,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="database-zap" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu (KHDL)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
 						</div>
 						<p class="text-slate-600">KHDL làm việc với nhiều loại dữ liệu. TGMT chuyên sâu về các
 							loại dữ liệu phức tạp nhất là hình ảnh, video (dữ liệu phi cấu trúc), đòi hỏi các kỹ thuật xử lý chuyên
@@ -301,7 +306,7 @@
 					<div class="card p-6">
 						<div class="flex items-center mb-4">
 							<i data-lucide="cpu" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính (KHMT)</h4>
+							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
 						</div>
 						<p class="text-slate-600">KHMT cung cấp các lý thuyết nền tảng về thuật toán. TGMT ứng dụng và phát triển
 							các lý thuyết đó để tạo ra các thuật toán có khả năng "nhìn", "vẽ" và "hiểu" thế giới thực.</p>
