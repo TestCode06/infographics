@@ -138,8 +138,8 @@
 
 		.card:hover {
 			transform: translateY(-5px);
-			border-color: #312E81;
-			/* Indigo-900 */
+			border-color: #111B88;
+			/* Brand color for hover state */
 			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 		}
 
@@ -151,8 +151,8 @@
 
 		.tagline {
 			font-style: italic;
-			color: #F97316;
-			/* Orange-500 */
+			color: #6366F1;
+			/* Indigo-500 - harmonious with brand color #111B88 */
 			font-weight: 500;
 		}
 
@@ -161,6 +161,17 @@
 			background-size: cover;
 			background-position: center;
 			position: relative;
+		}
+
+		.header-bg::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(17, 27, 136, 0.85);
+			/* Brand color #111B88 with opacity */
 		}
 
 		.header-content {
@@ -185,13 +196,11 @@
 <body class="antialiased">
 	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
 		<header class="header-bg">
-			<div class="absolute inset-0" style="background-color: rgba(17, 27, 136, 0.7);"></div>
 			<div class="header-content text-center py-16 px-4">
 				<h1 class="text-2xl md:text-4xl font-black text-white leading-snug mb-4">KHOA HỌC MÁY TÍNH</h1>
-				<p class="text-xl md:text-2xl font-semibold text-orange-400 mb-4">Computer Science (KHMT)</p>
-				<p class="text-2xl md:text-3xl font-bold text-orange-400 mb-6">Nền Tảng Đổi Mới Công Nghệ Tương Lai</p>
-				<p class="text-lg text-gray-300">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM
-				</p>
+				<p class="text-xl md:text-2xl font-semibold text-indigo-400 mb-4">Computer Science</p>
+				<p class="text-2xl md:text-3xl font-bold text-indigo-300 mb-6">Nền Tảng Đổi Mới Công Nghệ Tương Lai</p>
+				<p class="text-lg text-gray-200">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="tagline text-xl mt-4">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
 		</header>

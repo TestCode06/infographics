@@ -161,6 +161,28 @@
 			display: none !important;
 		}
 
+		/* Desktop buttons - hidden on mobile */
+		.download-buttons-desktop {
+			display: flex;
+		}
+
+		@media (max-width: 767px) {
+			.download-buttons-desktop {
+				display: none !important;
+			}
+		}
+
+		/* Mobile buttons - hidden on desktop */
+		.download-buttons-mobile {
+			display: none;
+		}
+
+		@media (max-width: 767px) {
+			.download-buttons-mobile {
+				display: flex !important;
+			}
+		}
+
 		/* Responsive styles for normal viewing */
 		@media (max-width: 1024px) {
 			.download-buttons {
@@ -340,7 +362,7 @@
 </head>
 
 <body class="antialiased">
-	<div class="download-buttons">
+	<div class="download-buttons download-buttons-desktop">
 		<button id="download-current"
 			class="download-btn text-white font-bold py-3 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300">
 			<i data-lucide="download" class="w-5 h-5"></i>
@@ -366,7 +388,7 @@
 
 	<div class="container mx-auto p-2 md:p-4 lg:p-8">
 		<div class="md:hidden mb-4">
-			<div class="download-buttons relative top-0 right-0 flex-row justify-center">
+			<div class="download-buttons download-buttons-mobile relative top-0 right-0 flex-row justify-center">
 				<button id="download-current-mobile"
 					class="download-btn text-white font-bold py-3 px-4 rounded-full shadow-lg flex items-center gap-2 transition-all duration-300">
 					<i data-lucide="download" class="w-5 h-5"></i>
