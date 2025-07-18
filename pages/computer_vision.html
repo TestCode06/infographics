@@ -12,6 +12,19 @@
 		href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Poppins:wght@700;900&display=swap"
 		rel="stylesheet">
 	<script src="https://unpkg.com/lucide@latest"></script>
+	<script>
+		// Wait for Lucide to be fully loaded
+		function waitForLucide() {
+			if (typeof lucide !== 'undefined' && lucide.createIcons) {
+				console.log('Lucide loaded, creating icons...');
+				lucide.createIcons();
+			} else {
+				console.log('Waiting for Lucide...');
+				setTimeout(waitForLucide, 50);
+			}
+		}
+		waitForLucide();
+	</script>
 	<style>
 		body {
 			font-family: 'Be Vietnam Pro', sans-serif;
@@ -56,6 +69,28 @@
 			/* Lime-600 */
 			width: 48px;
 			height: 48px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		/* Ensure Lucide icons are visible */
+		[data-lucide] {
+			display: inline-block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			color: #65A30D !important;
+			width: 48px !important;
+			height: 48px !important;
+		}
+
+		[data-lucide] svg {
+			width: 100% !important;
+			height: 100% !important;
+			stroke: currentColor !important;
+			fill: none !important;
+			stroke-width: 2 !important;
+			stroke-linecap: round !important;
+			stroke-linejoin: round !important;
 		}
 
 		.header-bg {
@@ -289,6 +324,33 @@
 			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
 		}
 
+		/* Enhanced Lucide icons visibility in export mode */
+		.export-mode .icon {
+			color: #65A30D !important;
+			width: 48px !important;
+			height: 48px !important;
+			display: inline-block !important;
+			stroke-width: 2 !important;
+			font-size: 48px !important;
+			line-height: 1 !important;
+		}
+
+		.export-mode .icon svg {
+			width: 100% !important;
+			height: 100% !important;
+			stroke: currentColor !important;
+			fill: none !important;
+			stroke-linecap: round !important;
+			stroke-linejoin: round !important;
+		}
+
+		/* Force Lucide icons to be visible */
+		.export-mode [data-lucide] {
+			display: inline-block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+
 		/* Enhanced responsive design - Does not affect export PNG */
 		@media (max-width: 1024px) {
 			body:not(.export-mode) #infographic-content {
@@ -463,7 +525,9 @@
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">Câu hỏi cốt lõi của ngành</h2>
 				<div class="card p-8 text-center bg-lime-50 border-lime-200">
-					<i data-lucide="help-circle" class="icon mx-auto mb-4"></i>
+					<div class="flex justify-center mb-4">
+						<i data-lucide="help-circle" class="icon"></i>
+					</div>
 					<p class="text-2xl font-semibold text-slate-800 italic">
 						"Làm thế nào để máy tính có thể hiểu được nội dung hình ảnh hoặc video ở mức độ sâu sắc như con người?"
 					</p>
@@ -668,11 +732,11 @@
 					<div class="card p-6">
 						<h3 class="font-bold text-lg text-slate-800 mb-3">Tiên phong & Uy tín</h3>
 						<ul class="space-y-3 text-slate-600">
-							<li class="flex items-start"><i data-lucide="award"
-									class="text-amber-500 mr-3 mt-1 flex-shrink-0"></i><span>Bộ môn chính danh đầu tiên về TGMT ở phía
+							<li class="flex items-start"><i data-lucide="award" class="icon"></i><span>Bộ môn chính danh đầu tiên về
+									TGMT ở
+									phía
 									Nam, có bề dày lịch sử từ 2010.</span></li>
-							<li class="flex items-start"><i data-lucide="graduation-cap"
-									class="text-red-500 mr-3 mt-1 flex-shrink-0"></i><span>Nền
+							<li class="flex items-start"><i data-lucide="graduation-cap" class="icon"></i><span>Nền
 									tảng vững chắc để học lên Thạc sĩ, Tiến sĩ trong và ngoài nước.</span></li>
 
 						</ul>
@@ -690,11 +754,13 @@
 					<div class="card p-6">
 						<h3 class="font-bold text-lg text-slate-800 mb-3">Thực tiễn & Sáng tạo</h3>
 						<ul class="space-y-3 text-slate-600">
-							<li class="flex items-start"><i data-lucide="flask-conical"
-									class="text-purple-500 mr-3 mt-1 flex-shrink-0"></i><span>Nhiều hướng nghiên cứu "bắt trend" như AI
+							<li class="flex items-start"><i data-lucide="flask-conical" class="icon"></i><span>Nhiều hướng nghiên cứu
+									"bắt trend" như
+									AI
 									tạo sinh, phân tích ảnh y khoa.</span></li>
-							<li class="flex items-start"><i data-lucide="handshake"
-									class="text-cyan-500 mr-3 mt-1 flex-shrink-0"></i><span>Hợp tác với doanh nghiệp và phòng lab, tạo
+							<li class="flex items-start"><i data-lucide="handshake" class="icon"></i><span>Hợp tác với doanh nghiệp và
+									phòng lab,
+									tạo
 									điều kiện thực tập và nghiên cứu chuyên sâu.</span></li>
 						</ul>
 					</div>
@@ -704,7 +770,79 @@
 	</div>
 
 	<script>
-		lucide.createIcons();
+		// Multiple fallbacks to ensure Lucide icons are created
+		function createLucideIcons() {
+			if (typeof lucide !== 'undefined' && lucide.createIcons) {
+				try {
+					lucide.createIcons();
+					console.log('Lucide icons created successfully');
+				} catch (error) {
+					console.error('Error creating Lucide icons:', error);
+				}
+			} else {
+				console.warn('Lucide not available, retrying...');
+				setTimeout(createLucideIcons, 100);
+			}
+		}
+
+		// Immediate execution
+		createLucideIcons();
+
+		// DOM ready fallback
+		document.addEventListener('DOMContentLoaded', createLucideIcons);
+
+		// Window load fallback
+		window.addEventListener('load', createLucideIcons);
+
+		// Additional fallback with delay
+		setTimeout(createLucideIcons, 500);
+
+		// Final fallback for export tools
+		setTimeout(function () {
+			console.log('Final fallback executing...');
+			createLucideIcons();
+
+			// Force re-render if needed
+			if (document.querySelector('[data-lucide]')) {
+				document.querySelectorAll('[data-lucide]').forEach(function (el) {
+					console.log('Checking icon:', el.getAttribute('data-lucide'));
+					if (!el.querySelector('svg')) {
+						console.log('Missing SVG for:', el.getAttribute('data-lucide'));
+
+						// Try to manually create this specific icon
+						const iconName = el.getAttribute('data-lucide');
+						if (lucide && lucide.icons && lucide.icons[iconName]) {
+							console.log('Manually creating icon:', iconName);
+							const icon = lucide.icons[iconName];
+							el.innerHTML = icon.toSvg();
+						} else {
+							console.log('Icon not found in lucide.icons:', iconName);
+						}
+					} else {
+						console.log('SVG found for:', el.getAttribute('data-lucide'));
+					}
+				});
+			}
+
+			// Debug: Check if help-circle icon is rendered
+			const helpCircle = document.querySelector('[data-lucide="help-circle"]');
+			if (helpCircle) {
+				console.log('Help circle element found:', helpCircle);
+				console.log('Has SVG:', helpCircle.querySelector('svg') !== null);
+
+				// If still no SVG, create it manually
+				if (!helpCircle.querySelector('svg')) {
+					console.log('Creating manual SVG for help-circle');
+					helpCircle.innerHTML = `
+						<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="10"></circle>
+							<path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+							<line x1="12" y1="17" x2="12.01" y2="17"></line>
+						</svg>
+					`;
+				}
+			}
+		}, 1500);
 	</script>
 </body>
 
