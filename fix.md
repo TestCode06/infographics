@@ -1,9 +1,432 @@
-# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 5)
+# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 6)
 
 ## Tổng Quan
-Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật thêm các thay đổi về màu chữ brand, background section, default page hiển thị, sidebar scroll functionality, PNG export optimization, grid layout consistency cho PNG export, và điều chỉnh export width từ 1200px sang 854px (tablet layout).**
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật lần 6: Sửa tính năng export PNG để luôn center align và cải thiện responsive design toàn diện.**
 
-#### 10. Điều Chỉnh Export PNG Width từ 1200px sang 854px (Mới)
+#### 11. Sửa Tính Năng Export PNG - Center Align (Mới - Lần 6)
+
+**Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
+
+**Vấn đề:**
+- Tính năng export PNG hiện tại không có CSS export-mode được định nghĩa
+- Cần đảm bảo page luôn center align khi export PNG
+- Nội dung trong page phải align theo yêu cầu (page center, elements inside có thể left/right align)
+
+**Giải pháp:**
+
+#### A. Index.html - CSS Export Mode:
+```css
+/* Export Mode CSS - Center align page content */
+.export-mode {
+    width: 1096px !important;
+    height: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    background: white !important;
+    overflow: visible !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+}
+
+.export-mode .container {
+    padding: 20px !important;
+    margin: 0 auto !important;
+}
+
+.export-mode .header-section {
+    padding: 60px 24px !important;
+    margin: 0 auto 32px auto !important;
+    text-align: center !important;
+}
+
+.export-mode .header-section h1 {
+    font-size: 4rem !important;
+    text-align: center !important;
+}
+```
+
+#### B. Pages Files - Export Mode CSS (Tất cả 8 files):
+```css
+/* Export Mode CSS - Center align page content */
+.export-mode #infographic-content {
+    width: 1096px !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    background: white !important;
+    display: block !important;
+}
+
+.export-mode .header-bg {
+    padding: 60px 24px !important;
+    margin: 0 auto 32px auto !important;
+    text-align: center !important;
+}
+
+.export-mode .header-content {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.export-mode .header-content h1 {
+    font-size: 2.75rem !important;
+    text-align: center !important;
+}
+
+.export-mode .grid {
+    gap: 20px !important;
+    margin: 0 auto !important;
+}
+
+.export-mode main {
+    padding: 20px !important;
+    margin: 0 auto !important;
+}
+
+.export-mode section {
+    margin: 32px auto !important;
+}
+
+.export-mode .section-title {
+    text-align: center !important;
+    margin: 0 auto 24px auto !important;
+}
+
+/* Enhanced text shadow for better visibility */
+.export-mode .header-content h1,
+.export-mode .header-content p {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.export-mode .header-content h1 {
+    color: #FFFFFF !important;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+}
+```
+
+#### C. Export Logic Logic:
+- **Page Center Alignment:** Sử dụng `margin: 0 auto` và `justify-content: center` để center page
+- **Content Structure:** Page container center align, nhưng content inside vẫn giữ alignment riêng
+- **Typography Enhancement:** Improved text shadow cho better visibility trong PNG export
+- **Consistent Dimensions:** Width 1096px cho tất cả pages với padding 20px
+
+#### D. Files được cập nhật:
+- `index.html` (CSS export mode)
+- `artificial_intelligence.html`
+- `computer_science.html`
+- `computer_vision.html`
+- `data_science.html`
+- `information_system.html`
+- `knowledge_engineer.html`
+- `computer_network.html`
+- `software_engineer.html`
+
+**Cải thiện đạt được:**
+
+#### PNG Export Center Alignment:
+- **Page Level:** Toàn bộ page luôn center align trong PNG export
+- **Content Level:** Header, sections, main content center align theo page
+- **Element Level:** Individual elements (text, cards) vẫn có thể left/right align theo design
+- **Consistent Layout:** Tất cả PNG export có cùng layout structure và alignment
+
+#### Export Quality Enhancement:
+- **Enhanced Text Shadow:** Double shadow layers với opacity 0.7 và 0.5 cho better visibility
+- **Header Optimization:** Triple shadow cho headers (0.8, 0.6, 0.3 opacity) + drop-shadow filter
+- **Typography Control:** Explicit font sizes và colors cho export mode
+- **Professional Appearance:** Clean, centered layout phù hợp cho professional documents
+
+#### 12. Cải Thiện Responsive Design Toàn Diện (Mới - Lần 6)
+
+**Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
+
+**Vấn đề:**
+- Responsive design hiện tại chưa tối ưu cho mobile và tablet
+- Cần cải thiện UX trên các thiết bị khác nhau
+- Phải đảm bảo không ảnh hưởng đến chức năng export PNG
+
+**Giải pháp:**
+
+#### A. Index.html - Enhanced Responsive CSS:
+```css
+/* Enhanced responsive design */
+@media (max-width: 1024px) {
+    body:not(.export-mode) .container {
+        padding: 1rem !important;
+    }
+    
+    body:not(.export-mode) .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 0.75rem !important;
+    }
+
+    body:not(.export-mode) .header-section {
+        padding: 2rem 1rem !important;
+    }
+
+    body:not(.export-mode) .header-section h1 {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(.export-mode) .menu-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+
+    body:not(.export-mode) .menu-item {
+        padding: 0.75rem !important;
+    }
+
+    body:not(.export-mode) .header-section {
+        padding: 1.5rem 0.75rem !important;
+    }
+
+    body:not(.export-mode) .header-section h1 {
+        font-size: 1.5rem !important;
+    }
+
+    body:not(.export-mode) .download-buttons {
+        top: 8px !important;
+        right: 8px !important;
+        gap: 6px !important;
+    }
+
+    body:not(.export-mode) .download-btn {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+
+    body:not(.export-mode) .download-btn span {
+        display: none !important;
+    }
+}
+```
+
+#### B. Pages Files - Enhanced Responsive CSS (Tất cả 8 files):
+```css
+/* Enhanced responsive design - Does not affect export PNG */
+@media (max-width: 1024px) {
+    body:not(.export-mode) #infographic-content {
+        padding: 1rem !important;
+    }
+
+    body:not(.export-mode) .header-bg {
+        padding: 3rem 1rem !important;
+    }
+
+    body:not(.export-mode) .header-content h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    body:not(.export-mode) .major {
+        font-size: 2rem !important;
+    }
+
+    body:not(.export-mode) .english {
+        font-size: 1.25rem !important;
+    }
+
+    body:not(.export-mode) .major-slogan {
+        font-size: 1.25rem !important;
+    }
+
+    body:not(.export-mode) .grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+
+    body:not(.export-mode) .section-title {
+        font-size: 1.75rem !important;
+    }
+
+    body:not(.export-mode) main {
+        padding: 1rem !important;
+    }
+
+    body:not(.export-mode) section {
+        margin: 2rem 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body:not(.export-mode) .header-bg {
+        padding: 2rem 0.75rem !important;
+    }
+
+    body:not(.export-mode) .header-content h1 {
+        font-size: 1.5rem !important;
+    }
+
+    body:not(.export-mode) .major {
+        font-size: 1.5rem !important;
+    }
+
+    body:not(.export-mode) .english {
+        font-size: 1rem !important;
+    }
+
+    body:not(.export-mode) .major-slogan {
+        font-size: 1rem !important;
+    }
+
+    body:not(.export-mode) .faculty-slogan {
+        font-size: 1rem !important;
+    }
+
+    body:not(.export-mode) .grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+    }
+
+    body:not(.export-mode) .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    body:not(.export-mode) .card {
+        padding: 1rem !important;
+    }
+
+    body:not(.export-mode) .card h3 {
+        font-size: 1.125rem !important;
+    }
+
+    body:not(.export-mode) .card p {
+        font-size: 0.875rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(.export-mode) #infographic-content {
+        padding: 0.5rem !important;
+    }
+
+    body:not(.export-mode) .header-bg {
+        padding: 1.5rem 0.5rem !important;
+    }
+
+    body:not(.export-mode) .header-content h1 {
+        font-size: 1.25rem !important;
+    }
+
+    body:not(.export-mode) .major {
+        font-size: 1.25rem !important;
+    }
+
+    body:not(.export-mode) .english {
+        font-size: 0.875rem !important;
+    }
+
+    body:not(.export-mode) .major-slogan {
+        font-size: 0.875rem !important;
+    }
+
+    body:not(.export-mode) .faculty {
+        font-size: 0.75rem !important;
+    }
+
+    body:not(.export-mode) .faculty-slogan {
+        font-size: 0.875rem !important;
+    }
+
+    body:not(.export-mode) .section-title {
+        font-size: 1.25rem !important;
+    }
+
+    body:not(.export-mode) main {
+        padding: 0.75rem !important;
+    }
+
+    body:not(.export-mode) section {
+        margin: 1.5rem 0 !important;
+    }
+
+    body:not(.export-mode) .card {
+        padding: 0.75rem !important;
+    }
+
+    body:not(.export-mode) .card h3 {
+        font-size: 1rem !important;
+    }
+
+    body:not(.export-mode) .card p {
+        font-size: 0.8rem !important;
+    }
+
+    body:not(.export-mode) .icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+```
+
+#### C. Responsive Design Features:
+
+**1. Breakpoint Strategy:**
+- **Desktop (>1024px):** Giữ nguyên layout hiện tại
+- **Tablet (768px - 1024px):** Reduced padding, optimized grid, smaller fonts
+- **Mobile (640px - 768px):** Single column layout, compressed spacing
+- **Small Mobile (<640px):** Minimal padding, compact UI elements
+
+**2. Typography Scaling:**
+- **Progressive font sizing:** Từ desktop → tablet → mobile với scaling hợp lý
+- **Header optimization:** Major titles từ 2.75rem → 2rem → 1.5rem → 1.25rem
+- **Content scaling:** Section titles, card content, body text đều scale tương ứng
+- **Line height optimization:** Improved line-height cho better readability
+
+**3. Layout Optimization:**
+- **Grid responsiveness:** Auto-fit grid → 2-column → 1-column theo breakpoint
+- **Spacing optimization:** Margins và padding scale down theo device size
+- **Button optimization:** Download buttons compact trên mobile, hide text labels
+- **Menu optimization:** Menu grid adapt từ multi-column → single column
+
+**4. Export Protection:**
+- **Non-interference:** Tất cả responsive CSS sử dụng `body:not(.export-mode)` selector
+- **PNG Export unchanged:** Export PNG luôn sử dụng desktop layout với width 1096px
+- **Consistency guarantee:** Export quality không thay đổi từ mobile hay desktop
+- **Professional output:** PNG export luôn professional appearance
+
+**Files được cập nhật:**
+- `index.html` - Main responsive CSS
+- `artificial_intelligence.html` - Content responsive CSS
+- `computer_science.html` - Content responsive CSS
+- `computer_vision.html` - Content responsive CSS
+- `data_science.html` - Content responsive CSS
+- `information_system.html` - Content responsive CSS
+- `knowledge_engineer.html` - Content responsive CSS
+- `computer_network.html` - Content responsive CSS
+- `software_engineer.html` - Content responsive CSS
+
+**Cải thiện đạt được:**
+
+#### Mobile & Tablet Experience:
+- **Optimal readability:** Typography scaling phù hợp cho từng device size
+- **Touch-friendly:** Buttons và interactive elements size phù hợp cho touch
+- **Performance:** Efficient CSS với proper selector specificity
+- **Accessibility:** Better contrast và spacing trên small screens
+
+#### Layout Responsiveness:
+- **Flexible grids:** Auto-responsive grid system thích ứng với screen size
+- **Progressive enhancement:** Layout gracefully degrade từ desktop → mobile
+- **Content priority:** Important content luôn visible và accessible
+- **Visual hierarchy:** Clear hierarchy maintained across all breakpoints
+
+#### Technical Excellence:
+- **Non-interference:** Hoàn toàn không ảnh hưởng đến PNG export functionality
+- **Maintainable:** Clean CSS structure với clear breakpoint logic
+- **Performance:** Efficient media queries với minimal redundancy
+- **Cross-browser:** Compatible với modern browsers
+
+#### User Experience:
+- **Seamless transition:** Smooth experience across all device sizes
+- **Professional appearance:** Consistent brand identity trên mọi thiết bị
+- **Functional completeness:** Tất cả features hoạt động tốt trên mobile
+- **Export consistency:** PNG export quality đồng nhất từ mọi device
+
 
 **Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
 
@@ -912,7 +1335,49 @@ body:not(.export-mode) .header-content h1 {
 
 **Trạng thái:** Đã sửa và ổn định.
 
-## Kết Quả Mong Đợi (Cập nhật lần 5)
+## Kết Quả Mong Đợi (Cập nhật lần 6)
+
+### PNG Export Center Alignment:
+- ✅ PNG export luôn center align toàn bộ page content
+- ✅ Page container center align với margin: 0 auto
+- ✅ Header, sections, main content center align theo page structure
+- ✅ Individual elements vẫn có thể left/right align theo design intent
+- ✅ Consistent 1096px width với enhanced text shadow cho visibility
+- ✅ Professional appearance với clean centered layout
+
+### Export Quality Enhancement:
+- ✅ Enhanced text shadow với double layers (0.7 và 0.5 opacity)
+- ✅ Header optimization với triple shadow (0.8, 0.6, 0.3 opacity) + drop-shadow filter
+- ✅ Typography control với explicit font sizes và colors cho export mode
+- ✅ Background: white, overflow: visible cho professional documents
+- ✅ Proper alignment cho tất cả PNG exports từ mọi pages
+
+### Enhanced Responsive Design:
+- ✅ Progressive breakpoints: Desktop → Tablet (1024px) → Mobile (768px) → Small (640px)
+- ✅ Typography scaling: Headers từ 2.75rem → 2rem → 1.5rem → 1.25rem
+- ✅ Grid optimization: Auto-fit → 2-column → 1-column theo device size
+- ✅ Spacing optimization: Margins và padding scale down theo screen size
+- ✅ Touch-friendly buttons: Download buttons compact trên mobile
+- ✅ Menu optimization: Multi-column → single column grid layout
+
+### Export Protection:
+- ✅ Non-interference: Tất cả responsive CSS sử dụng `body:not(.export-mode)` selector
+- ✅ PNG Export unchanged: Export luôn sử dụng desktop layout với width 1096px
+- ✅ Consistency guarantee: Export quality không thay đổi từ mobile hay desktop
+- ✅ Professional output: PNG export luôn professional appearance
+
+### Mobile & Tablet Experience:
+- ✅ Optimal readability: Typography scaling phù hợp cho từng device size
+- ✅ Touch-friendly: Buttons và interactive elements size phù hợp
+- ✅ Performance: Efficient CSS với proper selector specificity
+- ✅ Accessibility: Better contrast và spacing trên small screens
+- ✅ Seamless transition: Smooth experience across all device sizes
+
+### Technical Excellence:
+- ✅ Maintainable CSS: Clean structure với clear breakpoint logic
+- ✅ Cross-browser compatibility: Compatible với modern browsers
+- ✅ Performance optimization: Efficient media queries với minimal redundancy
+- ✅ Export consistency: PNG quality đồng nhất từ mọi device
 
 ### PNG Export 854px Width:
 - ✅ PNG export sử dụng width 854px thay vì 1200px
@@ -962,7 +1427,7 @@ body:not(.export-mode) .header-content h1 {
 ### Responsive Design:
 - ✅ Download buttons hiển thị chính xác (2 buttons mỗi breakpoint)
 - ✅ Mobile buttons ẩn trên desktop, desktop buttons ẩn trên mobile
-- ✅ PNG export luôn ở quality desktop (1200px) kể cả từ mobile
+- ✅ PNG export luôn ở quality desktop (1096px) kể cả từ mobile
 - ✅ Proper responsive behavior cho all UI elements
 
 ### User Experience:
@@ -987,6 +1452,22 @@ body:not(.export-mode) .header-content h1 {
 
 ## So Sánh Evolution
 
+### PNG Export Center Alignment:
+- **Before (Lần 5):** Không có CSS export-mode, alignment không đảm bảo
+- **After (Lần 6):** Center align toàn bộ page với margin: 0 auto, enhanced text shadow
+
+### Responsive Design:
+- **Before (Lần 5):** Basic responsive với limited breakpoints
+- **After (Lần 6):** Comprehensive responsive với 4 breakpoints (Desktop → Tablet → Mobile → Small)
+
+### Export Protection:
+- **Before (Lần 5):** Responsive CSS có thể ảnh hưởng đến PNG export
+- **After (Lần 6):** Complete protection với `body:not(.export-mode)` selector
+
+### Typography Scaling:
+- **Before (Lần 5):** Limited responsive typography
+- **After (Lần 6):** Progressive typography scaling trên tất cả breakpoints
+
 ### Grid Layout Export:
 - **Before:** Auto-fit minmax(280px, 1fr) causing 3 cards per row instead of 4
 - **After:** Explicit grid columns matching web display (4-col, 3-col, 2-col layouts)
@@ -998,6 +1479,7 @@ body:not(.export-mode) .header-content h1 {
 ### PNG Export:
 - **Before (Lần 4):** 1200px width export, 4-column grid layout, gap 20px
 - **After (Lần 5):** 854px width export, 3-column grid layout, gap 16px, tablet-like responsive behavior
+- **After (Lần 6):** 1096px width export, center aligned, enhanced text shadow
 
 ### Background CTA:
 1. **Original:** Blue gradient (#1E3A8A, #4F46E5)
@@ -1037,9 +1519,9 @@ body:not(.export-mode) .header-content h1 {
 - **After:** Indigo/blue palette hài hòa với brand color #111B88
 
 ## Tổng Kết
-- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên 854px export layout) + **Lần 5: `fix.md`**
-- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, Grid layout consistency fix, **PNG export width optimization to 854px**
-- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency với web display, **và PNG export sử dụng 854px width với layout tablet-responsive tối ưu**
-- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, **PNG export với 854px width và 3-column grid layout**, **đặc biệt kiểm tra tỷ lệ cards và spacing trong PNG exports mới**
+- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên PNG export center alignment và comprehensive responsive design) + **Lần 6: `fix.md`**
+- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, Grid layout consistency fix, **PNG export center alignment**, **comprehensive responsive design**
+- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency với web display, **PNG export luôn center aligned với enhanced text shadow**, **responsive design toàn diện trên mọi thiết bị**
+- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, **PNG export center alignment và text shadow enhancement**, **responsive design trên tablet và mobile**, **đặc biệt kiểm tra PNG export quality không bị ảnh hưởng bởi responsive CSS**
 
-Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization, **và đặc biệt là PNG export giờ đây sử dụng 854px width với responsive 3-column grid layout tối ưu cho việc chia sẻ và xem trên nhiều platform khác nhau.**
+Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization, **PNG export luôn center aligned với enhanced visibility**, **và responsive design toàn diện cải thiện UX trên mobile và tablet mà không ảnh hưởng đến chức năng export PNG.**

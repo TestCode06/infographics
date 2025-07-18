@@ -109,6 +109,217 @@
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
 		}
+
+		/* Export Mode CSS - Center align page content */
+		.export-mode #infographic-content {
+			width: 1096px !important;
+			max-width: none !important;
+			margin: 0 auto !important;
+			padding: 20px !important;
+			background: white !important;
+			display: block !important;
+		}
+
+		.export-mode .header-bg {
+			padding: 60px 24px !important;
+			margin: 0 auto 32px auto !important;
+			text-align: center !important;
+		}
+
+		.export-mode .header-content {
+			text-align: center !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode .header-content h1 {
+			font-size: 2.75rem !important;
+			text-align: center !important;
+		}
+
+		.export-mode .grid {
+			gap: 20px !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode main {
+			padding: 20px !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode section {
+			margin: 32px auto !important;
+		}
+
+		.export-mode .section-title {
+			text-align: center !important;
+			margin: 0 auto 24px auto !important;
+		}
+
+		/* Enhanced text shadow for better visibility */
+		.export-mode .header-content h1,
+		.export-mode .header-content p {
+			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+		}
+
+		.export-mode .header-content h1 {
+			color: #FFFFFF !important;
+			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+		/* Enhanced responsive design - Does not affect export PNG */
+		@media (max-width: 1024px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .header-bg {
+				padding: 3rem 1rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 2rem !important;
+				line-height: 1.2 !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 2rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .grid {
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+				gap: 1rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.75rem !important;
+			}
+
+			body:not(.export-mode) main {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) section {
+				margin: 2rem 0 !important;
+			}
+		}
+
+		@media (max-width: 768px) {
+			body:not(.export-mode) .header-bg {
+				padding: 2rem 0.75rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .faculty-slogan {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .grid {
+				grid-template-columns: 1fr !important;
+				gap: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .card {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .card h3 {
+				font-size: 1.125rem !important;
+			}
+
+			body:not(.export-mode) .card p {
+				font-size: 0.875rem !important;
+			}
+		}
+
+		@media (max-width: 640px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 0.5rem !important;
+			}
+
+			body:not(.export-mode) .header-bg {
+				padding: 1.5rem 0.5rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .faculty {
+				font-size: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .faculty-slogan {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) main {
+				padding: 0.75rem !important;
+			}
+
+			body:not(.export-mode) section {
+				margin: 1.5rem 0 !important;
+			}
+
+			body:not(.export-mode) .card {
+				padding: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .card h3 {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .card p {
+				font-size: 0.8rem !important;
+			}
+
+			body:not(.export-mode) .icon {
+				width: 32px !important;
+				height: 32px !important;
+			}
+		}
+		}
 	</style>
 </head>
 
@@ -195,7 +406,8 @@
 						</div>
 						<p class="text-slate-600"><b>KHMT</b> xây dựng "động cơ" và "khung sườn" (thuật toán, hệ điều hành).
 							<b>AI</b> là người chế tạo "bộ não thông minh" để lắp vào chiếc xe, giúp nó có khả năng tự học và đưa ra
-							quyết định.</p>
+							quyết định.
+						</p>
 					</div>
 					<div class="card p-6">
 						<div class="flex items-center mb-4"><i data-lucide="camera" class="icon mr-4"></i>
@@ -203,7 +415,8 @@
 						</div>
 						<p class="text-slate-600"><b>KHMT</b> cung cấp các thuật toán xử lý tín hiệu và học máy nói chung.
 							<b>TGMT</b> là một ứng dụng chuyên sâu, áp dụng và cải tiến các thuật toán đó để giải quyết riêng các bài
-							toán về hình ảnh, dạy cho máy tính cách "nhìn".</p>
+							toán về hình ảnh, dạy cho máy tính cách "nhìn".
+						</p>
 					</div>
 					<div class="card p-6">
 						<div class="flex items-center mb-4"><i data-lucide="book-open-check" class="icon mr-4"></i>
@@ -218,7 +431,8 @@
 							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
 						</div>
 						<p class="text-slate-600"><b>KHMT</b> tạo ra các "công cụ" như cơ sở dữ liệu và thuật toán học máy.
-							<b>KHDL</b> là người "nghệ nhân", sử dụng các công cụ đó để "kể những câu chuyện" ý nghĩa từ dữ liệu.</p>
+							<b>KHDL</b> là người "nghệ nhân", sử dụng các công cụ đó để "kể những câu chuyện" ý nghĩa từ dữ liệu.
+						</p>
 					</div>
 				</div>
 			</section>

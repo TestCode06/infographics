@@ -169,6 +169,101 @@
 		.icon-color-faculty {
 			color: #7c3aed;
 		}
+
+		/* Export Mode CSS - Center align page content */
+		.export-mode {
+			width: 1096px !important;
+			height: auto !important;
+			max-width: none !important;
+			padding: 0 !important;
+			margin: 0 auto !important;
+			background: white !important;
+			overflow: visible !important;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: flex-start !important;
+		}
+
+		.export-mode .container {
+			padding: 20px !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode .header-section {
+			padding: 60px 24px !important;
+			margin: 0 auto 32px auto !important;
+			text-align: center !important;
+		}
+
+		.export-mode .header-section h1 {
+			font-size: 4rem !important;
+			text-align: center !important;
+		}
+
+		/* Responsive adjustments for mobile */
+		@media (max-width: 768px) {
+			body:not(.export-mode) .main-container {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .content-container {
+				padding: 1rem !important;
+			}
+		}
+
+		/* Enhanced responsive design */
+		@media (max-width: 1024px) {
+			body:not(.export-mode) .container {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .menu-grid {
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+				gap: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .header-section {
+				padding: 2rem 1rem !important;
+			}
+
+			body:not(.export-mode) .header-section h1 {
+				font-size: 2rem !important;
+			}
+		}
+
+		@media (max-width: 640px) {
+			body:not(.export-mode) .menu-grid {
+				grid-template-columns: 1fr !important;
+				gap: 0.5rem !important;
+			}
+
+			body:not(.export-mode) .menu-item {
+				padding: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .header-section {
+				padding: 1.5rem 0.75rem !important;
+			}
+
+			body:not(.export-mode) .header-section h1 {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .download-buttons {
+				top: 8px !important;
+				right: 8px !important;
+				gap: 6px !important;
+			}
+
+			body:not(.export-mode) .download-btn {
+				padding: 0.5rem 0.75rem !important;
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .download-btn span {
+				display: none !important;
+			}
+		}
 	</style>
 </head>
 
