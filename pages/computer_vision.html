@@ -21,369 +21,6 @@
 			/* Dark Green */
 		}
 
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #BEF264;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #D9F99D;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #BEF264;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px tablet layout */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #D9F99D;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #D9F99D;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #D9F99D;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #BEF264;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
-
 		.section-title {
 			font-weight: 900;
 			color: #365314;
@@ -421,15 +58,8 @@
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #FDE047;
-			/* Yellow-300 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('../imgs/cv_header.png');
+			background-image: url('https://placehold.co/1600x900/F7FEE7/1A2E05?text=Computer+Vision+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -450,30 +80,15 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #BEF264;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -484,15 +99,12 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #D9F99D;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
 			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.faculty-slogan {
@@ -502,92 +114,6 @@
 			font-style: italic;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #BEF264;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #D9F99D;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #BEF264;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
 		}
 	</style>
 </head>
@@ -596,142 +122,123 @@
 	<div class="max-w-5xl mx-auto bg-white" id="infographic-content">
 		<header class="header-bg">
 			<div class="header-content text-center py-16 px-4">
-				<h1 class="major">THỊ GIÁC MÁY TÍNH &<br>ĐIỀU KHIỂN HỌC THÔNG MINH</h1>
-				<p class="english">Computer Vision</p>
-				<p class="major-slogan">Nhìn, Hiểu Và Cảm Nhận Thế Giới</p>
+				<h1 class="major">Thị Giác Máy Tính & Điều Khiển Học Thông Minh</h1>
+				<p class="english">Computer Vision & Cognitive Cybernetics</p>
+				<p class="major-slogan">Dạy Máy Tính Cách "Nhìn" và "Hiểu" Thế Giới</p>
 				<p class="faculty">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="faculty-slogan">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
 		</header>
 
 		<main class="p-4 md:p-8">
+			<!-- SECTION: ĐẶC TRƯNG NGÀNH -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
+				<h2 class="section-title text-3xl text-center mb-10">Câu hỏi cốt lõi của ngành</h2>
+				<div class="card p-8 text-center bg-lime-50 border-lime-200">
+					<i data-lucide="help-circle" class="icon mx-auto mb-4"></i>
+					<p class="text-2xl font-semibold text-slate-800 italic">
+						"Làm thế nào để máy tính có thể hiểu được nội dung hình ảnh hoặc video ở mức độ sâu sắc như con người?"
+					</p>
+					<p class="text-slate-600 mt-4">Đây chính là câu hỏi "khó nhằn" mà ngành Thị giác Máy tính (TGMT) tìm cách trả
+						lời, biến máy móc từ những cỗ máy tính toán thành những thực thể có khả năng "nhìn" và "cảm nhận".</p>
+				</div>
+			</section>
+
+			<!-- SECTION: HÀNH TRANG KIẾN THỨC -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Hành trang kiến thức của bạn</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 					<div class="card p-6">
 						<div class="flex justify-center mb-4"><i data-lucide="image" class="icon"></i></div>
 						<div class="card-content">
 							<h3 class="text-xl font-bold text-slate-800 mb-2">Xử lý Ảnh & Video số</h3>
-							<p class="text-slate-600">Nắm vững các thuật toán để máy tính có thể "nhìn", nhận dạng và phân tích
-								thông tin từ hình ảnh, video. Đây là nền tảng cho FaceID, xe tự lái.</p>
+							<p class="text-slate-600">Nắm vững các thuật toán để máy tính có thể "nhìn", nhận dạng và phân tích thông
+								tin từ hình ảnh, video. Đây là nền tảng cho FaceID, xe tự lái.</p>
 						</div>
 					</div>
 					<div class="card p-6">
 						<div class="flex justify-center mb-4"><i data-lucide="cuboid" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Đồ họa Máy tính & AR/VR</h3>
-							<p class="text-slate-600">Xây dựng các ứng dụng đồ họa 2D/3D: từ việc "vẽ" nên các thế giới game sống
-								động, đến lập trình các phần mềm kỹ thuật (AutoCAD) và sáng tạo (Adobe Photoshop).</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Đồ họa Máy tính 2D/3D</h3>
+							<p class="text-slate-600">Hiểu rõ nguyên lý tạo đồ họa 2D, 3D để xây dựng các ứng dụng từ game sống động,
+								kỹ xảo điện ảnh đến các phần mềm kỹ thuật như AutoCAD.</p>
 						</div>
 					</div>
 					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="audio-lines" class="icon"></i></div>
+						<div class="flex justify-center mb-4"><i data-lucide="brain-circuit" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Xử lý Tín hiệu Đa phương tiện</h3>
-							<p class="text-slate-600">Trang bị kiến thức để máy tính có thể "nghe" và "hiểu" được âm thanh, giọng nói,
-								tạo ra các trợ lý ảo thông minh hoặc hệ thống giám sát an ninh.</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Học máy & Học sâu</h3>
+							<p class="text-slate-600">Làm chủ các thuật toán AI "đỉnh cao" để máy tính có thể học hỏi từ dữ liệu hình
+								ảnh, video, văn bản, giọng nói và cả sóng não.</p>
 						</div>
 					</div>
 					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="toy-brick" class="icon"></i></div>
+						<div class="flex justify-center mb-4"><i data-lucide="sigma" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Điều Khiển Robot & Drone</h3>
-							<p class="text-slate-600">Thiết kế các hệ thống tự động có khả năng ra quyết định dựa trên dữ liệu hình
-								ảnh, âm thanh, như robot tự hành, drone giao hàng và xe tự lái.</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Toán và Thống kê ứng dụng</h3>
+							<p class="text-slate-600">Xây dựng nền tảng toán học vững chắc để phân tích các loại dữ liệu đa chiều,
+								phức tạp trong lĩnh vực thị giác.</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: HƯỚNG NGHIÊN CỨU -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
+				<h2 class="section-title text-3xl text-center mb-10">Hướng nghiên cứu "bắt trend"</h2>
 				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="card p-8">
-						<h3 class="text-2xl font-bold text-slate-800 mb-4">Trao "Giác Quan" & "Bàn Tay" Cho Máy</h3>
-						<p class="text-slate-600 mb-6">Trọng tâm của ngành là mô phỏng và tái tạo lại các giác quan phức tạp của con
-							người cho máy móc, đặc biệt là <strong class="text-lime-700">thị giác</strong>. Không chỉ giúp máy "nhìn"
-							và "hiểu", ngành còn trang bị cho máy khả năng "vẽ" và "tái tạo" lại thế giới số.</p>
-						<div class="space-y-4">
-							<div class="flex items-start">
-								<i data-lucide="move-3d" class="text-yellow-500 mr-3 mt-1 flex-shrink-0"></i>
-								<p class="text-slate-600"><strong class="text-slate-700">Tái tạo Không gian 3D:</strong> Đi sâu vào việc
-									tái tạo và hiểu không gian 3 chiều, tạo ra các mô hình 3D cho game, phim ảnh, và các trải nghiệm AR/VR
-									sống động.</p>
-							</div>
-							<div class="flex items-start">
-								<i data-lucide="crosshair" class="text-yellow-500 mr-3 mt-1 flex-shrink-0"></i>
-								<p class="text-slate-600"><strong class="text-slate-700">Kết hợp Phần cứng & Phần mềm:</strong> Là sự
-									giao thoa mạnh mẽ giữa thuật toán phần mềm và các thiết bị phần cứng như camera, cảm biến, và
-									bộ xử lý đồ họa (GPU).</p>
-							</div>
-						</div>
-					</div>
 					<div class="card overflow-hidden">
-						<img src="../imgs/robot_arm.jpg" alt="Một bàn tay robot đang tương tác với giao diện số"
+						<img src="https://placehold.co/800x600/F7FEE7/1A2E05?text=Medical+Imaging+4:3"
+							alt="Hình ảnh quét MRI não bộ với các vùng được tô sáng, minh họa ứng dụng của AI trong phân tích ảnh y khoa. Tỉ lệ khung hình 4:3."
 							class="object-cover w-full h-full rounded-lg">
 					</div>
-				</div>
-			</section>
-
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Thị Giác Máy Tính "So Kè" Với Các Ngành Khác</h2>
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="brain-circuit" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo</h4>
+					<div class="space-y-6">
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">Mô hình ngôn ngữ thị giác</h4>
+							<p class="text-slate-600">Dạy máy tính "nói chuyện" về những gì nó "thấy", trả lời câu hỏi về nội dung một
+								bức ảnh.</p>
 						</div>
-						<p class="text-slate-600">Thị giác máy tính là một chuyên ngành ứng dụng của AI. Nếu AI là bộ não, thì TGMT
-							chính là "đôi mắt", chuyên xử lý thông tin hình ảnh để bộ não ra quyết định.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="code-2" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">Phân tích ảnh y khoa</h4>
+							<p class="text-slate-600">Trở thành "trợ thủ đắc lực" cho bác sĩ, giúp phát hiện sớm và chẩn đoán bệnh qua
+								ảnh X-quang, MRI.</p>
 						</div>
-						<p class="text-slate-600">KTPM tập trung vào quy trình xây dựng phần mềm nói chung. TGMT tập trung vào việc
-							phát triển các thuật toán và mô hình chuyên biệt để giải quyết các bài toán về thị giác và đồ họa.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-zap" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">AI tạo sinh trong thiết kế</h4>
+							<p class="text-slate-600">Sử dụng AI để tự động tạo ra các thiết kế thời trang, sản phẩm mới lạ và độc
+								đáo.</p>
 						</div>
-						<p class="text-slate-600">KHDL làm việc với nhiều loại dữ liệu. TGMT chuyên sâu về các
-							loại dữ liệu phức tạp nhất là hình ảnh, video (dữ liệu phi cấu trúc), đòi hỏi các kỹ thuật xử lý chuyên
-							biệt.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
-						</div>
-						<p class="text-slate-600">KHMT cung cấp các lý thuyết nền tảng về thuật toán. TGMT ứng dụng và phát triển
-							các lý thuyết đó để tạo ra các thuật toán có khả năng "nhìn", "vẽ" và "hiểu" thế giới thực.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: CƠ HỘI NGHỀ NGHIỆP -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
+				<h2 class="section-title text-3xl text-center mb-12">Sự nghiệp "cất cánh" với các vai trò</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="scan-face" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Thị giác Máy tính</h4>
-						<p class="text-slate-600 text-sm">Phát triển các thuật toán nhận dạng, theo dõi và phân tích đối
-							tượng trong hình ảnh, video.</p>
+						<i data-lucide="code" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư lập trình Ảnh/Video</h4>
+						<p class="text-slate-600 text-sm">Phát triển các thuật toán và phần mềm xử lý, phân tích hình ảnh và video
+							cho nhiều ứng dụng.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="brain-circuit" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Trí tuệ Nhân tạo</h4>
+						<p class="text-slate-600 text-sm">Chuyên sâu về các mô hình AI cho thị giác, xây dựng các hệ thống thông
+							minh có khả năng "nhìn".</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="flask-conical" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Nhà nghiên cứu</h4>
+						<p class="text-slate-600 text-sm">Làm việc tại các viện nghiên cứu, trường đại học để phát triển các thuật
+							toán và lý thuyết mới trong lĩnh vực TGMT.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="clapperboard" class="icon mb-4"></i>
 						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Đồ họa Máy tính</h4>
 						<p class="text-slate-600 text-sm">Phát triển thuật toán dựng hình (rendering), mô phỏng vật lý và tạo kỹ xảo
-							(VFX) cho game, phim ảnh, và các phần mềm thiết kế.</p>
-					</div>
-					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="microscope" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia Xử lý ảnh Y tế</h4>
-						<p class="text-slate-600 text-sm">Phân tích hình ảnh X-quang, MRI, CT để hỗ trợ bác sĩ chẩn đoán bệnh chính
-							xác và nhanh chóng hơn.</p>
+							(VFX) cho game, phim ảnh.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="car" class="icon mb-4"></i>
@@ -745,56 +252,51 @@
 						<p class="text-slate-600 text-sm">Xây dựng các ứng dụng thực tế tăng cường và thực tế ảo, kết hợp thế giới
 							thực và thế giới số một cách liền mạch.</p>
 					</div>
-					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="drone" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Robotics & Tự động hóa</h4>
-						<p class="text-slate-600 text-sm">Lập trình cho robot có khả năng nhận biết môi trường xung quanh và tương
-							tác với các vật thể một cách thông minh.</p>
-					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: ỨNG DỤNG THỰC TẾ -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
+				<h2 class="section-title text-3xl text-center mb-12">Ứng dụng thực tế "chất lừ"</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<div class="card p-6 flex items-start">
 						<i data-lucide="smartphone-nfc" class="icon mr-4 flex-shrink-0"></i>
 						<div>
 							<h4 class="text-lg font-bold text-slate-800 mb-2">Mở khóa bằng khuôn mặt (FaceID)</h4>
-							<p class="text-slate-600 text-sm">Công nghệ nhận diện khuôn mặt 3D giúp bảo mật điện thoại và các
-								thiết bị cá nhân của bạn.</p>
+							<p class="text-slate-600 text-sm">Công nghệ nhận diện khuôn mặt 3D của Apple giúp bảo mật điện thoại và
+								các thiết bị cá nhân của bạn.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="shopping-cart" class="icon mr-4 flex-shrink-0"></i>
 						<div>
 							<h4 class="text-lg font-bold text-slate-800 mb-2">Cửa hàng không người bán (Amazon Go)</h4>
-							<p class="text-slate-600 text-sm">Các hệ thống camera thông minh theo dõi sản phẩm bạn lấy
-								và tự động thanh toán khi bạn rời đi.</p>
+							<p class="text-slate-600 text-sm">Các hệ thống camera thông minh theo dõi sản phẩm bạn lấy và tự động
+								thanh toán khi bạn rời đi.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="sparkles" class="icon mr-4 flex-shrink-0"></i>
 						<div>
 							<h4 class="text-lg font-bold text-slate-800 mb-2">Bộ lọc ảnh & Video (Filters)</h4>
-							<p class="text-slate-600 text-sm">Các bộ lọc ngộ nghĩnh trên Instagram, TikTok, Snapchat đều được
-								xây dựng dựa trên công nghệ này.</p>
+							<p class="text-slate-600 text-sm">Các bộ lọc ngộ nghĩnh trên Instagram, TikTok, Snapchat đều được xây dựng
+								dựa trên công nghệ này.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="gamepad-2" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ xảo Phim ảnh & Game (VFX)</h4>
-							<p class="text-slate-600 text-sm">Tạo ra các nhân vật, hiệu ứng cháy nổ và thế giới kỹ thuật số hoành
-								tráng trong các bom tấn Hollywood và game AAA.</p>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Game & Giải trí (Unreal Engine)</h4>
+							<p class="text-slate-600 text-sm">Tạo ra các thế giới game 3D sống động, các nhân vật và hiệu ứng kỹ xảo
+								hoành tráng trong các game bom tấn.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="pencil-ruler" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Phần mềm Thiết kế chuyên dụng</h4>
-							<p class="text-slate-600 text-sm">Các công cụ dựng hình 3D, chỉnh sửa ảnh và video trong bộ phần mềm Adobe
-								(Photoshop, After Effects) và kỹ thuật (AutoCAD).</p>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Phần mềm sáng tạo & kỹ thuật</h4>
+							<p class="text-slate-600 text-sm">Các công cụ trong bộ Adobe (Photoshop, After Effects) hay phần mềm thiết
+								kế 3D như AutoCAD, SolidWorks.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
@@ -804,6 +306,47 @@
 							<p class="text-slate-600 text-sm">Drone và camera phân tích hình ảnh cây trồng để phát hiện sâu bệnh, đánh
 								giá sức khỏe và tối ưu hóa năng suất.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Vì Sao Nên Chọn TGMT tại <span
+						class="text-lime-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3">Tiên phong & Uy tín</h3>
+						<ul class="space-y-3 text-slate-600">
+							<li class="flex items-start"><i data-lucide="award"
+									class="text-amber-500 mr-3 mt-1 flex-shrink-0"></i><span>Bộ môn chính danh đầu tiên về TGMT ở phía
+									Nam, có bề dày lịch sử từ 2010.</span></li>
+							<li class="flex items-start"><i data-lucide="users"
+									class="text-blue-500 mr-3 mt-1 flex-shrink-0"></i><span>Đội ngũ giảng viên "chất lượng" với 1 PGS và
+									hơn 50% là Tiến sĩ.</span></li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3">Nền tảng vững chắc</h3>
+						<ul class="space-y-3 text-slate-600">
+							<li class="flex items-start"><i data-lucide="book-open"
+									class="text-green-500 mr-3 mt-1 flex-shrink-0"></i><span>Chương trình đào tạo chuyên sâu, bài bản với
+									hơn 15 môn học về Thị giác và Tính toán.</span></li>
+							<li class="flex items-start"><i data-lucide="graduation-cap"
+									class="text-red-500 mr-3 mt-1 flex-shrink-0"></i><span>Nền tảng vững chắc để học lên Thạc sĩ, Tiến sĩ
+									trong và ngoài nước.</span></li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3">Thực tiễn & Sáng tạo</h3>
+						<ul class="space-y-3 text-slate-600">
+							<li class="flex items-start"><i data-lucide="flask-conical"
+									class="text-purple-500 mr-3 mt-1 flex-shrink-0"></i><span>Nhiều hướng nghiên cứu "bắt trend" như AI
+									tạo sinh, phân tích ảnh y khoa.</span></li>
+							<li class="flex items-start"><i data-lucide="handshake"
+									class="text-cyan-500 mr-3 mt-1 flex-shrink-0"></i><span>Hợp tác với doanh nghiệp và phòng lab, tạo
+									điều kiện thực tập và nghiên cứu chuyên sâu.</span></li>
+						</ul>
 					</div>
 				</div>
 			</section>
