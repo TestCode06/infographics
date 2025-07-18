@@ -117,6 +117,8 @@
 			font-style: italic;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
+		}
+
 		/* Export Mode CSS - Center align page content */
 		.export-mode #infographic-content {
 			width: 1096px !important;
@@ -143,6 +145,123 @@
 			text-align: center !important;
 		}
 
+		/* Export Mode - Fixed Image Dimensions */
+		.export-mode img {
+			max-width: 100% !important;
+			height: auto !important;
+			object-fit: contain !important;
+			object-position: center !important;
+			background-color: transparent !important;
+			display: block !important;
+			margin: 0 auto !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		/* Standard image containers in export mode */
+		.export-mode .card img {
+			width: 100% !important;
+			height: 250px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+			border-radius: 0.5rem !important;
+			background-color: rgba(248, 250, 252, 0.5) !important;
+		}
+
+		/* Overflow hidden containers - prevent image distortion */
+		.export-mode .card.overflow-hidden {
+			overflow: visible !important;
+		}
+
+		.export-mode .card.overflow-hidden img {
+			height: 300px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+		}
+
+		/* Specific fixes for placeholder images with different aspect ratios */
+		.export-mode img[src*="placehold.co"] {
+			background-color: rgba(248, 250, 252, 0.8) !important;
+			border: 1px solid rgba(226, 232, 240, 0.5) !important;
+		}
+
+		/* Wide images (3:2 aspect ratio like 600x400) */
+		.export-mode img[src*="600x400"] {
+			width: 100% !important;
+			height: 200px !important;
+			max-height: 200px !important;
+		}
+
+		/* Square-ish images (4:3 aspect ratio like 800x600) */
+		.export-mode img[src*="800x600"] {
+			width: 100% !important;
+			height: 240px !important;
+			max-height: 240px !important;
+		}
+
+		/* Tall images (4:5 aspect ratio like 800x1000) */
+		.export-mode img[src*="800x1000"] {
+			width: 100% !important;
+			height: 300px !important;
+			max-height: 300px !important;
+		}
+
+		/* Force consistent sizing regardless of source dimensions */
+		.export-mode .grid img,
+		.export-mode .space-y-6 img,
+		.export-mode .items-center img {
+			object-fit: contain !important;
+			object-position: center !important;
+			background-color: rgba(248, 250, 252, 0.3) !important;
+		}
+
+		/* Standard image containers in export mode */
+		.export-mode .card img {
+			width: 100% !important;
+			height: 250px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+			border-radius: 0.5rem !important;
+			background-color: rgba(248, 250, 252, 0.5) !important;
+		}
+
+		/* Specific image size fixes for different aspect ratios */
+		.export-mode .card.overflow-hidden img {
+			height: 300px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+		}
+
+		/* Wide images (3:2 aspect ratio) */
+		.export-mode .grid img[src*="600x400"] {
+			width: 100% !important;
+			height: 200px !important;
+			object-fit: contain !important;
+		}
+
+		/* Square-ish images (4:3 aspect ratio) */
+		.export-mode .grid img[src*="800x600"] {
+			width: 100% !important;
+			height: 240px !important;
+			object-fit: contain !important;
+		}
+
+		/* Tall images (4:5 aspect ratio) */
+		.export-mode .grid img[src*="800x1000"] {
+			width: 100% !important;
+			height: 300px !important;
+			object-fit: contain !important;
+		}
+
+		/* Ensure all images are properly contained and centered */
+		.export-mode img {
+			display: block !important;
+			margin: 0 auto !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		/* Enhanced export mode layout */
 		.export-mode .grid {
 			gap: 20px !important;
 			margin: 0 auto !important;
@@ -173,23 +292,25 @@
 			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
 			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
 		}
+
 		/* Enhanced responsive design - Does not affect export PNG */
 		@media (max-width: 1024px) {
 			body:not(.export-mode) #infographic-content {
-				padding: 1rem !important;
+				max-width: 100% !important;
+				margin: 0 !important;
+				padding: 16px !important;
 			}
 
 			body:not(.export-mode) .header-bg {
-				padding: 3rem 1rem !important;
+				padding: 48px 16px !important;
 			}
 
 			body:not(.export-mode) .header-content h1 {
-				font-size: 2rem !important;
-				line-height: 1.2 !important;
+				font-size: 2.25rem !important;
 			}
 
 			body:not(.export-mode) .major {
-				font-size: 2rem !important;
+				font-size: 2.25rem !important;
 			}
 
 			body:not(.export-mode) .english {
@@ -201,8 +322,8 @@
 			}
 
 			body:not(.export-mode) .grid {
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-				gap: 1rem !important;
+				grid-template-columns: 1fr !important;
+				gap: 16px !important;
 			}
 
 			body:not(.export-mode) .section-title {
@@ -210,33 +331,33 @@
 			}
 
 			body:not(.export-mode) main {
-				padding: 1rem !important;
+				padding: 16px !important;
 			}
 
 			body:not(.export-mode) section {
-				margin: 2rem 0 !important;
+				margin: 24px auto !important;
 			}
 		}
 
 		@media (max-width: 768px) {
 			body:not(.export-mode) .header-bg {
-				padding: 2rem 0.75rem !important;
+				padding: 32px 16px !important;
 			}
 
 			body:not(.export-mode) .header-content h1 {
-				font-size: 1.5rem !important;
+				font-size: 1.875rem !important;
 			}
 
 			body:not(.export-mode) .major {
-				font-size: 1.5rem !important;
+				font-size: 1.875rem !important;
 			}
 
 			body:not(.export-mode) .english {
-				font-size: 1rem !important;
+				font-size: 1.125rem !important;
 			}
 
 			body:not(.export-mode) .major-slogan {
-				font-size: 1rem !important;
+				font-size: 1.125rem !important;
 			}
 
 			body:not(.export-mode) .faculty-slogan {
@@ -245,7 +366,7 @@
 
 			body:not(.export-mode) .grid {
 				grid-template-columns: 1fr !important;
-				gap: 0.75rem !important;
+				gap: 12px !important;
 			}
 
 			body:not(.export-mode) .section-title {
@@ -253,7 +374,7 @@
 			}
 
 			body:not(.export-mode) .card {
-				padding: 1rem !important;
+				padding: 16px !important;
 			}
 
 			body:not(.export-mode) .card h3 {
@@ -267,31 +388,31 @@
 
 		@media (max-width: 640px) {
 			body:not(.export-mode) #infographic-content {
-				padding: 0.5rem !important;
+				padding: 12px !important;
 			}
 
 			body:not(.export-mode) .header-bg {
-				padding: 1.5rem 0.5rem !important;
+				padding: 24px 12px !important;
 			}
 
 			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
+				font-size: 1.5rem !important;
 			}
 
 			body:not(.export-mode) .major {
-				font-size: 1.25rem !important;
+				font-size: 1.5rem !important;
 			}
 
 			body:not(.export-mode) .english {
-				font-size: 0.875rem !important;
+				font-size: 1rem !important;
 			}
 
 			body:not(.export-mode) .major-slogan {
-				font-size: 0.875rem !important;
+				font-size: 1rem !important;
 			}
 
 			body:not(.export-mode) .faculty {
-				font-size: 0.75rem !important;
+				font-size: 0.875rem !important;
 			}
 
 			body:not(.export-mode) .faculty-slogan {
@@ -303,15 +424,15 @@
 			}
 
 			body:not(.export-mode) main {
-				padding: 0.75rem !important;
+				padding: 12px !important;
 			}
 
 			body:not(.export-mode) section {
-				margin: 1.5rem 0 !important;
+				margin: 16px auto !important;
 			}
 
 			body:not(.export-mode) .card {
-				padding: 0.75rem !important;
+				padding: 12px !important;
 			}
 
 			body:not(.export-mode) .card h3 {
@@ -326,7 +447,6 @@
 				width: 32px !important;
 				height: 32px !important;
 			}
-		}
 		}
 	</style>
 </head>
@@ -472,7 +592,8 @@
 						</div>
 						<p class="text-slate-600"><b>MMT</b> xây dựng và bảo trì hệ thống đường cao tốc, cầu cống (hạ tầng mạng).
 							<b>HTTT</b> thiết kế các luồng giao thông, đặt các trung tâm thương mại, khu dân cư (ứng dụng nghiệp vụ)
-							trên nền tảng đường cao tốc đó để đảm bảo kinh tế-xã hội (doanh nghiệp) phát triển.</p>
+							trên nền tảng đường cao tốc đó để đảm bảo kinh tế-xã hội (doanh nghiệp) phát triển.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -567,22 +688,24 @@
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">Vì Sao Nên Chọn HTTT tại <span
 						class="text-cyan-600 font-bold">fit@hcmus</span>?</h2>
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="card p-8">
-						<h3 class="text-xl font-bold text-slate-800 mb-4">Chương trình đào tạo "chất"</h3>
-						<p class="text-slate-600 mb-4">Chương trình được thiết kế bài bản, cân bằng giữa lý thuyết nền tảng và kỹ
-							năng thực chiến, giúp bạn tự tin "chiến" mọi dự án ngay khi ra trường.</p>
-						<img src="https://placehold.co/800x600/ECFEFF/164E63?text=Modern+Classroom+4:3"
-							alt="Một phòng học hiện đại với sinh viên đang tương tác trên các thiết bị công nghệ cao, thể hiện môi trường học tập tiên tiến. Tỉ lệ khung hình 4:3."
-							class="object-cover w-full h-48 rounded-lg">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="award"
+								class="icon mr-3 h-8 w-8"></i>Chất lượng đào tạo hàng đầu</h3>
+						<p class="text-slate-600">Là một trong những nơi đầu tiên đào tạo về HTTT tại Việt Nam (từ 1995), với chương
+							trình chất lượng và đội ngũ giảng viên giàu kinh nghiệm.</p>
 					</div>
-					<div class="card p-8">
-						<h3 class="text-xl font-bold text-slate-800 mb-4">Cơ hội nghề nghiệp rộng mở</h3>
-						<p class="text-slate-600 mb-4">Với tấm bằng từ KHTN, bạn sẽ được các nhà tuyển dụng hàng đầu "săn đón". Mạng
-							lưới cựu sinh viên và đối tác doanh nghiệp "khủng" sẽ là bệ phóng vững chắc cho sự nghiệp của bạn.</p>
-						<img src="https://placehold.co/800x600/ECFEFF/164E63?text=Career+Success+4:3"
-							alt="Một sinh viên tốt nghiệp tự tin bắt tay với nhà tuyển dụng, biểu tượng cho cơ hội nghề nghiệp rộng mở sau khi ra trường. Tỉ lệ khung hình 4:3."
-							class="object-cover w-full h-48 rounded-lg">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="briefcase"
+								class="icon mr-3 h-8 w-8"></i>Cơ hội nghề nghiệp rộng mở</h3>
+						<p class="text-slate-600">Sinh viên tốt nghiệp luôn được các nhà tuyển dụng đánh giá cao và săn đón cho các
+							vị trí quan trọng như Phân tích nghiệp vụ, Quản trị CSDL, Khoa học dữ liệu.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="book-open"
+								class="icon mr-3 h-8 w-8"></i>Kiến thức toàn diện</h3>
+						<p class="text-slate-600">Chương trình học cân bằng giữa kiến thức nền tảng về công nghệ, kỹ năng phân tích
+							dữ liệu và sự am hiểu về quy trình vận hành trong doanh nghiệp.</p>
 					</div>
 				</div>
 			</section>

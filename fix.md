@@ -1,9 +1,228 @@
-# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 6)
+# Báo Cáo Sửa Lỗi - Fix Brand Style và Download Buttons (Cập nhật lần 7)
 
 ## Tổng Quan
-Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật lần 6: Sửa tính năng export PNG để luôn center align và cải thiện responsive design toàn diện.**
+Thực hiện sửa lỗi theo yêu cầu để khắc phục vấn đề về brand style của `fit@hcmus` và tình trạng loading không kết thúc của các nút tải xuống. **Cập nhật lần 7: Cố định kích thước images khi export PNG để đảm bảo tất cả images được resize (không crop) về đúng kích thước.**
 
-#### 11. Sửa Tính Năng Export PNG - Center Align (Mới - Lần 6)
+#### 13. Cố Định Kích Thước Images Khi Export PNG (Mới - Lần 7)
+
+**Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
+
+**Vấn đề:**
+- Images trong các pages có kích thước source khác nhau (600x400, 800x600, 800x1000)
+- Khi export PNG, cần đảm bảo tất cả images được resize về kích thước chuẩn
+- Cần sử dụng `object-fit: contain` thay vì `object-fit: cover` để tránh crop images
+- Đảm bảo images luôn hiển thị đầy đủ và không bị biến dạng
+
+**Giải pháp:**
+
+#### A. Index.html - Enhanced Image Export CSS:
+```css
+/* Export Mode - Fixed Image Dimensions */
+.export-mode img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: transparent !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Standard image containers in export mode */
+.export-mode .card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 0.5rem !important;
+    background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+/* Overflow hidden containers - prevent image distortion */
+.export-mode .card.overflow-hidden {
+    overflow: visible !important;
+}
+
+.export-mode .card.overflow-hidden img {
+    height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Specific fixes for placeholder images with different aspect ratios */
+.export-mode img[src*="placehold.co"] {
+    background-color: rgba(248, 250, 252, 0.8) !important;
+    border: 1px solid rgba(226, 232, 240, 0.5) !important;
+}
+
+/* Wide images (3:2 aspect ratio like 600x400) */
+.export-mode img[src*="600x400"] {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+}
+
+/* Square-ish images (4:3 aspect ratio like 800x600) */
+.export-mode img[src*="800x600"] {
+    width: 100% !important;
+    height: 240px !important;
+    max-height: 240px !important;
+}
+
+/* Tall images (4:5 aspect ratio like 800x1000) */
+.export-mode img[src*="800x1000"] {
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+}
+
+/* Force consistent sizing regardless of source dimensions */
+.export-mode .grid img,
+.export-mode .space-y-6 img,
+.export-mode .items-center img {
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: rgba(248, 250, 252, 0.3) !important;
+}
+```
+
+#### B. Pages Files - Image Dimension Control (Tất cả 8 files):
+```css
+/* Export Mode - Fixed Image Dimensions */
+.export-mode img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: transparent !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Standard image containers in export mode */
+.export-mode .card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 0.5rem !important;
+    background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+/* Overflow hidden containers - prevent image distortion */
+.export-mode .card.overflow-hidden {
+    overflow: visible !important;
+}
+
+.export-mode .card.overflow-hidden img {
+    height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* Specific fixes for placeholder images with different aspect ratios */
+.export-mode img[src*="placehold.co"] {
+    background-color: rgba(248, 250, 252, 0.8) !important;
+    border: 1px solid rgba(226, 232, 240, 0.5) !important;
+}
+
+/* Wide images (3:2 aspect ratio like 600x400) */
+.export-mode img[src*="600x400"] {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 200px !important;
+}
+
+/* Square-ish images (4:3 aspect ratio like 800x600) */
+.export-mode img[src*="800x600"] {
+    width: 100% !important;
+    height: 240px !important;
+    max-height: 240px !important;
+}
+
+/* Tall images (4:5 aspect ratio like 800x1000) */
+.export-mode img[src*="800x1000"] {
+    width: 100% !important;
+    height: 300px !important;
+    max-height: 300px !important;
+}
+
+/* Force consistent sizing regardless of source dimensions */
+.export-mode .grid img,
+.export-mode .space-y-6 img,
+.export-mode .items-center img {
+    object-fit: contain !important;
+    object-position: center !important;
+    background-color: rgba(248, 250, 252, 0.3) !important;
+}
+```
+
+#### C. Image Dimension Strategy:
+
+**1. Resize Logic:**
+- **object-fit: contain** - Đảm bảo toàn bộ image hiển thị, không crop
+- **object-position: center** - Image được center trong container
+- **Fixed heights** - Mỗi loại image có height cố định theo aspect ratio
+- **Background color** - Subtle background cho empty space nếu cần
+
+**2. Aspect Ratio Handling:**
+- **3:2 (600x400):** Height 200px - Phù hợp cho wide images
+- **4:3 (800x600):** Height 240px - Standard cho most images
+- **4:5 (800x1000):** Height 300px - Taller images như data visualization
+- **Card images:** Height 250px - Default cho card containers
+- **Overflow containers:** Height 300px - Larger showcase images
+
+**3. Container Fixes:**
+- **Overflow hidden containers:** Set `overflow: visible` để tránh crop
+- **Grid containers:** Consistent spacing và background
+- **Card containers:** Rounded corners và subtle background
+
+#### D. Files được cập nhật:
+- `index.html` - Enhanced image export CSS
+- `artificial_intelligence.html` - Fixed image dimensions
+- `computer_science.html` - Fixed image dimensions
+- `computer_vision.html` - Fixed image dimensions
+- `data_science.html` - Fixed image dimensions
+- `information_system.html` - Fixed image dimensions
+- `knowledge_engineer.html` - Fixed image dimensions
+- `computer_network.html` - Fixed image dimensions
+- `software_engineer.html` - Fixed image dimensions
+
+**Cải thiện đạt được:**
+
+#### Image Resize Consistency:
+- **No cropping:** Tất cả images sử dụng `object-fit: contain` để hiển thị đầy đủ
+- **Consistent sizing:** Mỗi aspect ratio có fixed height chuẩn
+- **Center alignment:** Images luôn center trong container
+- **Source agnostic:** Kích thước export không phụ thuộc vào source image size
+
+#### Visual Quality:
+- **Professional appearance:** Subtle backgrounds cho empty space
+- **Consistent spacing:** Uniform margins và padding
+- **Border radius:** Rounded corners cho modern look
+- **No distortion:** Images maintain aspect ratio
+
+#### Export Reliability:
+- **Predictable output:** Mỗi image type có kích thước cố định
+- **Container compatibility:** Works với tất cả container types
+- **Overflow handling:** Prevents image cropping in overflow containers
+- **Background handling:** Subtle backgrounds thay vì transparent
+
+#### Technical Implementation:
+- **CSS specificity:** High specificity với !important để override
+- **Selector targeting:** Specific selectors cho different image types
+- **Container fixes:** Overflow và display property adjustments
+- **Cross-browser compatibility:** Standard CSS properties
+
+#### User Experience:
+- **Consistent exports:** PNG files có layout predictable
+- **No surprises:** Images luôn hiển thị như mong đợi
+- **Professional quality:** Clean, consistent image presentation
+- **Source flexibility:** Có thể thay đổi source images mà không lo sizing issues
 
 **Vị trí:** `index.html` + tất cả 8 files trong `/pages/` directory
 
@@ -1335,7 +1554,23 @@ body:not(.export-mode) .header-content h1 {
 
 **Trạng thái:** Đã sửa và ổn định.
 
-## Kết Quả Mong Đợi (Cập nhật lần 6)
+## Kết Quả Mong Đợi (Cập nhật lần 7)
+
+### Fixed Image Dimensions trong PNG Export:
+- ✅ Tất cả images sử dụng `object-fit: contain` để hiển thị đầy đủ, không crop
+- ✅ Kích thước images cố định theo aspect ratio: 3:2 (200px), 4:3 (240px), 4:5 (300px)
+- ✅ Images luôn center align với `object-position: center`
+- ✅ Consistent sizing bất kể source image dimensions
+- ✅ Subtle background colors cho empty space khi cần
+- ✅ Overflow containers set `overflow: visible` để tránh crop
+
+### Image Resize Strategy:
+- ✅ Source agnostic: Kích thước export không phụ thuộc vào source image size
+- ✅ Aspect ratio preserved: Images maintain tỷ lệ gốc
+- ✅ Container compatibility: Works với card, grid, overflow containers
+- ✅ Professional quality: Clean, consistent image presentation
+- ✅ No distortion: Images không bị stretch hay squeeze
+- ✅ Predictable output: Mỗi image type có kích thước cố định
 
 ### PNG Export Center Alignment:
 - ✅ PNG export luôn center align toàn bộ page content
@@ -1351,6 +1586,7 @@ body:not(.export-mode) .header-content h1 {
 - ✅ Typography control với explicit font sizes và colors cho export mode
 - ✅ Background: white, overflow: visible cho professional documents
 - ✅ Proper alignment cho tất cả PNG exports từ mọi pages
+- ✅ Image quality: Consistent, professional image presentation
 
 ### Enhanced Responsive Design:
 - ✅ Progressive breakpoints: Desktop → Tablet (1024px) → Mobile (768px) → Small (640px)
@@ -1365,6 +1601,7 @@ body:not(.export-mode) .header-content h1 {
 - ✅ PNG Export unchanged: Export luôn sử dụng desktop layout với width 1096px
 - ✅ Consistency guarantee: Export quality không thay đổi từ mobile hay desktop
 - ✅ Professional output: PNG export luôn professional appearance
+- ✅ Image consistency: Images luôn hiển thị đúng kích thước trong export mode
 
 ### Mobile & Tablet Experience:
 - ✅ Optimal readability: Typography scaling phù hợp cho từng device size
@@ -1378,6 +1615,7 @@ body:not(.export-mode) .header-content h1 {
 - ✅ Cross-browser compatibility: Compatible với modern browsers
 - ✅ Performance optimization: Efficient media queries với minimal redundancy
 - ✅ Export consistency: PNG quality đồng nhất từ mọi device
+- ✅ Image handling: Robust CSS để handle different image sizes và aspect ratios
 
 ### PNG Export 854px Width:
 - ✅ PNG export sử dụng width 854px thay vì 1200px
@@ -1476,10 +1714,15 @@ body:not(.export-mode) .header-content h1 {
 - **Before:** Sidebar không thể scroll do CSS conflicts
 - **After:** Working scroll với clean container separation
 
+### Image Dimensions:
+- **Before (Lần 6):** Images có thể bị crop hoặc distort khi export PNG
+- **After (Lần 7):** Fixed image dimensions với `object-fit: contain`, no cropping
+
 ### PNG Export:
 - **Before (Lần 4):** 1200px width export, 4-column grid layout, gap 20px
 - **After (Lần 5):** 854px width export, 3-column grid layout, gap 16px, tablet-like responsive behavior
 - **After (Lần 6):** 1096px width export, center aligned, enhanced text shadow
+- **After (Lần 7):** 1096px width export, center aligned, enhanced text shadow, fixed image dimensions
 
 ### Background CTA:
 1. **Original:** Blue gradient (#1E3A8A, #4F46E5)
@@ -1519,9 +1762,9 @@ body:not(.export-mode) .header-content h1 {
 - **After:** Indigo/blue palette hài hòa với brand color #111B88
 
 ## Tổng Kết
-- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên PNG export center alignment và comprehensive responsive design) + **Lần 6: `fix.md`**
-- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, Grid layout consistency fix, **PNG export center alignment**, **comprehensive responsive design**
-- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency với web display, **PNG export luôn center aligned với enhanced text shadow**, **responsive design toàn diện trên mọi thiết bị**
-- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, **PNG export center alignment và text shadow enhancement**, **responsive design trên tablet và mobile**, **đặc biệt kiểm tra PNG export quality không bị ảnh hưởng bởi responsive CSS**
+- **Files được chỉnh sửa:** 12 files (`faculty.html`, `index.html` + **tất cả 8 pages files** với focus trên PNG export center alignment, comprehensive responsive design, và fixed image dimensions) + **Lần 7: `fix.md`**
+- **Loại thay đổi:** Brand consistency, Design improvement, UX enhancement, Bug fix, Text visibility enhancement, Typography optimization, Header standardization, Responsive button fix, Sidebar scroll fix, PNG export optimization, Grid layout consistency fix, **PNG export center alignment**, **comprehensive responsive design**, **fixed image dimensions**
+- **Tác động:** Brand identity nhất quán, design attractive, UX cải thiện, functionality ổn định, header text visibility tối ưu, typography responsive và professional, header heights đồng nhất, download buttons behavior chính xác, sidebar scroll hoạt động hoàn hảo, PNG export quality consistency với web display, **PNG export luôn center aligned với enhanced text shadow**, **responsive design toàn diện trên mọi thiết bị**, **images luôn hiển thị đúng kích thước và không bị crop khi export PNG**
+- **Testing cần thiết:** Kiểm tra default page load, export PNG alignment, visual consistency, header text readability, responsive behavior across devices, download functionality trên cả mobile và desktop, sidebar scroll functionality, **PNG export center alignment và text shadow enhancement**, **responsive design trên tablet và mobile**, **image dimensions và quality trong PNG export**, **đặc biệt kiểm tra PNG export quality không bị ảnh hưởng bởi responsive CSS và images luôn hiển thị đúng kích thước**
 
-Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization, **PNG export luôn center aligned với enhanced visibility**, **và responsive design toàn diện cải thiện UX trên mobile và tablet mà không ảnh hưởng đến chức năng export PNG.**
+Tất cả các thay đổi đều đảm bảo brand guidelines được tuân thủ nghiêm ngặt, cải thiện visual appeal, nâng cao trải nghiệm người dùng tổng thể, tối ưu typography cho mọi thiết bị, chuẩn hóa header structure, đảm bảo download functionality hoạt động chính xác trên mọi breakpoint với quality export nhất quán, sidebar scroll functionality hoạt động mượt mà với PNG export optimization, **PNG export luôn center aligned với enhanced visibility**, **responsive design toàn diện cải thiện UX trên mobile và tablet mà không ảnh hưởng đến chức năng export PNG**, **và images luôn được resize đúng kích thước (không crop) trong PNG export bất kể source image dimensions.**

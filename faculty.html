@@ -90,6 +90,288 @@
 			margin-right: 8px;
 			border-radius: 50%;
 		}
+	
+		/* Export Mode CSS - Center align page content */
+		.export-mode #infographic-content {
+			width: 1096px !important;
+			max-width: none !important;
+			margin: 0 auto !important;
+			padding: 20px !important;
+			background: white !important;
+			display: block !important;
+		}
+
+		.export-mode .header-bg {
+			padding: 60px 24px !important;
+			margin: 0 auto 32px auto !important;
+			text-align: center !important;
+		}
+
+		.export-mode .header-content {
+			text-align: center !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode .header-content h1 {
+			font-size: 2.75rem !important;
+			text-align: center !important;
+		}
+
+		/* Export Mode - Fixed Image Dimensions */
+		.export-mode img {
+			max-width: 100% !important;
+			height: auto !important;
+			object-fit: contain !important;
+			object-position: center !important;
+			background-color: transparent !important;
+			display: block !important;
+			margin: 0 auto !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		/* Standard image containers in export mode */
+		.export-mode .card img {
+			width: 100% !important;
+			height: 250px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+			border-radius: 0.5rem !important;
+			background-color: rgba(248, 250, 252, 0.5) !important;
+		}
+
+		/* Overflow hidden containers - prevent image distortion */
+		.export-mode .card.overflow-hidden {
+			overflow: visible !important;
+		}
+
+		.export-mode .card.overflow-hidden img {
+			height: 300px !important;
+			object-fit: contain !important;
+			object-position: center !important;
+		}
+
+		/* Specific fixes for placeholder images with different aspect ratios */
+		.export-mode img[src*="placehold.co"] {
+			background-color: rgba(248, 250, 252, 0.8) !important;
+			border: 1px solid rgba(226, 232, 240, 0.5) !important;
+		}
+
+		/* Wide images (3:2 aspect ratio like 600x400) */
+		.export-mode img[src*="600x400"] {
+			width: 100% !important;
+			height: 200px !important;
+			max-height: 200px !important;
+		}
+
+		/* Square-ish images (4:3 aspect ratio like 800x600) */
+		.export-mode img[src*="800x600"] {
+			width: 100% !important;
+			height: 240px !important;
+			max-height: 240px !important;
+		}
+
+		/* Tall images (4:5 aspect ratio like 800x1000) */
+		.export-mode img[src*="800x1000"] {
+			width: 100% !important;
+			height: 300px !important;
+			max-height: 300px !important;
+		}
+
+		/* Force consistent sizing regardless of source dimensions */
+		.export-mode .grid img,
+		.export-mode .space-y-6 img,
+		.export-mode .items-center img {
+			object-fit: contain !important;
+			object-position: center !important;
+			background-color: rgba(248, 250, 252, 0.3) !important;
+		}
+
+		.export-mode .grid {
+			gap: 20px !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode main {
+			padding: 20px !important;
+			margin: 0 auto !important;
+		}
+
+		.export-mode section {
+			margin: 32px auto !important;
+		}
+
+		.export-mode .section-title {
+			text-align: center !important;
+			margin: 0 auto 24px auto !important;
+		}
+
+		/* Enhanced text shadow for better visibility */
+		.export-mode .header-content h1,
+		.export-mode .header-content p {
+			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+		}
+
+		.export-mode .header-content h1 {
+			color: #FFFFFF !important;
+			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+		}
+
+		/* Enhanced responsive design - Does not affect export PNG */
+		@media (max-width: 1024px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .header-bg {
+				padding: 3rem 1rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 2rem !important;
+				line-height: 1.2 !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 2rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .grid {
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+				gap: 1rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.75rem !important;
+			}
+
+			body:not(.export-mode) main {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) section {
+				margin: 2rem 0 !important;
+			}
+		}
+
+		@media (max-width: 768px) {
+			body:not(.export-mode) .header-bg {
+				padding: 2rem 0.75rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .faculty-slogan {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .grid {
+				grid-template-columns: 1fr !important;
+				gap: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.5rem !important;
+			}
+
+			body:not(.export-mode) .card {
+				padding: 1rem !important;
+			}
+
+			body:not(.export-mode) .card h3 {
+				font-size: 1.125rem !important;
+			}
+
+			body:not(.export-mode) .card p {
+				font-size: 0.875rem !important;
+			}
+		}
+
+		@media (max-width: 640px) {
+			body:not(.export-mode) #infographic-content {
+				padding: 0.5rem !important;
+			}
+
+			body:not(.export-mode) .header-bg {
+				padding: 1.5rem 0.5rem !important;
+			}
+
+			body:not(.export-mode) .header-content h1 {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .major {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) .english {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .major-slogan {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .faculty {
+				font-size: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .faculty-slogan {
+				font-size: 0.875rem !important;
+			}
+
+			body:not(.export-mode) .section-title {
+				font-size: 1.25rem !important;
+			}
+
+			body:not(.export-mode) main {
+				padding: 0.75rem !important;
+			}
+
+			body:not(.export-mode) section {
+				margin: 1.5rem 0 !important;
+			}
+
+			body:not(.export-mode) .card {
+				padding: 0.75rem !important;
+			}
+
+			body:not(.export-mode) .card h3 {
+				font-size: 1rem !important;
+			}
+
+			body:not(.export-mode) .card p {
+				font-size: 0.8rem !important;
+			}
+
+			body:not(.export-mode) .icon {
+				width: 32px !important;
+				height: 32px !important;
+			}
+		}
 	</style>
 </head>
 
