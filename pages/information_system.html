@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Infographic: Hệ Thống Thông Tin – Cầu Nối Giữa Công Nghệ & Vận Hành Doanh Nghiệp</title>
+	<title>Infographic: Hệ Thống Thông Tin – Cầu Nối Giữa Công Nghệ & Doanh Nghiệp</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,377 +17,14 @@
 			font-family: 'Be Vietnam Pro', sans-serif;
 			background-color: #ECFEFF;
 			/* Cyan-50 */
-			color: #0E7490;
-			/* Cyan-800 */
+			color: #164E63;
+			/* Cyan-900 */
 		}
-
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #67E8F9;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #A5F3FC;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #67E8F9;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px tablet layout */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A5F3FC;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A5F3FC;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A5F3FC;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #67E8F9;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
 
 		.section-title {
 			font-weight: 900;
-			color: #0E7490;
-			/* Cyan-800 */
+			color: #0891B2;
+			/* Cyan-600 */
 			text-transform: uppercase;
 			letter-spacing: 1px;
 		}
@@ -409,26 +46,19 @@
 
 		.card:hover {
 			transform: translateY(-5px);
-			border-color: #0891B2;
-			/* Cyan-600 */
+			border-color: #06B6D4;
+			/* Cyan-500 */
 			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 		}
 
 		.icon {
-			color: #0891B2;
+			color: #06B6D4;
 			width: 48px;
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #FB923C;
-			/* Orange-400 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
+			background-image: url('https://placehold.co/1600x900/ECFEFF/164E63?text=Business+Tech+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -441,8 +71,8 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background-color: rgba(21, 94, 117, 0.8);
-			/* Cyan-800 with opacity */
+			background-color: rgba(22, 78, 99, 0.8);
+			/* Cyan-900 with opacity */
 		}
 
 		.header-content {
@@ -450,31 +80,18 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #67E8F9;
+			/* Cyan-300 */
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-bottom: 1rem;
 		}
@@ -483,46 +100,23 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #A5F3FC;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
+			/* Cyan-200 */
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+			color: #E0F2F7;
 		}
 
 		.faculty-slogan {
 			font-size: 1.25rem;
 			font-weight: 600;
 			color: #67E8F9;
+			/* Cyan-300 */
 			font-style: italic;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
 		}
 	</style>
 </head>
@@ -532,247 +126,256 @@
 		<header class="header-bg">
 			<div class="header-content text-center py-16 px-4">
 				<h1 class="major">HỆ THỐNG THÔNG TIN</h1>
-				<p class="english">Information System</p>
-				<p class="major-slogan">Kết Nối Thông Tin, Quản Lý Hiệu Quả</p>
+				<p class="english">Information Systems</p>
+				<p class="major-slogan">"Kiến trúc sư" xây cầu nối giữa Công nghệ và Doanh nghiệp</p>
 				<p class="faculty">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="faculty-slogan">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
 		</header>
 
 		<main class="p-4 md:p-8">
+			<!-- SECTION: ĐẶC TRƯNG NGÀNH -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="file-check-2" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Phân Tích Nghiệp Vụ (BA)</h3>
-							<p class="text-slate-600">Học cách "giải mã" các quy trình của doanh nghiệp để đề xuất giải pháp công nghệ
-								phù hợp. Như tìm ra lý do tại sao app giao đồ ăn lại "lag" vào giờ cao điểm!</p>
+				<h2 class="section-title text-3xl text-center mb-10">HTTT "chất" như thế nào?</h2>
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div class="card overflow-hidden">
+						<img src="https://placehold.co/800x600/ECFEFF/164E63?text=Team+Collaboration+4:3"
+							alt="Một nhóm chuyên gia đang thảo luận sôi nổi bên một bảng trắng đầy sơ đồ, tượng trưng cho sự kết hợp giữa phân tích kinh doanh và giải pháp kỹ thuật. Tỉ lệ khung hình 4:3."
+							class="object-cover w-full h-full rounded-lg">
+					</div>
+					<div class="space-y-6">
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">"Người phiên dịch" đa ngôn ngữ</h4>
+							<p class="text-slate-600">Bạn sẽ là người "dịch" ngôn ngữ kinh doanh của sếp thành yêu cầu kỹ thuật cho
+								team dev, và ngược lại. Bạn hiểu cả hai thế giới và kết nối họ lại với nhau.</p>
+						</div>
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">Bậc thầy về dữ liệu</h4>
+							<p class="text-slate-600">Không chỉ lưu trữ, bạn sẽ học cách "nói chuyện với dữ liệu", biến những con số
+								khô khan thành insight vàng, giúp doanh nghiệp đưa ra quyết định chiến lược.</p>
+						</div>
+						<div class="card p-6">
+							<h4 class="text-xl font-bold text-slate-800 mb-2">Nhà thiết kế hệ thống "khủng"</h4>
+							<p class="text-slate-600">Từ hệ thống quản lý nhân sự, bán hàng (ERP) đến các sàn thương mại điện tử, bạn
+								sẽ là người thiết kế và xây dựng "xương sống" công nghệ cho cả một tổ chức.</p>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: BẠN SẼ "CÂN" ĐƯỢC GÌ? -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Bạn sẽ "cân" được những gì?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
 					<div class="card p-6">
 						<div class="flex justify-center mb-4"><i data-lucide="database" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Thiết Kế & Quản Trị Hệ Thống</h3>
-							<p class="text-slate-600">Xây dựng và quản lý các hệ thống thông tin, cơ sở dữ liệu để đảm bảo luồng thông
-								tin trong tổ chức được thông suốt. Từ hệ thống quản lý điểm đến app banking!</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Làm trùm Cơ sở dữ liệu</h3>
+							<p class="text-slate-600">Thiết kế, xây dựng và quản trị các hệ thống CSDL (SQL, NoSQL), đảm bảo dữ liệu
+								luôn an toàn, chính xác và sẵn sàng "phục vụ".</p>
 						</div>
 					</div>
 					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="users-2" class="icon"></i></div>
+						<div class="flex justify-center mb-4"><i data-lucide="bar-chart-3" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Tích Hợp Công Nghệ & Kinh Doanh</h3>
-							<p class="text-slate-600">Trở thành cầu nối quan trọng, "dịch thuật" giữa sếp và dev team để đảm bảo các
-								bên hiểu nhau và tạo ra sản phẩm đúng ý.</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Phân tích & "Kể chuyện" dữ liệu</h3>
+							<p class="text-slate-600">Sử dụng các công cụ để khai phá, phân tích và trực quan hóa dữ liệu, tìm ra các
+								xu hướng ẩn và dự báo tương lai cho doanh nghiệp.</p>
 						</div>
 					</div>
 					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="clipboard-list" class="icon"></i></div>
+						<div class="flex justify-center mb-4"><i data-lucide="lightbulb" class="icon"></i></div>
 						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Quản Lý Dự Án CNTT</h3>
-							<p class="text-slate-600">Nắm vững các kỹ năng để lập kế hoạch, dẫn dắt và triển khai các dự án công nghệ
-								thành công. Đảm bảo app ra đúng hẹn và không "bug" tùm lum!</p>
+							<h3 class="text-xl font-bold text-slate-800 mb-2">Xây dựng hệ thống thông minh</h3>
+							<p class="text-slate-600">Thiết kế các hệ thống hỗ trợ ra quyết định (DSS), kinh doanh thông minh (BI), hệ
+								thống gợi ý... giúp doanh nghiệp hoạt động hiệu quả và thông minh hơn.</p>
+						</div>
+					</div>
+					<div class="card p-6 lg:col-span-3">
+						<div class="flex flex-col md:flex-row items-center text-left">
+							<div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6"><i data-lucide="sitemap"
+									class="w-16 h-16 text-cyan-500"></i></div>
+							<div>
+								<h3 class="text-xl font-bold text-slate-800 mb-2">🏗️ Phân tích & Thiết kế hệ thống</h3>
+								<p class="text-slate-600">Nắm vững các phương pháp luận để phân tích yêu cầu, thiết kế kiến trúc và
+									triển khai các dự án HTTT phức tạp, từ A đến Z.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: HƯỚNG NGHIÊN CỨU "CHẤT LỪ" -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
-				<div class="space-y-12">
-					<!-- Feature 1 -->
-					<div class="grid md:grid-cols-2 gap-8 items-center">
-						<div class="card overflow-hidden">
-							<img src="../imgs/information_mindset.png" alt="Nhóm đang thảo luận về quy trình làm việc"
-								class="object-cover w-full h-full rounded-lg">
+				<h2 class="section-title text-3xl text-center mb-10">Hướng nghiên cứu "chất lừ"</h2>
+				<div class="card p-8">
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+						<div class="flex items-start"><i data-lucide="trending-up"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Kinh doanh thông minh (Business
+								Intelligence)</span></div>
+						<div class="flex items-start"><i data-lucide="database-zap"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Phân tích dữ liệu lớn (Big Data
+								Analytics)</span></div>
+						<div class="flex items-start"><i data-lucide="search"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Truy xuất thông tin (Information
+								Retrieval)</span></div>
+						<div class="flex items-start"><i data-lucide="thumbs-up"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Hệ thống gợi ý (Recommendation Systems)</span>
 						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="briefcase" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tư duy Hướng Doanh nghiệp</h4>
-							</div>
-							<p class="text-slate-600">Luôn đặt bài toán và mục tiêu của tổ chức làm trọng tâm để tìm kiếm và ứng dụng
-								giải pháp công nghệ phù hợp, thay vì chỉ tập trung vào công nghệ thuần túy.</p>
+						<div class="flex items-start"><i data-lucide="wifi"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Internet vạn vật (Internet of Things)</span>
 						</div>
-					</div>
-					<!-- Feature 2 -->
-					<div class="grid md:grid-cols-2 gap-8 items-center">
-						<div class="card p-6 md:order-last">
-							<div class="flex items-center mb-4">
-								<i data-lucide="network" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tầm nhìn Tổng thể</h4>
-							</div>
-							<p class="text-slate-600">Nhìn nhận vấn đề ở cấp độ hệ thống, xem xét sự tương tác và ảnh hưởng lẫn nhau
-								giữa ba yếu tố cốt lõi: Con người, Quy trình và Công nghệ.</p>
-						</div>
-						<div class="card overflow-hidden">
-							<img src="../imgs/information_combine.png" alt="Sơ đồ quy trình trên bảng trắng"
-								class="object-cover w-full h-full rounded-lg">
-						</div>
-					</div>
-					<!-- Feature 3 -->
-					<div class="grid md:grid-cols-2 gap-8 items-center">
-						<div class="card overflow-hidden">
-							<img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop"
-								alt="Người đang phiên dịch giữa hai nhóm" class="object-cover w-full h-full rounded-lg">
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="arrow-right-left" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Cầu nối Giao tiếp</h4>
-							</div>
-							<p class="text-slate-600">Có khả năng "dịch" ngôn ngữ kinh doanh sang ngôn ngữ kỹ thuật và ngược lại, đảm
-								bảo các bên liên quan (từ CEO đến lập trình viên) đều hiểu và hướng về cùng một mục tiêu.</p>
-						</div>
-					</div>
-					<!-- Feature 4 -->
-					<div class="grid md:grid-cols-2 gap-8 items-center">
-						<div class="card p-6 md:order-last">
-							<div class="flex items-center mb-4">
-								<i data-lucide="settings-2" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tối ưu hóa Vận hành</h4>
-							</div>
-							<p class="text-slate-600">Mục tiêu cuối cùng là ứng dụng công nghệ để tối ưu hóa quy trình, tăng hiệu
-								suất, giảm chi phí và tạo lợi thế cạnh tranh bền vững cho doanh nghiệp.</p>
-						</div>
-						<div class="card overflow-hidden">
-							<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
-								alt="Người đang trình bày kế hoạch" class="object-cover w-full h-full rounded-lg">
-						</div>
+						<div class="flex items-start"><i data-lucide="brain-circuit"
+								class="text-cyan-600 mr-3 mt-1 flex-shrink-0"></i><span>Đồ thị tri thức (Knowledge Graph)</span></div>
 					</div>
 				</div>
 			</section>
 
+			<!-- NEW SECTION: SO SÁNH NGÀNH -->
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">HTTT "So Kè" Với Các Ngành Khác</h2>
 				<div class="grid md:grid-cols-2 gap-8">
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="code-2" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
-						</div>
-						<p class="text-slate-600">HTTT tập trung vào việc "What & Why": Cần xây dựng hệ thống gì để giải quyết vấn
-							đề cho doanh nghiệp? KTPM tập trung vào "How": Xây dựng hệ thống đó như thế nào cho tốt nhất?</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="cpu" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
 						</div>
-						<p class="text-slate-600">KHMT tạo ra các công nghệ và thuật toán mới. HTTT là người ứng dụng các công nghệ
-							đó để xây dựng các giải pháp thực tiễn, giải quyết các bài toán vận hành và quản lý.</p>
+						<p class="text-slate-600"><b>KHMT</b> là người phát minh ra động cơ, nghiên cứu vật liệu. <b>HTTT</b> là kỹ
+							sư thiết kế chiếc xe hoàn chỉnh, đảm bảo động cơ đó phục vụ tốt nhất cho việc di chuyển trong thành phố
+							(doanh nghiệp). KHMT tập trung vào "Tại sao?", HTTT tập trung vào "Để làm gì?".</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-zap" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="code" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
+						</div>
+						<p class="text-slate-600"><b>KTPM</b> là tổng thầu xây dựng, tập trung vào quy trình để xây một toà nhà
+							(phần mềm) vững chắc, đúng tiến độ. <b>HTTT</b> là kiến trúc sư quy hoạch cả khu đô thị, quyết định đặt
+							toà nhà đó ở đâu, kết nối với các công trình khác ra sao để phục vụ cư dân (doanh nghiệp) tốt nhất.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4"><i data-lucide="flask-conical" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
 						</div>
-						<p class="text-slate-600">HTTT đảm bảo dữ liệu được thu thập, lưu trữ và quản lý một cách chính xác (dữ liệu
-							vận hành). KHDL sử dụng dữ liệu đó để phân tích, tìm kiếm insight và dự báo (dữ liệu phân tích).</p>
+						<p class="text-slate-600"><b>KHDL</b> là chuyên gia khai thác mỏ, dùng công cụ tối tân để tìm ra vàng
+							(insight) từ quặng thô (dữ liệu). <b>HTTT</b> là người quản lý cả khu mỏ, từ việc xây dựng đường đi, nhà
+							kho, đến việc đảm bảo vàng được đưa đến đúng nơi cần thiết.</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="network" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Mạng máy tính</h4>
+						<div class="flex items-center mb-4"><i data-lucide="network" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Mạng máy tính & Viễn thông</h4>
 						</div>
-						<p class="text-slate-600">MMT xây dựng hạ tầng kết nối. HTTT xây dựng các ứng dụng và hệ thống chạy trên hạ
-							tầng đó để phục vụ cho các quy trình nghiệp vụ của một tổ chức.</p>
+						<p class="text-slate-600"><b>MMT</b> xây dựng và bảo trì hệ thống đường cao tốc, cầu cống (hạ tầng mạng).
+							<b>HTTT</b> thiết kế các luồng giao thông, đặt các trung tâm thương mại, khu dân cư (ứng dụng nghiệp vụ)
+							trên nền tảng đường cao tốc đó để đảm bảo kinh tế-xã hội (doanh nghiệp) phát triển.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: VÍ DỤ THỰC TẾ -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
+				<h2 class="section-title text-3xl text-center mb-12">Ví dụ thực tế "khủng"</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="user-round-search" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Phân tích Nghiệp vụ (BA)</h4>
-						<p class="text-slate-600 text-sm">Là người "phiên dịch" giữa team kinh doanh và team code, đảm bảo app làm
-							ra đúng ý tưởng và giải quyết được bài toán kinh doanh.</p>
+						<i data-lucide="shopping-cart" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Sàn thương mại điện tử</h4>
+						<p class="text-slate-600 text-sm">Hệ thống đằng sau các "ông lớn" như Amazon, Tiki, quản lý hàng triệu sản
+							phẩm, đơn hàng và gợi ý sản phẩm "chuẩn không cần chỉnh".</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="binary" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Phân tích Hệ thống</h4>
-						<p class="text-slate-600 text-sm">Vẽ ra "bản đồ" chi tiết cho toàn bộ hệ thống, từ việc người dùng đăng ký
-							tài khoản đến lúc thanh toán đơn hàng trên Shopee.</p>
+						<i data-lucide="car" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Ứng dụng đặt xe công nghệ</h4>
+						<p class="text-slate-600 text-sm">"Bộ não" của Grab, Gojek, giúp kết nối hàng triệu tài xế và khách hàng,
+							tính toán giá cước và tối ưu quãng đường đi.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="landmark" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Hệ thống ngân hàng số</h4>
+						<p class="text-slate-600 text-sm">Các ứng dụng mobile banking bạn dùng hàng ngày, quản lý hàng tỷ giao dịch,
+							đảm bảo an toàn và tiện lợi.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="users" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Mạng xã hội</h4>
+						<p class="text-slate-600 text-sm">Nền tảng của Facebook, Instagram, quản lý thông tin cá nhân, bài đăng, mối
+							quan hệ và hiển thị Bảng tin (News Feed) cho bạn.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="clapperboard" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Dịch vụ Streaming</h4>
+						<p class="text-slate-600 text-sm">Hệ thống của Netflix, Spotify, quản lý kho nội dung khổng lồ và đề xuất
+							phim/nhạc "bắt trend" đúng gu của bạn.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="truck" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản lý chuỗi cung ứng</h4>
+						<p class="text-slate-600 text-sm">Các hệ thống phức tạp giúp các tập đoàn lớn theo dõi sản phẩm từ nhà máy
+							đến tay người tiêu dùng trên toàn cầu.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: CƠ HỘI NGHỀ NGHIỆP "XỊN SÒ" -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Sự nghiệp "cất cánh" với các vai trò</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="user-check" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên phân tích nghiệp vụ (BA)</h4>
+						<p class="text-slate-600 text-sm">"Cầu nối" giữa khách hàng và team dev, đảm bảo sản phẩm làm ra đúng ý
+							người dùng.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="database-backup" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản trị viên Cơ sở dữ liệu (DBA)</h4>
-						<p class="text-slate-600 text-sm">Là người 'gác cổng' cho kho dữ liệu, đảm bảo mọi thông tin luôn an toàn,
-							chính xác và truy cập nhanh chóng.</p>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản trị viên CSDL (DBA)</h4>
+						<p class="text-slate-600 text-sm">"Người gác đền" cho kho dữ liệu của công ty, đảm bảo an toàn và hiệu suất.
+						</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="lightbulb" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Tư vấn ERP</h4>
-						<p class="text-slate-600 text-sm">Giúp các công ty lớn như Vinamilk, FPT vận hành trơn tru bằng cách triển
-							khai các hệ thống quản lý 'tất-cả-trong-một'.</p>
+						<i data-lucide="pie-chart" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên phân tích dữ liệu</h4>
+						<p class="text-slate-600 text-sm">"Thám tử" dữ liệu, tìm ra những sự thật ngầm hiểu để định hướng kinh
+							doanh.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="clipboard-list" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản lý Sản phẩm (Product Manager)</h4>
-						<p class="text-slate-600 text-sm">Là 'thuyền trưởng' của một sản phẩm, quyết định sản phẩm sẽ có những tính
-							năng gì và phát triển nó như thế nào để thành công.</p>
+						<i data-lucide="server-cog" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư dữ liệu (Data Engineer)</h4>
+						<p class="text-slate-600 text-sm">"Kiến trúc sư" xây dựng các đường ống dữ liệu khổng lồ, đảm bảo dữ liệu
+							"chảy" mượt mà.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="shield-check" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia Kiểm toán Hệ thống</h4>
-						<p class="text-slate-600 text-sm">Đóng vai 'thanh tra', soi chiếu toàn bộ hệ thống để tìm ra các lỗ hổng bảo
-							mật hoặc những quy trình kém hiệu quả.</p>
+						<i data-lucide="flask-conical" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Nhà khoa học dữ liệu (Data Scientist)</h4>
+						<p class="text-slate-600 text-sm">Sử dụng thuật toán và mô hình để dự báo tương lai và tạo ra các sản phẩm
+							thông minh.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="crown" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Giám đốc thông tin (CIO)</h4>
+						<p class="text-slate-600 text-sm">Vị trí lãnh đạo, định hướng chiến lược công nghệ thông tin cho toàn bộ
+							doanh nghiệp.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-					<div class="card p-6 flex items-start">
-						<i data-lucide="shopping-cart" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Thương mại điện tử (Shopee, Tiki)</h4>
-							<p class="text-slate-600 text-sm">Hệ thống quản lý sản phẩm, đơn hàng, thanh toán và vận chuyển.</p>
-						</div>
+				<h2 class="section-title text-3xl text-center mb-10">Vì Sao Nên Chọn HTTT tại <span
+						class="text-cyan-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div class="card p-8">
+						<h3 class="text-xl font-bold text-slate-800 mb-4">Chương trình đào tạo "chất"</h3>
+						<p class="text-slate-600 mb-4">Chương trình được thiết kế bài bản, cân bằng giữa lý thuyết nền tảng và kỹ
+							năng thực chiến, giúp bạn tự tin "chiến" mọi dự án ngay khi ra trường.</p>
+						<img src="https://placehold.co/800x600/ECFEFF/164E63?text=Modern+Classroom+4:3"
+							alt="Một phòng học hiện đại với sinh viên đang tương tác trên các thiết bị công nghệ cao, thể hiện môi trường học tập tiên tiến. Tỉ lệ khung hình 4:3."
+							class="object-cover w-full h-48 rounded-lg">
 					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="landmark" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Ngân hàng số (Techcombank, Momo)</h4>
-							<p class="text-slate-600 text-sm">Hệ thống xử lý giao dịch, quản lý tài khoản và bảo mật thông tin cho các
-								ứng dụng ngân hàng, ví điện tử.</p>
-						</div>
-					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="hospital" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Quản lý Bệnh viện</h4>
-							<p class="text-slate-600 text-sm">Quản lý hồ sơ bệnh án điện tử, lịch hẹn, thông tin thuốc và thanh toán
-								viện phí.</p>
-						</div>
-					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="plane" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Hệ thống Đặt vé máy bay & Khách sạn</h4>
-							<p class="text-slate-600 text-sm">Quản lý thông tin chuyến bay, tình trạng phòng, và quy trình đặt vé,
-								thanh toán phức tạp.</p>
-						</div>
-					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="truck" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Quản lý Chuỗi cung ứng</h4>
-							<p class="text-slate-600 text-sm">Theo dõi hàng hóa từ nhà sản xuất, qua kho bãi, đến tay người tiêu dùng
-								một cách hiệu quả.</p>
-						</div>
-					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="handshake" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Quản lý Quan hệ Khách hàng (CRM)</h4>
-							<p class="text-slate-600 text-sm">Lưu trữ và phân tích dữ liệu tương tác của khách hàng để cải thiện dịch
-								vụ và tăng doanh số.</p>
-						</div>
+					<div class="card p-8">
+						<h3 class="text-xl font-bold text-slate-800 mb-4">Cơ hội nghề nghiệp rộng mở</h3>
+						<p class="text-slate-600 mb-4">Với tấm bằng từ KHTN, bạn sẽ được các nhà tuyển dụng hàng đầu "săn đón". Mạng
+							lưới cựu sinh viên và đối tác doanh nghiệp "khủng" sẽ là bệ phóng vững chắc cho sự nghiệp của bạn.</p>
+						<img src="https://placehold.co/800x600/ECFEFF/164E63?text=Career+Success+4:3"
+							alt="Một sinh viên tốt nghiệp tự tin bắt tay với nhà tuyển dụng, biểu tượng cho cơ hội nghề nghiệp rộng mở sau khi ra trường. Tỉ lệ khung hình 4:3."
+							class="object-cover w-full h-48 rounded-lg">
 					</div>
 				</div>
 			</section>
