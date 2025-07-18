@@ -21,369 +21,6 @@
 			/* Teal-900 */
 		}
 
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #6EE7B7;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #A7F3D0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #6EE7B7;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px tablet layout */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A7F3D0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A7F3D0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #A7F3D0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #6EE7B7;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
-
 		.section-title {
 			font-weight: 900;
 			color: #0F766E;
@@ -420,15 +57,8 @@
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #22D3EE;
-			/* Cyan-400 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('../imgs/network_backgrounmd.png');
+			background-image: url('https://placehold.co/1600x900/F0FDFA/134E4A?text=Networking+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -450,29 +80,15 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #6EE7B7;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -483,15 +99,12 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #A7F3D0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
 			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.faculty-slogan {
@@ -502,28 +115,6 @@
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
 		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
 	</style>
 </head>
 
@@ -532,137 +123,103 @@
 		<header class="header-bg">
 			<div class="header-content text-center py-16 px-4">
 				<h1 class="major">MẠNG MÁY TÍNH & VIỄN THÔNG</h1>
-				<p class="english">Computer Network</p>
-				<p class="major-slogan">Kết Nối Thế Giới Số</p>
+				<p class="english">Computer Networks & Telecommunications</p>
+				<p class="major-slogan">Xây Dựng "Xa Lộ" Cho Thế Giới Số</p>
 				<p class="faculty">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="faculty-slogan">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
 		</header>
 
 		<main class="p-4 md:p-8">
+			<!-- SECTION: BẠN SẼ CHINH PHỤC ĐIỀU GÌ? -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="network" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Kiến Trúc & Giao Thức Mạng</h3>
-							<p class="text-slate-600">Hiểu rõ cách Internet hoạt động, từ các giao thức nền tảng (TCP/IP) đến kiến
-								trúc của các hệ thống mạng phức tạp. Từ tin nhắn Zalo đến video call đều chạy trên những giao thức này!
-							</p>
+				<h2 class="section-title text-3xl text-center mb-10">Bốn "Môn Phái" Cốt Lõi Bạn Sẽ Chinh Phục</h2>
+				<div class="space-y-8">
+					<!-- Quản trị hạ tầng -->
+					<div class="card p-6 grid md:grid-cols-3 gap-6 items-center">
+						<div class="md:col-span-2">
+							<h3 class="text-2xl font-bold text-slate-800 mb-3 flex items-center"><i data-lucide="server-cog"
+									class="icon mr-3"></i>Quản Trị Hạ Tầng IT</h3>
+							<p class="text-slate-600">Trở thành người "giữ mạch" cho cả hệ thống. Bạn sẽ học cách thiết kế, triển khai
+								và quản lý các hệ thống mạng (LAN, WAN), máy chủ (Linux, Windows Server), và công nghệ ảo hóa (VMware,
+								Hyper-V).</p>
+						</div>
+						<img src="https://placehold.co/600x400/F0FDFA/134E4A?text=IT+Infrastructure+3:2"
+							alt="Hình ảnh một phòng máy chủ với các dãy rack và đèn LED nhấp nháy, minh họa cho hạ tầng IT. Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full">
+					</div>
+					<!-- DevOps -->
+					<div class="card p-6 grid md:grid-cols-3 gap-6 items-center">
+						<img src="https://placehold.co/600x400/F0FDFA/134E4A?text=DevOps+Workflow+3:2"
+							alt="Sơ đồ quy trình DevOps với các giai đoạn code, build, test, deploy được tự động hóa. Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full md:order-last">
+						<div class="md:col-span-2">
+							<h3 class="text-2xl font-bold text-slate-800 mb-3 flex items-center"><i data-lucide="git-fork"
+									class="icon mr-3"></i>DevOps: Code & Vận Hành "Mượt Mà"</h3>
+							<p class="text-slate-600">Làm chủ văn hóa kết hợp giữa phát triển (Dev) và vận hành (Ops). Bạn sẽ học quy
+								trình CI/CD, tự động hóa mọi thứ với các công cụ "xịn" như Ansible, Terraform, Kubernetes và giám sát hệ
+								thống với Prometheus, Grafana.</p>
 						</div>
 					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="wifi" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Công Nghệ Không Dây</h3>
-							<p class="text-slate-600">Làm chủ các công nghệ kết nối không dây hiện đại như Wi-Fi 6, 5G, IoT. Tạo nền
-								tảng cho thế giới kết nối vạn vật - từ điện thoại đến smart home!</p>
+					<!-- Điện toán đám mây -->
+					<div class="card p-6 grid md:grid-cols-3 gap-6 items-center">
+						<div class="md:col-span-2">
+							<h3 class="text-2xl font-bold text-slate-800 mb-3 flex items-center"><i data-lucide="cloud"
+									class="icon mr-3"></i>Điện Toán Đám Mây</h3>
+							<p class="text-slate-600">"Bay" cùng các nền tảng đám mây "khủng" như AWS, Azure, GCP. Bạn sẽ học cách
+								triển khai hạ tầng, quản lý dịch vụ và đảm bảo bảo mật trên mây - nơi mà các "ông lớn" như Netflix,
+								Spotify đang "sinh sống".</p>
 						</div>
+						<img src="https://placehold.co/600x400/F0FDFA/134E4A?text=Cloud+Computing+3:2"
+							alt="Biểu tượng đám mây kết nối với các thiết bị khác nhau, minh họa cho điện toán đám mây. Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full">
 					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="shield-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">An Ninh Mạng</h3>
-							<p class="text-slate-600">Học cách thiết kế, triển khai và bảo vệ các hệ thống mạng khỏi các cuộc tấn công
-								và mối đe dọa từ không gian mạng. Trở thành "siêu anh hùng" bảo vệ dữ liệu!</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="cloud" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Điện Toán Đám Mây</h3>
-							<p class="text-slate-600">Nắm vững cách vận hành và quản lý các dịch vụ trên nền tảng đám mây, hạ tầng
-								quan trọng nhất của mọi ứng dụng hiện đại. Netflix, Spotify đều "sống" trên đám mây!</p>
+					<!-- An toàn thông tin -->
+					<div class="card p-6 grid md:grid-cols-3 gap-6 items-center">
+						<img src="https://placehold.co/600x400/F0FDFA/134E4A?text=Cyber+Security+3:2"
+							alt="Hình ảnh một chiếc khiên kỹ thuật số đang bảo vệ dữ liệu, minh họa cho an toàn thông tin. Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full md:order-last">
+						<div class="md:col-span-2">
+							<h3 class="text-2xl font-bold text-slate-800 mb-3 flex items-center"><i data-lucide="shield-check"
+									class="icon mr-3"></i>An Toàn Thông Tin</h3>
+							<p class="text-slate-600">Trở thành "lá chắn thép" cho mọi hệ thống. Bạn sẽ nắm vững kỹ thuật mã hóa, phát
+								hiện và vá lỗ hổng phần mềm (SQL injection, XSS), và phòng chống các cuộc tấn công mạng tinh vi.</p>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="server" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Nền tảng Hạ tầng</h4>
-							</div>
-							<p class="text-slate-600">Tập trung vào việc xây dựng và duy trì "xương sống" của thế giới số, đảm bảo mọi
-								dữ liệu được truyền đi nhanh chóng, ổn định và an toàn.</p>
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="gauge-circle" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tối ưu hóa Hiệu năng</h4>
-							</div>
-							<p class="text-slate-600">Luôn tìm cách cải thiện tốc độ, giảm độ trễ và tăng cường độ tin cậy của các hệ
-								thống truyền thông.</p>
-						</div>
-					</div>
-					<div class="card overflow-hidden row-span-2">
-						<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
-							alt="" class="object-cover w-full h-full rounded-lg">
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="globe" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">Quy mô Toàn cầu</h4>
-						</div>
-						<p class="text-slate-600">Làm việc với các hệ thống có quy mô lớn, kết nối hàng tỷ người dùng và thiết bị
-							trên toàn thế giới.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="shield" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">Tuyến đầu An ninh</h4>
-						</div>
-						<p class="text-slate-600">Là lớp phòng thủ đầu tiên, trực tiếp đối mặt và ngăn chặn các mối đe dọa từ không
-							gian mạng.</p>
-					</div>
-				</div>
-			</section>
-
+			<!-- SECTION: MMT "SO KÈ" VỚI CÁC NGÀNH KHÁC -->
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">MMT "So Kè" Với Các Ngành Khác</h2>
 				<div class="grid md:grid-cols-2 gap-8">
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="code-2" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="code-2" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
 						</div>
-						<p class="text-slate-600">KTPM xây dựng "ứng dụng" (xe cộ). MMT xây dựng "hạ tầng" (đường cao tốc, hệ thống
-							đèn tín hiệu) để các ứng dụng đó có thể giao tiếp với nhau một cách hiệu quả và an toàn.</p>
+						<p class="text-slate-600"><b>KTPM</b> xây dựng "ứng dụng" (xe cộ). <b>MMT</b> xây dựng "hạ tầng" (đường cao
+							tốc, hệ thống đèn tín hiệu) để các ứng dụng đó có thể giao tiếp với nhau một cách hiệu quả và an toàn.</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-cog" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin</h4>
-						</div>
-						<p class="text-slate-600">HTTT tập trung vào việc quản lý và tối ưu hóa luồng thông tin trong một doanh
-							nghiệp. MMT tập trung vào hạ tầng kỹ thuật để kết nối các hệ thống đó lại với nhau và với thế giới bên
-							ngoài.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="cpu" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
 						</div>
-						<p class="text-slate-600">KHMT nghiên cứu các thuật toán và lý thuyết tính toán nền tảng. MMT ứng dụng các
-							lý thuyết đó để giải quyết các bài toán cụ thể về truyền thông, định tuyến và quản lý mạng lưới.</p>
+						<p class="text-slate-600"><b>KHMT</b> nghiên cứu các thuật toán và lý thuyết tính toán nền tảng. <b>MMT</b>
+							ứng dụng các lý thuyết đó để giải quyết các bài toán cụ thể về truyền thông, định tuyến và quản lý mạng
+							lưới.</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="lock" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. An ninh mạng</h4>
+						<div class="flex items-center mb-4"><i data-lucide="database" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin</h4>
 						</div>
-						<p class="text-slate-600">An ninh mạng là một lĩnh vực rất rộng. An ninh mạng trong MMT là một chuyên ngành
-							sâu, tập trung vào việc bảo vệ chính hạ tầng mạng (tường lửa, phát hiện xâm nhập) khỏi các cuộc tấn công.
-						</p>
+						<p class="text-slate-600"><b>HTTT</b> tập trung vào việc quản lý và tối ưu hóa luồng thông tin trong một
+							doanh nghiệp. <b>MMT</b> tập trung vào hạ tầng kỹ thuật để kết nối các hệ thống đó lại với nhau và với thế
+							giới bên ngoài.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: GIẢI MÃ CÁC VỊ TRÍ NGHỀ NGHIỆP -->
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -686,9 +243,9 @@
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="server-cog" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Quản trị viên Hệ thống</h4>
-						<p class="text-slate-600 text-sm">Đảm bảo các máy chủ, hệ thống mạng và các dịch vụ liên quan hoạt động ổn
-							định, hiệu quả và an toàn.</p>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư DevOps</h4>
+						<p class="text-slate-600 text-sm">Tự động hóa quy trình phát triển, triển khai và vận hành hệ thống phần mềm
+							trên các nền tảng đám mây.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="smartphone-charging" class="icon mb-4"></i>
@@ -698,13 +255,14 @@
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="lightbulb" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Tư vấn Giải pháp Mạng</h4>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên viên Tư vấn Giải pháp</h4>
 						<p class="text-slate-600 text-sm">Tư vấn cho các doanh nghiệp về các giải pháp mạng và bảo mật phù hợp với
 							nhu cầu kinh doanh.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: ỨNG DỤNG THỰC TẾ -->
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -755,6 +313,32 @@
 							<p class="text-slate-600 text-sm">Kết nối hàng tỷ thiết bị thông minh, từ nhà thông minh, xe tự lái đến
 								các cảm biến công nghiệp.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Vì Sao Nên Chọn MMT tại <span
+						class="text-teal-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="trending-up"
+								class="icon mr-3 h-8 w-8"></i>Nhu cầu nhân lực "cực hot"</h3>
+						<p class="text-slate-600">Chuyển đổi số đang bùng nổ, các vị trí như Cloud Engineer, DevOps Engineer,
+							Security Engineer luôn được các công ty săn đón.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="refresh-cw"
+								class="icon mr-3 h-8 w-8"></i>Chương trình đào tạo "chuẩn trend"</h3>
+						<p class="text-slate-600">Chương trình học luôn được cập nhật theo các xu hướng công nghệ mới nhất, giúp bạn
+							"bắt nhịp" ngay với yêu cầu của công việc.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="handshake"
+								class="icon mr-3 h-8 w-8"></i>Mạng lưới kết nối "khủng"</h3>
+						<p class="text-slate-600">Khoa có mối quan hệ hợp tác chặt chẽ với nhiều doanh nghiệp lớn, mang lại cơ hội
+							thực tập và việc làm hấp dẫn cho sinh viên.</p>
 					</div>
 				</div>
 			</section>

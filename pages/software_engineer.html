@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html /* Export mode - fixed layout for PNG generation (854px width - tablet layout) */ .export-mode
-	#infographic-content { width: 854px !important; max-width: none !important; margin: 0 !important; padding: 20px
-	!important; }i">
+<html lang="vi">
 
 <head>
 	<meta charset="UTF-8">
@@ -22,369 +20,6 @@
 			color: #1E3A8A;
 			/* Blue-900 */
 		}
-
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #93C5FD;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #BFDBFE;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #93C5FD;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px width */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #BFDBFE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #BFDBFE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #BFDBFE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #93C5FD;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
 
 		.section-title {
 			font-weight: 900;
@@ -422,15 +57,8 @@
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #FBBF24;
-			/* Amber-400 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop');
+			background-image: url('https://placehold.co/1600x900/EFF6FF/1E3A8A?text=Software+Engineering+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -452,29 +80,15 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #93C5FD;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -485,15 +99,12 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #BFDBFE;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
 			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.faculty-slogan {
@@ -503,28 +114,6 @@
 			font-style: italic;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
 		}
 	</style>
 </head>
@@ -544,127 +133,77 @@
 		<main class="p-4 md:p-8">
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="clipboard-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Quy Trình Chuyên Nghiệp</h3>
-							<p class="text-slate-600">Nắm vững các mô hình phát triển phần mềm hiện đại (Agile, Scrum, DevOps) để xây
-								dựng sản phẩm một cách hiệu quả. Từ idea đến app store chỉ trong vài sprint!</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="blocks" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Kiến Trúc Hệ Thống Lớn</h3>
-							<p class="text-slate-600">Học cách thiết kế và xây dựng các hệ thống phần mềm phức tạp, có khả năng mở
-								rộng và chịu tải cao. Từ app chat nhóm bạn đến hệ thống phục vụ triệu user!</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="shield-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Đảm Bảo Chất Lượng</h3>
-							<p class="text-slate-600">Trang bị kỹ năng kiểm thử, gỡ lỗi và bảo trì để đảm bảo phần mềm hoạt động ổn
-								định và đáng tin cậy. Không ai muốn app crash giữa lúc đang chơi game!</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="users" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Làm Việc Nhóm & Hợp Tác</h3>
-							<p class="text-slate-600">Phát triển kỹ năng làm việc nhóm, giao tiếp và sử dụng các công cụ hợp tác hiện
-								đại. Vì một mình code được app, nhưng team mới tạo ra ecosystem!</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
 				<div class="grid md:grid-cols-2 gap-8 items-center">
 					<div class="card overflow-hidden">
-						<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt=""
-							class="object-cover w-full h-full rounded-lg">
+						<img src="https://placehold.co/800x600/EFF6FF/1E3A8A?text=Dev+Cycle+4:3"
+							alt="Sơ đồ vòng đời phát triển phần mềm, minh họa các giai đoạn từ lập kế hoạch đến triển khai và bảo trì. Tỉ lệ khung hình 4:3."
+							class="rounded-lg object-cover w-full h-full">
 					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="hammer" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tập trung vào "Làm thế nào?"</h4>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="clipboard-check" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Quy Trình Chuyên Nghiệp</h3>
+								<p class="text-slate-600 text-sm">Nắm vững các mô hình phát triển phần mềm hiện đại (Agile, Scrum,
+									DevOps) để xây dựng sản phẩm một cách hiệu quả.</p>
 							</div>
-							<p class="text-slate-600">Tập trung vào quy trình, công cụ và kỹ thuật để tạo ra sản phẩm phần mềm hoàn
-								chỉnh, chất lượng, đúng tiến độ và trong ngân sách.</p>
 						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="users" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Làm việc nhóm & Quy trình</h4>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="blocks" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Kiến Trúc Hệ Thống Lớn</h3>
+								<p class="text-slate-600 text-sm">Học cách thiết kế và xây dựng các hệ thống phần mềm phức tạp, có khả
+									năng mở rộng và chịu tải cao.</p>
 							</div>
-							<p class="text-slate-600">Nhấn mạnh kỹ năng làm việc nhóm, giao tiếp và tuân thủ các quy trình chuẩn
-								(Agile, Scrum) để quản lý các dự án lớn.</p>
 						</div>
-					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="arrow-right-left" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Từ Ý tưởng đến Sản phẩm</h4>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="shield-check" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Đảm Bảo Chất Lượng</h3>
+								<p class="text-slate-600 text-sm">Trang bị kỹ năng kiểm thử, gỡ lỗi và bảo trì để đảm bảo phần mềm hoạt
+									động ổn định và đáng tin cậy.</p>
 							</div>
-							<p class="text-slate-600">Là cầu nối trực tiếp biến ý tưởng, yêu cầu của khách hàng thành những sản phẩm
-								phần mềm hữu ích, đáp ứng đúng nhu cầu người dùng.</p>
 						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="recycle" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tư duy về Vòng đời</h4>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="users" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Làm Việc Nhóm & Hợp Tác</h3>
+								<p class="text-slate-600 text-sm">Phát triển kỹ năng làm việc nhóm, giao tiếp và sử dụng các công cụ hợp
+									tác hiện đại để tạo ra các hệ sinh thái phần mềm.</p>
 							</div>
-							<p class="text-slate-600">Quan tâm đến toàn bộ vòng đời của phần mềm, từ lúc lên kế hoạch, phát triển,
-								triển khai cho đến khi bảo trì và nâng cấp.</p>
 						</div>
-					</div>
-					<div class="card overflow-hidden">
-						<img src="../imgs/dev_cycle.png" alt="Vòng đời phát triển phần mềm"
-							class="object-cover w-full h-full rounded-lg">
 					</div>
 				</div>
 			</section>
 
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">KTPM "So Kè" Với Các Ngành Khác</h2>
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
+				<div class="space-y-8">
+					<div class="card p-6 grid md:grid-cols-2 gap-6 items-center">
+						<div>
+							<div class="flex items-center mb-4"><i data-lucide="cpu" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
+							</div>
+							<p class="text-slate-600"><b>KHMT</b> tập trung vào lý thuyết và thuật toán (tạo ra "viên gạch").
+								<b>KTPM</b> tập trung vào quy trình và kỹ thuật để sử dụng những "viên gạch" đó xây nên những "tòa nhà"
+								phần mềm vững chắc và hiệu quả.</p>
 						</div>
-						<p class="text-slate-600">KHMT tập trung vào lý thuyết và thuật toán (tạo ra "viên gạch"). KTPM tập trung
-							vào quy trình và kỹ thuật để sử dụng những "viên gạch" đó xây nên những "tòa nhà" phần mềm vững chắc và
-							hiệu quả.</p>
+						<img src="https://placehold.co/600x400/EFF6FF/1E3A8A?text=Architect+vs+Brickmaker+3:2"
+							alt="Hình ảnh so sánh ẩn dụ giữa kiến trúc sư (KTPM) và người làm gạch (KHMT). Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full">
 					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-cog" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin</h4>
+					<div class="card p-6 grid md:grid-cols-2 gap-6 items-center">
+						<img src="https://placehold.co/600x400/EFF6FF/1E3A8A?text=Planner+vs+Builder+3:2"
+							alt="Hình ảnh so sánh ẩn dụ giữa người quy hoạch (HTTT) và người xây dựng (KTPM). Tỉ lệ khung hình 3:2."
+							class="rounded-lg object-cover w-full h-full md:order-last">
+						<div>
+							<div class="flex items-center mb-4"><i data-lucide="database-cog" class="icon mr-4"></i>
+								<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin</h4>
+							</div>
+							<p class="text-slate-600"><b>HTTT</b> là cầu nối giữa kinh doanh và công nghệ, tập trung vào việc "cần xây
+								cái gì?". <b>KTPM</b> tập trung vào việc "xây nó như thế nào?" một cách chuyên nghiệp và tối ưu nhất.
+							</p>
 						</div>
-						<p class="text-slate-600">HTTT là cầu nối giữa kinh doanh và công nghệ, tập trung vào việc "cần xây cái
-							gì?". KTPM tập trung vào việc "xây nó như thế nào?" một cách chuyên nghiệp và tối ưu nhất.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="network" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Mạng máy tính</h4>
-						</div>
-						<p class="text-slate-600">MMT xây dựng và quản lý "đường cao tốc" cho dữ liệu. KTPM xây dựng những "chiếc
-							xe" (ứng dụng) chạy trên đường cao tốc đó, đảm bảo chúng đến đích an toàn và nhanh chóng.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="brain-circuit" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo</h4>
-						</div>
-						<p class="text-slate-600">AI tập trung vào việc phát triển các thuật toán thông minh. KTPM đảm bảo rằng các
-							thuật toán đó được tích hợp vào một sản phẩm phần mềm hoàn chỉnh, chạy ổn định và dễ sử dụng.</p>
 					</div>
 				</div>
 			</section>
@@ -759,6 +298,32 @@
 							<p class="text-slate-600 text-sm">Xây dựng engine, logic và các hệ thống phức tạp cho các trò chơi điện
 								tử.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Vì sao nên chọn KTPM tại <span
+						class="text-blue-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="hammer"
+								class="icon mr-3 h-8 w-8"></i>Tập trung vào quy trình thực tiễn</h3>
+						<p class="text-slate-600">Chương trình học nhấn mạnh vào các quy trình phát triển phần mềm hiện đại như
+							Agile, Scrum, DevOps, giúp bạn sẵn sàng tham gia vào các dự án thực tế ngay khi ra trường.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="users"
+								class="icon mr-3 h-8 w-8"></i>Phát triển kỹ năng toàn diện</h3>
+						<p class="text-slate-600">Bạn không chỉ học "code" mà còn được rèn luyện các kỹ năng quan trọng khác như
+							quản lý dự án, làm việc nhóm, giao tiếp và đảm bảo chất lượng sản phẩm.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="arrow-right-left"
+								class="icon mr-3 h-8 w-8"></i>Cầu nối trực tiếp đến ngành công nghiệp</h3>
+						<p class="text-slate-600">Chuyên ngành có mối liên kết chặt chẽ với các doanh nghiệp phần mềm, tạo nhiều cơ
+							hội thực tập và việc làm, giúp bạn biến ý tưởng thành sản phẩm thực thụ.</p>
 					</div>
 				</div>
 			</section>

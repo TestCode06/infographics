@@ -21,369 +21,6 @@
 			/* Rose-950 */
 		}
 
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #FDA4AF;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #FECACA;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #FDA4AF;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px tablet layout */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #FECACA;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #FECACA;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #FECACA;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #FDA4AF;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
-
 		.section-title {
 			font-weight: 900;
 			color: #BE123C;
@@ -420,15 +57,8 @@
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #FBBF24;
-			/* Amber-400 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop');
+			background-image: url('https://placehold.co/1600x900/FFF1F2/500724?text=Data+Science+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -450,29 +80,15 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #FDA4AF;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -483,15 +99,12 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #FECACA;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
 			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.faculty-slogan {
@@ -501,92 +114,6 @@
 			font-style: italic;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #FDA4AF;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #FECACA;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #FDA4AF;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
 		}
 	</style>
 </head>
@@ -597,7 +124,7 @@
 			<div class="header-content text-center py-16 px-4">
 				<h1 class="major">KHOA HỌC DỮ LIỆU</h1>
 				<p class="english">Data Science</p>
-				<p class="major-slogan">Từ Dữ Liệu Đến Tri Thức</p>
+				<p class="major-slogan">Biến Dữ Liệu Thành Tri Thức, Kiến Tạo Tương Lai</p>
 				<p class="faculty">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="faculty-slogan">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
@@ -606,88 +133,45 @@
 		<main class="p-4 md:p-8">
 			<section class="my-16">
 				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
-				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="search-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Khai Phá Dữ Liệu (Mining)</h3>
-							<p class="text-slate-600">Trở thành "thợ săn" kho báu, "đào" sâu vào các mỏ dữ liệu khổng lồ để tìm ra
-								những insight, quy luật ẩn mà mắt thường không thấy được.</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="brain-cog" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Xây Dựng Mô Hình Dự Báo</h3>
-							<p class="text-slate-600">Sử dụng Học máy để xây dựng các mô hình dự đoán tương lai: từ việc dự báo doanh
-								số bán hàng cho Shopee đến dự đoán giá cổ phiếu.</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="area-chart" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">"Kể Chuyện" Bằng Dữ Liệu</h3>
-							<p class="text-slate-600">Biến những con số và dữ liệu khô khan thành các biểu đồ, đồ thị trực quan đẹp
-								mắt. Biến data thành những "story" hấp dẫn mà sếp nào cũng gật gù.</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="database" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Làm Việc Với Big Data</h3>
-							<p class="text-slate-600">Làm chủ các công nghệ và hệ thống được thiết kế để xử lý các tập dữ liệu siêu to
-								khổng lồ - từ hàng tỷ bài post Facebook đến dữ liệu giao dịch toàn cầu.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
 				<div class="grid md:grid-cols-2 gap-8 items-center">
 					<div class="card overflow-hidden">
-						<img src="https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=2070&auto=format&fit=crop"
-							alt="" class="object-cover w-full h-full rounded-lg">
-					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="combine" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Giao thoa Đa ngành</h4>
-							</div>
-							<p class="text-slate-600">Là sự kết hợp độc đáo giữa ba lĩnh vực: Khoa học máy tính, Toán - Thống kê và
-								kiến thức chuyên môn của ngành ứng dụng.</p>
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="lightbulb" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tập trung vào "Câu chuyện"</h4>
-							</div>
-							<p class="text-slate-600">Không chỉ xử lý số liệu, mà còn phải tìm ra ý nghĩa, "câu chuyện" đằng sau chúng
-								để tạo ra giá trị thực tiễn.</p>
-						</div>
-					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="target" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Hướng đến Quyết định</h4>
-							</div>
-							<p class="text-slate-600">Mọi phân tích và mô hình đều nhằm mục đích cuối cùng là cung cấp bằng chứng để
-								đưa ra các quyết định kinh doanh hoặc khoa học tốt hơn.</p>
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="wrench" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tư duy Thực nghiệm</h4>
-							</div>
-							<p class="text-slate-600">Luôn đặt ra giả thuyết, tiến hành thí nghiệm với dữ liệu, đo lường kết quả và
-								lặp lại quy trình để tìm ra lời giải tối ưu nhất.</p>
-						</div>
-					</div>
-					<div class="card overflow-hidden">
-						<img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt=""
+						<img src="https://placehold.co/800x1000/FFF1F2/500724?text=Data+Visualization+4:5"
+							alt="Hình ảnh trực quan hóa dữ liệu với các biểu đồ và đồ thị phức tạp, thể hiện việc biến dữ liệu thành tri thức. Tỉ lệ khung hình 4:5."
 							class="object-cover w-full h-full rounded-lg">
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="search-check" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Khai Phá Dữ Liệu</h3>
+								<p class="text-slate-600 text-sm">"Đào" sâu vào các mỏ dữ liệu khổng lồ để tìm ra những insight và quy
+									luật ẩn.</p>
+							</div>
+						</div>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="brain-cog" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Mô Hình Dự Báo</h3>
+								<p class="text-slate-600 text-sm">Sử dụng Học máy để xây dựng các mô hình dự đoán tương lai, từ doanh số
+									đến giá cổ phiếu.</p>
+							</div>
+						</div>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="area-chart" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">"Kể Chuyện" Dữ Liệu</h3>
+								<p class="text-slate-600 text-sm">Biến những con số khô khan thành các biểu đồ, đồ thị trực quan để kể
+									những câu chuyện hấp dẫn.</p>
+							</div>
+						</div>
+						<div class="card p-6 text-center">
+							<div class="flex justify-center mb-4"><i data-lucide="database" class="icon"></i></div>
+							<div class="card-content">
+								<h3 class="text-xl font-bold text-slate-800 mb-2">Làm Việc Với Big Data</h3>
+								<p class="text-slate-600 text-sm">Làm chủ các công nghệ để xử lý các tập dữ liệu siêu to khổng lồ của
+									các tập đoàn lớn.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -696,38 +180,41 @@
 				<h2 class="section-title text-3xl text-center mb-10">KHDL "So Kè" Với Các Ngành Khác</h2>
 				<div class="grid md:grid-cols-2 gap-8">
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="brain-circuit" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="brain-circuit" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo</h4>
 						</div>
-						<p class="text-slate-600">KHDL sử dụng các mô hình AI/ML như một công cụ để khai phá dữ liệu. AI là một lĩnh
+						<p class="text-slate-600"><b>KHDL</b> sử dụng các mô hình AI/ML như một công cụ để khai phá dữ liệu.
+							<b>AI</b> là một lĩnh
 							vực rộng hơn, bao gồm cả việc tạo ra các tác nhân thông minh có thể hành động (robot, xe tự lái), không
-							chỉ phân tích.</p>
+							chỉ phân tích.
+						</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="cpu" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
 						</div>
-						<p class="text-slate-600">KHMT tạo ra các "công cụ" (thuật toán, cơ sở dữ liệu). KHDL là người ứng dụng các
+						<p class="text-slate-600"><b>KHMT</b> tạo ra các "công cụ" (thuật toán, cơ sở dữ liệu). <b>KHDL</b> là người
+							ứng dụng các
 							công cụ đó vào một bộ dữ liệu cụ thể để trả lời một câu hỏi kinh doanh, khoa học.</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="database" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống Thông tin</h4>
 						</div>
-						<p class="text-slate-600">HTTT tập trung vào việc thiết kế và quản lý các hệ thống thông tin tổng thể trong
-							doanh nghiệp. KHDL chuyên sâu vào việc khai thác giá trị từ dữ liệu thông qua các mô hình toán học và
+						<p class="text-slate-600"><b>HTTT</b> tập trung vào việc thiết kế và quản lý các hệ thống thông tin tổng thể
+							trong
+							doanh nghiệp. <b>KHDL</b> chuyên sâu vào việc khai thác giá trị từ dữ liệu thông qua các mô hình toán học
+							và
 							thống kê.</p>
 					</div>
 					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="code" class="icon mr-4"></i>
+						<div class="flex items-center mb-4"><i data-lucide="code" class="icon mr-4"></i>
 							<h4 class="text-xl font-bold text-slate-800">vs. Kỹ thuật Phần mềm</h4>
 						</div>
-						<p class="text-slate-600">KTPM tập trung vào việc xây dựng các ứng dụng phần mềm chất lượng cao. KHDL sử
-							dụng phần mềm như một công cụ để phân tích dữ liệu và xây dựng các mô hình dự báo.</p>
+						<p class="text-slate-600"><b>KTPM</b> tập trung vào việc xây dựng các ứng dụng phần mềm chất lượng cao.
+							<b>KHDL</b> sử
+							dụng phần mềm như một công cụ để phân tích dữ liệu và xây dựng các mô hình dự báo.
+						</p>
 					</div>
 				</div>
 			</section>
@@ -780,7 +267,7 @@
 					<div class="card p-6 flex items-start">
 						<i data-lucide="shopping-cart" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Thương mại điện tử</h4>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Thương mại điện tử (Amazon, Tiki)</h4>
 							<p class="text-slate-600 text-sm">Phân tích giỏ hàng, gợi ý sản phẩm, cá nhân hóa trải nghiệm mua sắm và
 								tối ưu hóa giá.</p>
 						</div>
@@ -820,10 +307,36 @@
 					<div class="card p-6 flex items-start">
 						<i data-lucide="clapperboard" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Giải trí</h4>
-							<p class="text-slate-600 text-sm">Hệ thống gợi ý phim trên Netflix, gợi ý nhạc trên Spotify, và cá nhân
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Giải trí (Netflix, Spotify)</h4>
+							<p class="text-slate-600 text-sm">Hệ thống gợi ý phim, gợi ý nhạc, và cá nhân
 								hóa nội dung trên các nền tảng số.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Vì sao nên chọn KHDL tại <span
+						class="text-rose-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="combine"
+								class="icon mr-3 h-8 w-8"></i>Nền tảng liên ngành</h3>
+						<p class="text-slate-600">Chương trình kết hợp kiến thức sâu rộng từ Khoa học Máy tính, Toán-Tin và các lĩnh
+							vực ứng dụng, giúp bạn có cái nhìn toàn diện.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="lightbulb"
+								class="icon mr-3 h-8 w-8"></i>Tư duy thực nghiệm</h3>
+						<p class="text-slate-600">Rèn luyện phương pháp luận khoa học: đặt giả thuyết, kiểm chứng bằng dữ liệu và
+							lặp lại để tìm ra giải pháp tối ưu cho các bài toán thực tế.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="target"
+								class="icon mr-3 h-8 w-8"></i>Định hướng ứng dụng</h3>
+						<p class="text-slate-600">Chương trình không chỉ tập trung vào lý thuyết mà còn chú trọng vào việc giải
+							quyết các vấn đề thực tiễn, giúp bạn sẵn sàng cho thị trường lao động.</p>
 					</div>
 				</div>
 			</section>
