@@ -21,369 +21,6 @@
 			/* Purple-900 */
 		}
 
-		/* Export mode - fixed layout for PNG generation (854px width - tablet layout) */
-		.export-mode #infographic-content {
-			width: 854px !important;
-			max-width: none !important;
-			margin: 0 !important;
-			padding: 20px !important;
-		}
-
-		.export-mode .header-bg {
-			padding: 40px 16px !important;
-		}
-
-		.export-mode .header-content h1 {
-			font-size: 2rem !important;
-		}
-
-
-		/* Standardized header text classes */
-		.major {
-			font-size: 2rem;
-			font-weight: 900;
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
-		}
-
-		.english {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #D8B4FE;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1rem;
-		}
-
-		.major-slogan {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: #E9D5FF;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
-		}
-
-		.faculty {
-			font-size: 1rem;
-			font-weight: 500;
-			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.faculty-slogan {
-			font-size: 1.25rem;
-			font-weight: 600;
-			color: #D8B4FE;
-			font-style: italic;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-top: 1rem;
-		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
-
-		.export-mode .grid {
-			gap: 16px !important;
-		}
-
-		/* Export mode specific grid layouts for 854px tablet layout */
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-4 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .grid.md\\:grid-cols-2:not(.lg\\:grid-cols-3):not(.lg\\:grid-cols-4) {
-			grid-template-columns: repeat(2, 1fr) !important;
-		}
-
-		.export-mode .card {
-			min-height: auto !important;
-		}
-
-		/* Responsive styles for normal viewing */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				max-width: 100%;
-				padding: 16px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 40px 16px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2.5rem !important;
-			}
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #E9D5FF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-		}
-
-		@media (max-width: 768px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 12px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 32px 12px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.75rem !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #E9D5FF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 16px !important;
-			}
-		}
-
-		@media (max-width: 480px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 8px;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 24px 8px !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-				line-height: 1.3 !important;
-			}
-
-
-			/* Standardized header text classes */
-			.major {
-				font-size: 2rem;
-				font-weight: 900;
-				color: #FFFFFF;
-				text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-				margin-bottom: 1rem;
-			}
-
-			.english {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1rem;
-			}
-
-			.major-slogan {
-				font-size: 1.5rem;
-				font-weight: 700;
-				color: #E9D5FF;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-bottom: 1.5rem;
-			}
-
-			.faculty {
-				font-size: 1rem;
-				font-weight: 500;
-				color: #E2E8F0;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-				font-weight: 600;
-				color: #D8B4FE;
-				font-style: italic;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-				margin-top: 1rem;
-			}
-
-			@media (min-width: 768px) {
-				.major {
-					font-size: 2.75rem;
-				}
-
-				.english {
-					font-size: 1.5rem;
-				}
-
-				.major-slogan {
-					font-size: 1.875rem;
-				}
-
-				.faculty {
-					font-size: 1.125rem;
-				}
-
-				.faculty-slogan {
-					font-size: 1.25rem;
-				}
-			}
-
-			body:not(.export-mode) .header-content p {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 12px !important;
-			}
-		}
-
-
 		.section-title {
 			font-weight: 900;
 			color: #7C3AED;
@@ -420,15 +57,8 @@
 			height: 48px;
 		}
 
-		.tagline {
-			font-style: italic;
-			color: #C084FC;
-			/* Purple-400 */
-			font-weight: 500;
-		}
-
 		.header-bg {
-			background-image: url('https://images.unsplash.com/photo-1583324113626-4e356445557c?q=80&w=1974&auto=format&fit=crop');
+			background-image: url('https://placehold.co/1600x900/FAF5FF/581C87?text=Knowledge+Engineering+16:9');
 			background-size: cover;
 			background-position: center;
 			position: relative;
@@ -442,7 +72,6 @@
 			right: 0;
 			bottom: 0;
 			background-color: rgba(88, 28, 135, 0.85);
-			/* Purple-900 with opacity */
 		}
 
 		.header-content {
@@ -450,29 +79,15 @@
 			z-index: 10;
 		}
 
-		.header-content h1,
-		.header-content p {
-			text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.5);
-		}
-
-		.header-content h1 {
-			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-		}
-
-		/* Standardized header text classes */
 		.major {
-			font-size: 2rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			color: #FFFFFF;
-			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6);
-			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-			margin-bottom: 1rem;
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.english {
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			color: #D8B4FE;
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -483,15 +98,12 @@
 			font-size: 1.5rem;
 			font-weight: 700;
 			color: #E9D5FF;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-			margin-bottom: 1.5rem;
 		}
 
 		.faculty {
 			font-size: 1rem;
 			font-weight: 500;
 			color: #E2E8F0;
-			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		.faculty-slogan {
@@ -502,28 +114,6 @@
 			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 			margin-top: 1rem;
 		}
-
-		@media (min-width: 768px) {
-			.major {
-				font-size: 2.75rem;
-			}
-
-			.english {
-				font-size: 1.5rem;
-			}
-
-			.major-slogan {
-				font-size: 1.875rem;
-			}
-
-			.faculty {
-				font-size: 1.125rem;
-			}
-
-			.faculty-slogan {
-				font-size: 1.25rem;
-			}
-		}
 	</style>
 </head>
 
@@ -533,163 +123,122 @@
 			<div class="header-content text-center py-16 px-4">
 				<h1 class="major">CÔNG NGHỆ TRI THỨC</h1>
 				<p class="english">Knowledge Engineering</p>
-				<p class="major-slogan">Tri Thức Thông Minh Cho Tương Lai</p>
+				<p class="major-slogan">Biến Dữ Liệu Thành Tri Thức, Trao Cho Máy Năng Lực "Hiểu"</p>
 				<p class="faculty">Khoa Công nghệ thông tin, Trường Đại học Khoa học tự nhiên – ĐHQG-HCM</p>
 				<p class="faculty-slogan">"Tiên phong tri thức, kiến tạo tương lai"</p>
 			</div>
 		</header>
 
 		<main class="p-4 md:p-8">
+			<!-- SECTION: ĐẶC TRƯNG NGÀNH -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Bạn Sẽ Chinh Phục Điều Gì?</h2>
+				<h2 class="section-title text-3xl text-center mb-10">Công nghệ Tri thức là gì?</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="brain" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Biểu Diễn Tri Thức & Suy luận Logic</h3>
-							<p class="text-slate-600">Học cách cấu trúc hóa thông tin để máy tính có thể "hiểu" và suy luận như một
-								chuyên gia. Nền tảng của các hệ thống tư vấn và chẩn đoán thông minh.</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="message-circle-question" class="icon"></i>
-						</div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Xử Lý Ngôn Ngữ Tự Nhiên</h3>
-							<p class="text-slate-600">Nghiên cứu các phương pháp giúp máy tính đọc, hiểu, và tạo ra ngôn ngữ của con
-								người. Từ Google Translate đến ChatGPT đều dựa trên nền tảng này!</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="search-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">Tìm Kiếm Thông Minh</h3>
-							<p class="text-slate-600">Thiết kế các cỗ máy tìm kiếm không chỉ trả về kết quả theo từ khóa, mà còn
-								"hiểu" được ý định của bạn để đưa ra câu trả lời chính xác.</p>
-						</div>
-					</div>
-					<div class="card p-6">
-						<div class="flex justify-center mb-4"><i data-lucide="shield-check" class="icon"></i></div>
-						<div class="card-content">
-							<h3 class="text-xl font-bold text-slate-800 mb-2">An toàn Thông tin & Mật mã</h3>
-							<p class="text-slate-600">Nắm vững các kỹ thuật mã hóa, chữ ký số và công nghệ chuỗi khối (blockchain) để
-								xây dựng các hệ thống giao dịch an toàn, minh bạch.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">Sự Khác Biệt Của Ngành</h2>
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="card overflow-hidden">
-						<img src="../imgs/knowledge_braing.png" alt="Một bộ não thể hiện sự kết nối và suy luận"
-							class="object-cover w-full h-full rounded-lg">
-					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="captions" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Tập trung vào "Ngữ nghĩa"</h4>
-							</div>
-							<p class="text-slate-600">Đi sâu vào việc tìm hiểu ý nghĩa và mối quan hệ đằng sau dữ liệu để máy tính có
-								thể "hiểu" thật sự, không chỉ là xử lý thông tin.</p>
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="puzzle" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Suy luận dựa trên Logic</h4>
-							</div>
-							<p class="text-slate-600">Chú trọng xây dựng hệ thống dựa trên quy tắc và logic rõ ràng (AI biểu tượng),
-								giúp quyết định của máy có thể giải thích được.</p>
-						</div>
-					</div>
-					<div class="space-y-6">
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="lock" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">An toàn & Tin cậy</h4>
-							</div>
-							<p class="text-slate-600">Trang bị kiến thức nền tảng về mật mã và an toàn thông tin để xây dựng các hệ
-								thống không chỉ thông minh mà còn đáng tin cậy.</p>
-						</div>
-						<div class="card p-6">
-							<div class="flex items-center mb-4">
-								<i data-lucide="library" class="icon mr-4"></i>
-								<h4 class="text-xl font-bold text-slate-800">Xây dựng "Bộ não" cho Hệ thống</h4>
-							</div>
-							<p class="text-slate-600">Tập trung vào việc xây dựng các "bộ não" tri thức (knowledge base) làm nền tảng
-								cho các ứng dụng AI thông minh.</p>
-						</div>
-					</div>
-					<div class="card overflow-hidden">
-						<img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop"
-							alt="Một bộ não kỹ thuật số phát sáng" class="object-cover w-full h-full rounded-lg">
-					</div>
-				</div>
-			</section>
-
-			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">CNTThuc "So Kè" Với Các Ngành Khác</h2>
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="brain-circuit" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Trí tuệ nhân tạo</h4>
-						</div>
-						<p class="text-slate-600">CNTThuc là một nhánh quan trọng của AI, tập trung vào AI biểu tượng (Symbolic AI).
-							Trong khi AI hiện đại (Học máy) mạnh về học từ dữ liệu, CNTThuc mạnh về suy luận dựa trên các quy tắc và
-							tri thức đã được biểu diễn.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-zap" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Dữ liệu</h4>
-						</div>
-						<p class="text-slate-600">KHDL tìm ra các quy luật ẩn từ dữ liệu thô. CNTThuc tập trung vào việc tổ chức các
-							quy luật và tri thức đó một cách có cấu trúc để máy tính có thể "hiểu" và tái sử dụng cho các bài toán
-							khác.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="cpu" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Khoa học Máy tính</h4>
-						</div>
-						<p class="text-slate-600">KHMT quan tâm đến việc tính toán hiệu quả. CNTThuc quan tâm đến việc làm cho việc
-							tính toán đó trở nên "thông minh" hơn bằng cách thêm vào ngữ cảnh, tri thức và sự an toàn.</p>
-					</div>
-					<div class="card p-6">
-						<div class="flex items-center mb-4">
-							<i data-lucide="database-cog" class="icon mr-4"></i>
-							<h4 class="text-xl font-bold text-slate-800">vs. Hệ thống thông tin</h4>
-						</div>
-						<p class="text-slate-600">HTTT quản lý dòng chảy của dữ liệu trong một tổ chức. CNTThuc tìm cách biến dữ
-							liệu đó thành tri thức hữu ích, giúp hệ thống có thể tự động đưa ra các gợi ý và quyết định thông minh.
+						<div class="flex justify-center mb-4"><i data-lucide="database-zap" class="icon"></i></div>
+						<h3 class="text-xl font-bold text-slate-800 mb-2">Thu thập dữ liệu</h3>
+						<p class="text-slate-600">Sử dụng công cụ để "hút" thông tin từ nhiều nguồn: web, văn bản, cơ sở dữ liệu.
 						</p>
 					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="brain-circuit" class="icon"></i></div>
+						<h3 class="text-xl font-bold text-slate-800 mb-2">Mô hình hóa tri thức</h3>
+						<p class="text-slate-600">Biến dữ liệu thô thành các mô hình có cấu trúc, ý nghĩa để máy tính có thể "hiểu".
+						</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="atom" class="icon"></i></div>
+						<h3 class="text-xl font-bold text-slate-800 mb-2">Xử lý tri thức</h3>
+						<p class="text-slate-600">Áp dụng NLP, Học máy để phân tích, suy luận và xử lý các tri thức đã được mô hình
+							hóa.</p>
+					</div>
+					<div class="card p-6">
+						<div class="flex justify-center mb-4"><i data-lucide="lightbulb" class="icon"></i></div>
+						<h3 class="text-xl font-bold text-slate-800 mb-2">Ứng dụng tri thức</h3>
+						<p class="text-slate-600">Dùng tri thức để giải quyết các bài toán thực tế trong nhiều lĩnh vực "hot".</p>
+					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: HƯỚNG NGHIÊN CỨU -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Giải Mã Các Vị Trí Nghề Nghiệp</h2>
+				<h2 class="section-title text-3xl text-center mb-10">Bạn sẽ "master" những lĩnh vực nào?</h2>
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="card p-6">
+						<div class="flex items-center mb-4"><i data-lucide="shield-check" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Mã hóa & Mật mã</h4>
+						</div>
+						<p class="text-slate-600">Đi sâu vào "thế giới" an toàn thông tin và công nghệ chuỗi khối (blockchain), xây
+							dựng các hệ thống an toàn và minh bạch.</p>
+						<ul class="mt-3 space-y-2 text-slate-500 text-sm list-disc list-inside">
+							<li>An toàn thông tin</li>
+							<li>Ứng dụng Blockchain</li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4"><i data-lucide="languages" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Xử lý Ngôn ngữ Tự nhiên (NLP)</h4>
+						</div>
+						<p class="text-slate-600">Dạy máy tính "đọc hiểu" và "giao tiếp", ứng dụng trong dịch máy, tóm tắt văn bản,
+							chatbot và các trợ lý ảo thông minh.</p>
+						<ul class="mt-3 space-y-2 text-slate-500 text-sm list-disc list-inside">
+							<li>Dịch máy, tóm tắt văn bản</li>
+							<li>Nhận dạng thực thể, truy hồi văn bản</li>
+							<li>Hệ thống tác tử ngôn ngữ lớn (LLM agent)</li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4"><i data-lucide="mic" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Xử lý Tiếng nói</h4>
+						</div>
+						<p class="text-slate-600">Giúp máy tính có thể "nghe" và "nói", từ nhận dạng giọng nói, người nói, cảm xúc
+							đến tổng hợp âm thanh.</p>
+						<ul class="mt-3 space-y-2 text-slate-500 text-sm list-disc list-inside">
+							<li>Nhận dạng tiếng nói, người nói, cảm xúc</li>
+							<li>Tổng hợp giọng nói</li>
+						</ul>
+					</div>
+					<div class="card p-6">
+						<div class="flex items-center mb-4"><i data-lucide="image-plus" class="icon mr-4"></i>
+							<h4 class="text-xl font-bold text-slate-800">Xử lý Ảnh tạo sinh</h4>
+						</div>
+						<p class="text-slate-600">Nghiên cứu các kỹ thuật tạo sinh hình ảnh (như Midjourney), đồng thời phát triển
+							công cụ để phát hiện và chống lại các sản phẩm giả mạo.</p>
+						<ul class="mt-3 space-y-2 text-slate-500 text-sm list-disc list-inside">
+							<li>Tạo sinh hình ảnh (Image Generation)</li>
+							<li>Phát hiện ảnh giả mạo (Photo Forensic)</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: CƠ HỘI NGHỀ NGHIỆP -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-12">Sự nghiệp "cất cánh" với các vai trò</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="user-cog" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Tri thức</h4>
-						<p class="text-slate-600 text-sm">Thiết kế, xây dựng và duy trì các hệ cơ sở tri thức (knowledge base), giúp
-							các hệ thống AI có khả năng suy luận và học hỏi.</p>
+						<i data-lucide="shield-half" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia An toàn Thông tin</h4>
+						<p class="text-slate-600 text-sm">Bảo vệ hệ thống trước các mối đe dọa mạng, phát triển các giải pháp mã hóa
+							an toàn.</p>
+					</div>
+					<div class="card p-6 flex flex-col items-center text-center">
+						<i data-lucide="bitcoin" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Blockchain</h4>
+						<p class="text-slate-600 text-sm">Xây dựng và phát triển các ứng dụng phi tập trung (DApps), hợp đồng thông
+							minh trên nền tảng blockchain.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="message-square-text" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia Xử lý Ngôn ngữ Tự nhiên</h4>
-						<p class="text-slate-600 text-sm">Phát triển các mô hình giúp máy tính hiểu, phân tích, và tạo ra ngôn ngữ
-							của con người (dịch máy, chatbot).</p>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia Xử lý Ngôn ngữ (NLP)</h4>
+						<p class="text-slate-600 text-sm">Làm việc tại các công ty lớn như Google, FPT.AI để phát triển các mô hình
+							ngôn ngữ, trợ lý ảo, hệ thống dịch thuật.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="shield-half" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Chuyên gia An toàn Thông tin & Blockchain</h4>
-						<p class="text-slate-600 text-sm">Nghiên cứu, áp dụng các kỹ thuật mã hóa, và phát triển các ứng dụng phi
-							tập trung (DApps) trên nền tảng blockchain.</p>
+						<i data-lucide="bot" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư AI Hội thoại</h4>
+						<p class="text-slate-600 text-sm">Xây dựng các chatbot và trợ lý ảo thông minh cho các ngành dịch vụ, tài
+							chính, y tế.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
 						<i data-lucide="search" class="icon mb-4"></i>
@@ -698,28 +247,20 @@
 							trả về kết quả chính xác, phù hợp.</p>
 					</div>
 					<div class="card p-6 flex flex-col items-center text-center">
-						<i data-lucide="bot" class="icon mb-4"></i>
-						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư AI Hội thoại</h4>
-						<p class="text-slate-600 text-sm">Xây dựng các trợ lý ảo và chatbot thông minh, có khả năng giao tiếp và hỗ
-							trợ người dùng một cách tự nhiên.</p>
-					</div>
-					<div class="card p-6 flex items-start">
-						<i data-lucide="share-2" class="icon mr-4 flex-shrink-0"></i>
-						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Web Ngữ nghĩa</h4>
-							<p class="text-slate-600 text-sm">Xây dựng các hệ thống web thông minh hơn, nơi dữ liệu có thể được máy
-								tính
-								hiểu và liên kết với nhau.</p>
-						</div>
+						<i data-lucide="user-cog" class="icon mb-4"></i>
+						<h4 class="text-lg font-bold text-slate-800 mb-2">Kỹ sư Tri thức</h4>
+						<p class="text-slate-600 text-sm">Thiết kế, xây dựng và duy trì các hệ cơ sở tri thức (knowledge base), giúp
+							các hệ thống AI có khả năng suy luận và học hỏi.</p>
 					</div>
 				</div>
 			</section>
 
+			<!-- SECTION: ỨNG DỤNG THỰC TẾ -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-12">Ứng Dụng Thực Tế</h2>
+				<h2 class="section-title text-3xl text-center mb-12">Ứng dụng thực tế "khủng"</h2>
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					<div class="card p-6 flex items-start">
-						<i data-lucide="search-slash" class="icon mr-4 flex-shrink-0"></i>
+						<i data-lucide="search" class="icon mr-4 flex-shrink-0"></i>
 						<div>
 							<h4 class="text-lg font-bold text-slate-800 mb-2">Tìm kiếm Ngữ nghĩa của Google</h4>
 							<p class="text-slate-600 text-sm">Khi bạn tìm "thủ đô của Pháp", Google trả về "Paris" cùng bảng thông
@@ -727,44 +268,71 @@
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
-						<i data-lucide="book-check" class="icon mr-4 flex-shrink-0"></i>
+						<i data-lucide="bot" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Hệ chuyên gia</h4>
-							<p class="text-slate-600 text-sm">Các hệ thống mô phỏng khả năng ra quyết định của một chuyên gia, như
-								chẩn đoán y khoa hoặc tư vấn tài chính.</p>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Trợ lý ảo thông minh (Siri, Alexa)</h4>
+							<p class="text-slate-600 text-sm">Các trợ lý ảo có thể hiểu các câu lệnh phức tạp và duy trì ngữ cảnh hội
+								thoại là nhờ vào các kỹ thuật của CNTThuc.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="languages" class="icon mr-4 flex-shrink-0"></i>
 						<div>
 							<h4 class="text-lg font-bold text-slate-800 mb-2">Dịch máy tự động (Google Translate)</h4>
-							<p class="text-slate-600 text-sm">Các dịch vụ sử dụng các mô hình ngôn ngữ phức tạp
-								để dịch văn bản giữa các ngôn ngữ một cách tự nhiên.</p>
+							<p class="text-slate-600 text-sm">Các dịch vụ sử dụng các mô hình ngôn ngữ phức tạp để dịch văn bản giữa
+								các ngôn ngữ một cách tự nhiên.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
 						<i data-lucide="bitcoin" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Giao dịch Tiền mã hóa & Hợp đồng thông minh</h4>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Tiền mã hóa & Hợp đồng thông minh</h4>
 							<p class="text-slate-600 text-sm">Xây dựng các ứng dụng trên nền tảng Blockchain, đảm bảo tính minh bạch,
 								an toàn và không thể thay đổi của giao dịch.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
-						<i data-lucide="bot" class="icon mr-4 flex-shrink-0"></i>
+						<i data-lucide="stethoscope" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Trợ lý ảo thông minh (Siri, Alexa)</h4>
-							<p class="text-slate-600 text-sm">Các trợ lý ảo có thể hiểu các câu lệnh phức tạp và duy trì
-								ngữ cảnh hội thoại là nhờ vào các kỹ thuật của CNTThuc.</p>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Hệ chuyên gia trong Y tế</h4>
+							<p class="text-slate-600 text-sm">Các hệ thống mô phỏng khả năng ra quyết định của một chuyên gia, giúp
+								bác sĩ chẩn đoán bệnh hoặc đưa ra phác đồ điều trị.</p>
 						</div>
 					</div>
 					<div class="card p-6 flex items-start">
-						<i data-lucide="fingerprint" class="icon mr-4 flex-shrink-0"></i>
+						<i data-lucide="mail-warning" class="icon mr-4 flex-shrink-0"></i>
 						<div>
-							<h4 class="text-lg font-bold text-slate-800 mb-2">Bảo mật Giao dịch Ngân hàng & Chữ ký số</h4>
-							<p class="text-slate-600 text-sm">Áp dụng các thuật toán mật mã để mã hóa thông tin, đảm bảo an toàn tuyệt
-								đối cho các giao dịch tài chính và định danh số.</p>
+							<h4 class="text-lg font-bold text-slate-800 mb-2">Lọc thư rác trong Gmail</h4>
+							<p class="text-slate-600 text-sm">Hệ thống của Google sử dụng NLP và học máy để "hiểu" nội dung email và
+								tự động phân loại thư rác một cách chính xác.</p>
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION: VÌ SAO NÊN CHỌN FIT@HCMUS -->
+			<section class="my-16">
+				<h2 class="section-title text-3xl text-center mb-10">Vì Sao Nên Chọn CNTT tại <span
+						class="text-purple-600 font-bold">fit@hcmus</span>?</h2>
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="users"
+								class="icon mr-3 h-8 w-8"></i>Học từ chuyên gia đầu ngành</h3>
+						<p class="text-slate-600">Được dẫn dắt bởi các chuyên gia hàng đầu Việt Nam về mật mã và xử lý ngôn ngữ, đảm
+							bảo bạn được tiếp cận với những kiến thức chuyên sâu và cập nhật nhất.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="target"
+								class="icon mr-3 h-8 w-8"></i>Tập trung vào "thực chiến"</h3>
+						<p class="text-slate-600">Chương trình học hướng đến các bài toán thực tế, có tính ứng dụng cao, giúp sinh
+							viên tự tin và vững bước ngay khi ra trường.</p>
+					</div>
+					<div class="card p-6">
+						<h3 class="font-bold text-lg text-slate-800 mb-3 flex items-center"><i data-lucide="globe"
+								class="icon mr-3 h-8 w-8"></i>Cơ hội vươn ra "biển lớn"</h3>
+						<p class="text-slate-600">Khoa có liên kết hợp tác với nhiều trường/viện nghiên cứu uy tín trên thế giới như
+							JAIST (Nhật), Đại học Manchester (Anh), Đại học Osaka (Nhật), mở ra nhiều cơ hội học tập và nghiên cứu ở
+							nước ngoài.</p>
 					</div>
 				</div>
 			</section>
