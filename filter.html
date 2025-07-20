@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Minh Họa Quá Trình Lọc Ảo - Phiên bản Nâng cao</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Inter', sans-serif;
+		}
+
+		.table-cell {
+			padding: 8px 12px;
+			border: 1px solid #e2e8f0;
+			text-align: center;
+		}
+
+		.table-header {
+			background-color: #f1f5f9;
+			font-weight: 600;
+			color: #1e293b;
+		}
+
+		.status-dot {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			margin-right: 8px;
+		}
+
+		.status-trung-tuyen {
+			background-color: #16a34a;
+		}
+
+		.card {
+			transition: all 0.5s ease-in-out, transform 0.3s ease;
+			border-width: 2px;
+		}
+
+		.card-trung-tuyen {
+			border-color: #16a34a;
+			background-color: #f0fdf4;
+		}
+
+		.card-newly-added {
+			animation: flash-green 1s ease;
+		}
+
+		.card-being-rejected {
+			animation: shake 0.6s ease;
+			border-color: #dc2626;
+			background-color: #fef2f2;
+		}
+
+		.queue-item-active {
+			background-color: #16a34a;
+			color: white;
+			border-color: #15803d;
+			animation: pulse-green 1.5s infinite;
+		}
+
+		.queue-item-failed-nv {
+			animation: flash-fail 1.5s ease;
+			background-image: linear-gradient(to right, #facc15, #f87171);
+			color: #7f1d1d;
+			border-color: #ef4444;
+		}
+
+		.highlight-box {
+			border-left-width: 4px;
+			padding: 1rem;
+			border-radius: 0 0.5rem 0.5rem 0;
+		}
+
+		.highlight-blue {
+			border-color: #3b82f6;
+			background-color: #eff6ff;
+			color: #1e40af;
+		}
+
+		.highlight-purple {
+			border-color: #a855f7;
+			background-color: #faf5ff;
+			color: #581c87;
+			animation: pulse-purple 2s infinite;
+		}
+
+		@keyframes shake {
+
+			0%,
+			100% {
+				transform: translateX(0);
+			}
+
+			25% {
+				transform: translateX(-6px);
+			}
+
+			75% {
+				transform: translateX(6px);
+			}
+		}
+
+		@keyframes flash-green {
+			0% {
+				box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+			}
+
+			70% {
+				box-shadow: 0 0 0 12px rgba(22, 163, 74, 0);
+			}
+
+			100% {
+				box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+			}
+		}
+
+		@keyframes pulse-green {
+
+			0%,
+			100% {
+				transform: scale(1);
+				box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+			}
+
+			50% {
+				transform: scale(1.05);
+				box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+			}
+		}
+
+		@keyframes pulse-purple {
+
+			0%,
+			100% {
+				opacity: 1;
+			}
+
+			50% {
+				opacity: 0.85;
+			}
+		}
+
+		@keyframes flash-fail {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.05);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+	<div class="container mx-auto p-4 md:p-6">
+		<header class="text-center mb-6">
+			<h1 class="text-3xl md:text-4xl font-extrabold text-slate-900">Minh Họa Quy Trình Xét Tuyển</h1>
+			<p class="mt-2 text-lg text-slate-600">Điểm cao hơn sẽ thắng, bất kể thứ tự nguyện vọng.</p>
+		</header>
+
+		<main class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+			<aside class="lg:col-span-5 xl:col-span-4 space-y-6">
+				<div class="bg-white p-4 rounded-xl shadow-md">
+					<h2 class="text-xl font-semibold mb-3">Bảng Điều Khiển</h2>
+					<div class="flex flex-col gap-3 mb-3">
+						<div class="flex flex-col sm:flex-row lg:flex-col gap-3">
+							<button id="start-btn" type="button"
+								class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors shadow">Bắt
+								đầu Mô phỏng</button>
+							<button id="reset-btn" type="button"
+								class="w-full bg-slate-200 text-slate-800 font-bold py-3 px-4 rounded-lg hover:bg-slate-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">Làm
+								lại</button>
+						</div>
+						<a href="index.html"
+							class="w-full bg-slate-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-slate-600 transition-colors shadow text-center">Trở
+							về Infographic</a>
+					</div>
+					<div class="mt-4">
+						<label for="speed-slider" class="block mb-2 text-sm font-medium text-gray-900">Tốc độ mô phỏng:</label>
+						<div class="flex items-center gap-2">
+							<span class="text-xs font-bold">Chậm</span>
+							<input id="speed-slider" type="range" min="0.25" max="2" value="1" step="0.25"
+								class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+							<span class="text-xs font-bold">Nhanh</span>
+						</div>
+					</div>
+					<div class="mt-4">
+						<h4 class="text-sm font-medium text-gray-900 mb-1">Bước thực hiện:</h4>
+						<div id="step-counter-box" class="p-3 text-center bg-slate-100 rounded-lg shadow-inner">
+							<span class="text-2xl font-bold text-slate-700">0</span>
+						</div>
+					</div>
+					<div id="explanation-box" class="highlight-box highlight-blue min-h-[120px] mt-4">
+						<h4 class="font-bold">Sẵn sàng!</h4>
+						<p>Nhấn "Bắt đầu" để xem hệ thống xét tuyển từng thí sinh một.</p>
+					</div>
+				</div>
+				<div class="bg-white p-4 rounded-xl shadow-md">
+					<h2 class="text-xl font-semibold mb-3">Dữ liệu Đầu vào</h2>
+					<div class="max-h-80 overflow-y-auto pr-2">
+						<h3 class="font-bold mb-2 text-md">Các Ngành Tuyển Sinh</h3>
+						<table class="w-full border-collapse mb-4 text-sm">
+							<thead>
+								<tr>
+									<th class="table-header table-cell">Trường</th>
+									<th class="table-header table-cell">Ngành</th>
+									<th class="table-header table-cell">Chỉ Tiêu</th>
+								</tr>
+							</thead>
+							<tbody id="truong-table-body"></tbody>
+						</table>
+						<h3 class="font-bold mb-2 text-md">Danh sách Thí sinh</h3>
+						<table class="w-full border-collapse text-sm">
+							<thead>
+								<tr>
+									<th class="table-header table-cell">Thí sinh</th>
+									<th class="table-header table-cell">Điểm</th>
+									<th class="table-header table-cell">Số NV</th>
+								</tr>
+							</thead>
+							<tbody id="thisinh-table-body"></tbody>
+						</table>
+					</div>
+				</div>
+			</aside>
+
+			<section class="lg:col-span-7 xl:col-span-8">
+				<div id="simulation-container" class="bg-slate-100 p-4 rounded-xl min-h-full">
+					<div class="mb-4">
+						<h3 class="text-lg font-semibold mb-2">Trạng thái Xét tuyển</h3>
+						<div id="current-applicant-box"
+							class="p-3 text-center bg-white rounded-lg shadow-inner min-h-[74px] flex items-center justify-center">
+							<span class="text-slate-400">Chờ bắt đầu...</span>
+						</div>
+					</div>
+					<div id="queue-container" class="mb-4">
+						<h3 class="text-lg font-semibold mb-2">Hàng đợi xét tuyển</h3>
+						<div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
+							<span>Đầu hàng đợi</span>
+							<div class="flex-grow border-t"></div><span>Cuối hàng đợi</span>
+						</div>
+						<div id="queue-list" class="flex flex-wrap gap-2 bg-white p-2 rounded-lg shadow-inner min-h-[46px]"></div>
+					</div>
+					<div id="truong-container" class="space-y-4"></div>
+				</div>
+				<div id="final-result-container" class="hidden mt-6">
+					<h2 class="text-2xl font-bold mb-4 text-center text-green-600">Kết Quả Cuối Cùng</h2>
+					<div class="bg-white p-4 rounded-xl shadow-lg">
+						<table class="w-full border-collapse">
+							<thead>
+								<tr>
+									<th class="table-header table-cell">Ngành</th>
+									<th class="table-header table-cell">Điểm Chuẩn</th>
+									<th class="table-header table-cell">SL</th>
+									<th class="table-header table-cell">Danh sách Trúng Tuyển</th>
+								</tr>
+							</thead>
+							<tbody id="final-table-body"></tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="text-center mt-12 mb-6">
+			<p class="text-sm text-slate-500 max-w-3xl mx-auto">
+				<strong>Miễn trừ trách nhiệm:</strong> Mọi dữ liệu về thí sinh, điểm số và nguyện vọng trong mô phỏng này đều là
+				giả định và chỉ mang tính chất minh họa. Quy trình 'lọc ảo' thực tế của Bộ GD&ĐT phức tạp hơn và được thực hiện
+				trên hệ thống toàn quốc.
+			</p>
+		</footer>
+	</div>
+
+	<script>
+		const initialTruongData = [
+			{ id: 'HCMUS', ten: 'HCMUS' },
+			{ id: 'ABC', ten: 'ĐH Công nghệ ABC' },
+			{ id: 'XYZ', ten: 'ĐH Kinh tế XYZ' },
+		];
+		const initialNganhData = [
+			{ id: 'HCMUS_NHOM', ten: 'Nhóm ngành MT&CNTT', chiTieu: 7, truongId: 'HCMUS' },
+			{ id: 'HCMUS_KHMTA', ten: 'KHMT (Tiên tiến)', chiTieu: 4, truongId: 'HCMUS' },
+			{ id: 'HCMUS_CNTTTA', ten: 'CNTT (T.c Anh)', chiTieu: 5, truongId: 'HCMUS' },
+			{ id: 'HCMUS_AI', ten: 'Trí tuệ Nhân tạo', chiTieu: 4, truongId: 'HCMUS' },
+			{ id: 'ABC_CNTT', ten: 'CNTT (Đại trà)', chiTieu: 7, truongId: 'ABC' },
+			{ id: 'ABC_ROBOT', ten: 'Robot & AI', chiTieu: 6, truongId: 'ABC' },
+			{ id: 'XYZ_OTO', ten: 'CN Kỹ thuật Ô tô', chiTieu: 6, truongId: 'XYZ' },
+			{ id: 'XYZ_LOG', ten: 'Logistics', chiTieu: 7, truongId: 'XYZ' },
+		];
+		const initialThiSinhData = [
+			{ id: 'TS10', ten: 'Hùng', diem: 30.5 },
+			{ id: 'TS11', ten: 'Hòa', diem: 30.2 },
+			{ id: 'TS03', ten: 'Cường', diem: 30.1 },
+			{ id: 'TS04', ten: 'Duy', diem: 30 },
+			{ id: 'TS05', ten: 'Giang', diem: 29.9 },
+			{ id: 'TS06', ten: 'Hải', diem: 29.8 },
+			{ id: 'TS07', ten: 'Hưng', diem: 29.7 },
+			{ id: 'TS31', ten: 'Tài', diem: 30.0 },
+			{ id: 'TS32', ten: 'Đức', diem: 29.9 },
+			{ id: 'TS25', ten: 'Đạt', diem: 29.8 },
+			{ id: 'TS19', ten: 'Yến', diem: 29.5 },
+			{ id: 'TS13', ten: 'Quân', diem: 29.2 },
+			{ id: 'TS08', ten: 'Linh', diem: 29 },
+			{ id: 'TS26', ten: 'Phát', diem: 28.9 },
+			{ id: 'TS14', ten: 'Sơn', diem: 28.8 },
+			{ id: 'TS09', ten: 'Mai', diem: 28.5 },
+			{ id: 'TS20', ten: 'Vinh', diem: 28.2 },
+			{ id: 'TS27', ten: 'Thành', diem: 28.1 },
+			{ id: 'TS01', ten: 'An', diem: 28 },
+			{ id: 'TS21', ten: 'Thắng', diem: 27.9 },
+			{ id: 'TS15', ten: 'Trang', diem: 27.8 },
+			{ id: 'TS28', ten: 'Toàn', diem: 27.6 },
+			{ id: 'TS02', ten: 'Bình', diem: 27.5 },
+			{ id: 'TS12', ten: 'Phúc', diem: 27.2 },
+			{ id: 'TS36', ten: 'Hải', diem: 29.6 },
+			{ id: 'TS37', ten: 'Hương', diem: 28.7 },
+			{ id: 'TS38', ten: 'Khoa', diem: 27.7 },
+			{ id: 'TS39', ten: 'Lan', diem: 26.7 },
+			{ id: 'TS40', ten: 'Mạnh', diem: 25.7 },
+			{ id: 'TS33', ten: 'Hiếu', diem: 24.2 },
+			{ id: 'TS34', ten: 'Trung', diem: 23.8 },
+			{ id: 'TS35', ten: 'Kiên', diem: 23.1 },
+			{ id: 'TS30', ten: 'Hùng', diem: 22.5 },
+			{ id: 'TS29', ten: 'Dũng', diem: 21.9 },
+			{ id: 'TS24', ten: 'Hà', diem: 21.5 },
+			{ id: 'TS23', ten: 'Lộc', diem: 21.2 },
+			{ id: 'TS22', ten: 'Liên', diem: 20.8 },
+			{ id: 'TS18', ten: 'Hạnh', diem: 20.5 },
+			{ id: 'TS17', ten: 'Ngân', diem: 20.2 },
+			{ id: 'TS16', ten: 'Phương', diem: 20.0 },
+		];
+
+		let nganhData, thiSinhData, queue, simulationSpeed = 1, isSimulating = false, simulationCancelled = false, stepCounter = 0;
+		const DOM = {
+			startBtn: document.getElementById('start-btn'), resetBtn: document.getElementById('reset-btn'),
+			speedSlider: document.getElementById('speed-slider'),
+			explanationBox: document.getElementById('explanation-box'), simulationContainer: document.getElementById('simulation-container'),
+			truongContainer: document.getElementById('truong-container'), finalResultContainer: document.getElementById('final-result-container'),
+			truongTableBody: document.getElementById('truong-table-body'), thisinhTableBody: document.getElementById('thisinh-table-body'),
+			finalTableBody: document.getElementById('final-table-body'), queueList: document.getElementById('queue-list'),
+			currentApplicantBox: document.getElementById('current-applicant-box'),
+			stepCounterBox: document.getElementById('step-counter-box'),
+		};
+
+		const sleep = ms => new Promise(resolve => setTimeout(resolve, ms * simulationSpeed));
+
+		function generatePreferences(studentId, allMajors) {
+			const hotMajor1 = 'HCMUS_KHMTA';
+			const hotMajor2 = 'HCMUS_AI';
+			const competitiveMajor1 = 'HCMUS_NHOM';
+			const competitiveMajor2 = 'HCMUS_CNTTTA';
+			const fillerMajor1 = 'ABC_CNTT';
+
+			let preferences = [];
+			const otherMajors = allMajors
+				.map(m => m.id)
+				.filter(id => ![hotMajor1, hotMajor2, competitiveMajor1, competitiveMajor2, fillerMajor1].includes(id))
+				.sort(() => 0.5 - Math.random());
+
+			// --- Pre-processing for specific scenarios ---
+			switch (studentId) {
+				// --- Scenario for HCMUS_AI (Hot Major 1) ---
+				case 'TS19': // Yến (29.5) -> NV1 winner for AI
+					preferences = [hotMajor1, hotMajor2, competitiveMajor1];
+					break;
+				case 'TS14': // Sơn (28.8) -> NV2 winner for AI
+					preferences = [competitiveMajor1, hotMajor1, competitiveMajor2];
+					break;
+				case 'TS27': // Thành (28.1) -> NV3 winner for AI
+					preferences = [competitiveMajor1, fillerMajor1, hotMajor1];
+					break;
+
+				// --- Scenario for HCMUS_KHMTA (Hot Major 2) ---
+				case 'TS13': // Quân (29.2) -> NV1 winner for KHMTA
+					preferences = [hotMajor2, hotMajor1, competitiveMajor1];
+					break;
+				case 'TS26': // Phát (28.9) -> NV2 winner for KHMTA
+					preferences = [hotMajor1, hotMajor2, competitiveMajor1];
+					break;
+				case 'TS09': // Mai (28.5) -> NV3 winner for KHMTA
+					preferences = [hotMajor1, competitiveMajor1, hotMajor2];
+					break;
+
+				// --- High-score students to create competition ---
+				case 'TS31': case 'TS32': case 'TS25': case 'TS08': case 'TS36':
+					preferences = [hotMajor1, hotMajor2, competitiveMajor1, competitiveMajor2];
+					break;
+
+				default: // Default random for others
+					preferences = [hotMajor1, hotMajor2, competitiveMajor1, competitiveMajor2, fillerMajor1, ...otherMajors]
+						.sort(() => 0.5 - Math.random());
+					break;
+			}
+
+			const maxPrefs = 6;
+			// Ensure the list is unique and sliced
+			return [...new Set(preferences)].slice(0, maxPrefs);
+		}
+
+		function initializeData() {
+			nganhData = JSON.parse(JSON.stringify(initialNganhData)).map(n => ({ ...n, dsTrungTuyen: [], diemChuan: null }));
+			thiSinhData = JSON.parse(JSON.stringify(initialThiSinhData)).map(ts => ({
+				...ts,
+				nguyenVong: generatePreferences(ts.id, nganhData),
+				trangThai: 'chuaXet', nvTrungTuyen: null, visualState: 'default'
+			}));
+			queue = thiSinhData.map(ts => ({ studentId: ts.id, nvIndex: 0 }));
+			queue.sort((a, b) => thiSinhData.find(ts => ts.id === b.studentId).diem - thiSinhData.find(ts => ts.id === a.studentId).diem);
+		}
+
+		function renderInitialTables() {
+			DOM.truongTableBody.innerHTML = nganhData.map(n => `<tr><td class="table-cell">${initialTruongData.find(t => t.id === n.truongId).ten}</td><td class="table-cell">${n.ten}</td><td class="table-cell font-semibold">${n.chiTieu}</td></tr>`).join('');
+			DOM.thisinhTableBody.innerHTML = thiSinhData.sort((a, b) => b.diem - a.diem).map(ts => `<tr><td class="table-cell">${ts.ten}</td><td class="table-cell font-semibold text-blue-600">${ts.diem}</td><td class="table-cell">${ts.nguyenVong.length}</td></tr>`).join('');
+		}
+
+		function renderQueue() {
+			DOM.queueList.innerHTML = queue.map(item => {
+				const ts = thiSinhData.find(t => t.id === item.studentId);
+				return `<div id="queue-item-${ts.id}" class="p-1.5 px-2.5 rounded-md border bg-slate-50 text-xs font-semibold transition-all duration-300">${ts.ten} (${ts.diem}đ - NV${item.nvIndex + 1})</div>`;
+			}).join('');
+		}
+
+		function renderSimulationState() {
+			DOM.truongContainer.innerHTML = initialTruongData.map(truong => {
+				const cacNganhCuaTruong = nganhData.filter(n => n.truongId === truong.id);
+				const nganhHTML = cacNganhCuaTruong.map(nganh => {
+					const dsThiSinhTrongNganh = thiSinhData.filter(ts => nganh.dsTrungTuyen.includes(ts.id)).sort((a, b) => b.diem - a.diem);
+					const dsCardThiSinh = dsThiSinhTrongNganh.map(ts => {
+						let cardClass = 'card-trung-tuyen';
+						if (ts.visualState === 'new') cardClass += ' card-newly-added';
+						if (ts.visualState === 'rejecting') cardClass += ' card-being-rejected';
+						const winningNv = ts.nguyenVong.indexOf(nganh.id) + 1;
+						return `<div id="ts-card-${ts.id}" class="card p-2 rounded-lg flex justify-between items-center text-sm ${cardClass}">
+                                    <div class="flex items-center"><span class="status-dot status-trung-tuyen"></span><span class="font-semibold">${ts.ten} (NV${winningNv})</span></div>
+                                    <span class="font-bold text-blue-600">${ts.diem}</span>
+                                </div>`;
+					}).join('');
+					const soLuongHienTai = nganh.dsTrungTuyen.length;
+					return `<div class="bg-white p-3 rounded-xl shadow-md space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold">${nganh.ten}</h3>
+                                    <span class="py-1 px-2.5 rounded-full font-semibold text-xs ${soLuongHienTai === nganh.chiTieu ? 'bg-amber-100 text-amber-700' : 'bg-green-100 text-green-700'}">${soLuongHienTai}/${nganh.chiTieu}</span>
+                                </div>
+                                <div class="space-y-2 min-h-[50px]">${dsCardThiSinh || ''}</div>
+                            </div>`;
+				}).join('');
+
+				return `<div class="bg-slate-200 p-3 rounded-lg">
+                            <h3 class="text-lg font-bold mb-2 text-slate-800">${truong.ten}</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">${nganhHTML}</div>
+                        </div>`;
+			}).join('');
+		}
+
+		function renderFinalResult() {
+			DOM.finalResultContainer.classList.remove('hidden');
+			DOM.finalTableBody.innerHTML = nganhData.map(nganh => {
+				const dsTrungTuyen = thiSinhData.filter(ts => ts.nvTrungTuyen === nganh.id);
+				const dsTen = dsTrungTuyen.map(ts => {
+					const winningNv = ts.nguyenVong.indexOf(ts.nvTrungTuyen) + 1;
+					return `${ts.ten} (${ts.diem}đ - NV${winningNv})`;
+				}).join(', ') || 'Không có';
+				return `<tr><td class="table-cell font-bold">${nganh.ten} (${initialTruongData.find(t => t.id === nganh.truongId).ten})</td><td class="table-cell font-bold text-xl text-green-600">${nganh.diemChuan || 'N/A'}</td><td class="table-cell font-semibold">${dsTrungTuyen.length}/${nganh.chiTieu}</td><td class="table-cell text-left">${dsTen}</td></tr>`;
+			}).join('');
+		}
+
+		function updateExplanation(title, text, type = 'blue') {
+			const box = DOM.explanationBox;
+			box.classList.remove('highlight-blue', 'highlight-purple');
+			box.classList.add(`highlight-${type}`);
+			box.innerHTML = `<h4 class="font-bold">${title}</h4><p>${text}</p>`;
+		}
+		function setVisualState(tsId, state) { thiSinhData.forEach(ts => ts.visualState = (ts.id === tsId) ? state : 'default'); }
+
+		async function runSimulation() {
+			if (isSimulating) return;
+			isSimulating = true;
+			simulationCancelled = false;
+
+			DOM.startBtn.disabled = true;
+			DOM.resetBtn.disabled = false;
+			DOM.startBtn.innerText = 'Đang mô phỏng...';
+			DOM.startBtn.classList.replace('bg-blue-600', 'bg-gray-400');
+			DOM.finalResultContainer.classList.add('hidden');
+			renderSimulationState();
+
+			while (queue.length > 0) {
+				if (simulationCancelled) break;
+				stepCounter++;
+				DOM.stepCounterBox.innerHTML = `<span class="text-2xl font-bold text-slate-700">${stepCounter}</span>`;
+
+				const application = queue.shift();
+				const student = thiSinhData.find(ts => ts.id === application.studentId);
+				if (student.trangThai === 'trungTuyen') continue;
+
+				renderQueue();
+
+				const nvId = student.nguyenVong[application.nvIndex];
+				if (!nvId) {
+					updateExplanation(`Thí sinh ${student.ten} đã hết nguyện vọng`, `Không thể xét tuyển.`);
+					DOM.currentApplicantBox.innerHTML = `<div class="p-3 rounded-lg border text-sm font-semibold queue-item-failed-nv w-full text-center">
+                        <div class="font-bold text-lg">${student.ten} - ${student.diem}đ</div>
+                        <div class="text-sm">Đã hết nguyện vọng</div>
+                    </div>`;
+					await sleep(1200);
+					continue;
+				}
+
+				const nganh = nganhData.find(n => n.id === nvId);
+				const truong = initialTruongData.find(t => t.id === nganh.truongId);
+				const applicantInfoHTML = `
+                    <div class="text-center">
+                        <div class="font-bold text-lg">${student.ten} - ${student.diem}đ</div>
+                        <div class="text-sm">Đang xét NV${application.nvIndex + 1}: <span class="font-semibold">${nganh.ten} (${truong.ten})</span></div>
+                    </div>`;
+				DOM.currentApplicantBox.innerHTML = `<div class="p-3 rounded-lg border text-sm font-semibold queue-item-active w-full">${applicantInfoHTML}</div>`;
+
+				updateExplanation(`Đang xét ${student.ten} (${student.diem}đ)`, `Thử ứng tuyển vào NV${application.nvIndex + 1}: ngành ${nganh.ten}.`);
+				await sleep(1500);
+
+				const dsTrungTuyen = nganh.dsTrungTuyen;
+				if (dsTrungTuyen.length < nganh.chiTieu) {
+					updateExplanation(`Ngành ${nganh.ten} còn chỗ`, `${student.ten} đã trúng tuyển tạm thời.`);
+					student.trangThai = 'trungTuyen'; student.nvTrungTuyen = nganh.id;
+					dsTrungTuyen.push(student.id);
+					setVisualState(student.id, 'new');
+				} else {
+					const dsObj = dsTrungTuyen.map(id => thiSinhData.find(ts => ts.id === id)).sort((a, b) => a.diem - b.diem);
+					const sinhVienThapNhat = dsObj[0];
+
+					if (student.diem > sinhVienThapNhat.diem) {
+						updateExplanation(`Sự công bằng của điểm số!`, `${student.ten} (NV${application.nvIndex + 1}, ${student.diem}đ) đã đẩy ${sinhVienThapNhat.ten} (${sinhVienThapNhat.diem}đ) ra khỏi ngành.`, 'purple');
+
+						setVisualState(sinhVienThapNhat.id, 'rejecting');
+						renderSimulationState(); await sleep(2000);
+
+						sinhVienThapNhat.trangThai = 'chuaXet'; sinhVienThapNhat.nvTrungTuyen = null;
+						nganh.dsTrungTuyen = nganh.dsTrungTuyen.filter(id => id !== sinhVienThapNhat.id);
+
+						const rejectedStudentNextNvIndex = sinhVienThapNhat.nguyenVong.indexOf(nganh.id) + 1;
+						queue.push({ studentId: sinhVienThapNhat.id, nvIndex: rejectedStudentNextNvIndex });
+
+						queue.sort((a, b) => thiSinhData.find(ts => ts.id === b.studentId).diem - thiSinhData.find(ts => ts.id === a.studentId).diem);
+
+						student.trangThai = 'trungTuyen'; student.nvTrungTuyen = nganh.id;
+						dsTrungTuyen.push(student.id);
+						setVisualState(student.id, 'new');
+
+					} else {
+						updateExplanation(`Điểm không đủ`, `${student.ten} không đủ điểm để vào ngành ${nganh.ten}. Chuyển sang NV tiếp theo.`);
+						const currentApplicantDiv = DOM.currentApplicantBox.firstElementChild;
+						if (currentApplicantDiv) {
+							currentApplicantDiv.classList.remove('queue-item-active');
+							currentApplicantDiv.classList.add('queue-item-failed-nv');
+						}
+						await sleep(1500);
+						application.nvIndex++;
+						queue.push(application);
+					}
+				}
+				renderSimulationState();
+				await sleep(1500);
+				setVisualState(null, 'default');
+			}
+			if (!simulationCancelled) finalizeResults();
+		}
+
+		function finalizeResults() {
+			isSimulating = false;
+			updateExplanation('Hoàn tất!', 'Quá trình lọc ảo đã kết thúc. Đây là kết quả cuối cùng.');
+			DOM.startBtn.innerText = 'Đã hoàn thành';
+			DOM.startBtn.disabled = true;
+			DOM.startBtn.classList.replace('bg-gray-400', 'bg-green-600');
+			DOM.resetBtn.disabled = false;
+			DOM.currentApplicantBox.innerHTML = `<span class="text-slate-400">Đã hoàn thành!</span>`;
+
+			nganhData.forEach(nganh => {
+				const dsTrungTuyenObj = thiSinhData.filter(ts => ts.nvTrungTuyen === nganh.id);
+				if (dsTrungTuyenObj.length > 0) {
+					dsTrungTuyenObj.sort((a, b) => a.diem - b.diem);
+					nganh.diemChuan = dsTrungTuyenObj[0].diem;
+				}
+			});
+
+			DOM.simulationContainer.classList.add('hidden');
+			renderFinalResult();
+		}
+
+		function reset() {
+			simulationCancelled = true;
+			isSimulating = false;
+			stepCounter = 0;
+			DOM.stepCounterBox.innerHTML = `<span class="text-2xl font-bold text-slate-700">0</span>`;
+			initializeData();
+			renderInitialTables();
+			DOM.simulationContainer.classList.remove('hidden');
+			DOM.finalResultContainer.classList.add('hidden');
+			renderSimulationState();
+			DOM.startBtn.disabled = false;
+			DOM.resetBtn.disabled = true;
+			DOM.startBtn.innerText = 'Bắt đầu Mô phỏng';
+			DOM.startBtn.classList.replace('bg-gray-400', 'bg-blue-600');
+			DOM.startBtn.classList.replace('bg-green-600', 'bg-blue-600');
+			renderQueue();
+			DOM.currentApplicantBox.innerHTML = `<span class="text-slate-400">Chờ bắt đầu...</span>`;
+			updateExplanation('Sẵn sàng!', 'Nhấn "Bắt đầu" để xem quá trình xét tuyển từng thí sinh.');
+		}
+
+		DOM.startBtn.addEventListener('click', runSimulation);
+		DOM.resetBtn.addEventListener('mousedown', reset);
+		DOM.speedSlider.addEventListener('input', (e) => {
+			simulationSpeed = parseFloat(e.target.max) - parseFloat(e.target.value) + parseFloat(e.target.min);
+		});
+		window.onload = reset;
+	</script>
+</body>
+
+</html>
