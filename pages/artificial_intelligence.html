@@ -135,6 +135,7 @@
 			font-size: 2.75rem !important;
 			text-align: center !important;
 		}
+
 		/* Export Mode - Fixed Image Dimensions */
 		.export-mode img {
 			max-width: 100% !important;
@@ -280,160 +281,161 @@
 			color: #FFFFFF !important;
 			text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.6) !important;
 			filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
-		/* Enhanced responsive design - Does not affect export PNG */
-		@media (max-width: 1024px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 1rem !important;
+
+			/* Enhanced responsive design - Does not affect export PNG */
+			@media (max-width: 1024px) {
+				body:not(.export-mode) #infographic-content {
+					padding: 1rem !important;
+				}
+
+				body:not(.export-mode) .header-bg {
+					padding: 3rem 1rem !important;
+				}
+
+				body:not(.export-mode) .header-content h1 {
+					font-size: 2rem !important;
+					line-height: 1.2 !important;
+				}
+
+				body:not(.export-mode) .major {
+					font-size: 2rem !important;
+				}
+
+				body:not(.export-mode) .english {
+					font-size: 1.25rem !important;
+				}
+
+				body:not(.export-mode) .major-slogan {
+					font-size: 1.25rem !important;
+				}
+
+				body:not(.export-mode) .grid {
+					grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+					gap: 1rem !important;
+				}
+
+				body:not(.export-mode) .section-title {
+					font-size: 1.75rem !important;
+				}
+
+				body:not(.export-mode) main {
+					padding: 1rem !important;
+				}
+
+				body:not(.export-mode) section {
+					margin: 2rem 0 !important;
+				}
 			}
 
-			body:not(.export-mode) .header-bg {
-				padding: 3rem 1rem !important;
+			@media (max-width: 768px) {
+				body:not(.export-mode) .header-bg {
+					padding: 2rem 0.75rem !important;
+				}
+
+				body:not(.export-mode) .header-content h1 {
+					font-size: 1.5rem !important;
+				}
+
+				body:not(.export-mode) .major {
+					font-size: 1.5rem !important;
+				}
+
+				body:not(.export-mode) .english {
+					font-size: 1rem !important;
+				}
+
+				body:not(.export-mode) .major-slogan {
+					font-size: 1rem !important;
+				}
+
+				body:not(.export-mode) .faculty-slogan {
+					font-size: 1rem !important;
+				}
+
+				body:not(.export-mode) .grid {
+					grid-template-columns: 1fr !important;
+					gap: 0.75rem !important;
+				}
+
+				body:not(.export-mode) .section-title {
+					font-size: 1.5rem !important;
+				}
+
+				body:not(.export-mode) .card {
+					padding: 1rem !important;
+				}
+
+				body:not(.export-mode) .card h3 {
+					font-size: 1.125rem !important;
+				}
+
+				body:not(.export-mode) .card p {
+					font-size: 0.875rem !important;
+				}
 			}
 
-			body:not(.export-mode) .header-content h1 {
-				font-size: 2rem !important;
-				line-height: 1.2 !important;
-			}
+			@media (max-width: 640px) {
+				body:not(.export-mode) #infographic-content {
+					padding: 0.5rem !important;
+				}
 
-			body:not(.export-mode) .major {
-				font-size: 2rem !important;
-			}
+				body:not(.export-mode) .header-bg {
+					padding: 1.5rem 0.5rem !important;
+				}
 
-			body:not(.export-mode) .english {
-				font-size: 1.25rem !important;
-			}
+				body:not(.export-mode) .header-content h1 {
+					font-size: 1.25rem !important;
+				}
 
-			body:not(.export-mode) .major-slogan {
-				font-size: 1.25rem !important;
-			}
+				body:not(.export-mode) .major {
+					font-size: 1.25rem !important;
+				}
 
-			body:not(.export-mode) .grid {
-				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-				gap: 1rem !important;
-			}
+				body:not(.export-mode) .english {
+					font-size: 0.875rem !important;
+				}
 
-			body:not(.export-mode) .section-title {
-				font-size: 1.75rem !important;
-			}
+				body:not(.export-mode) .major-slogan {
+					font-size: 0.875rem !important;
+				}
 
-			body:not(.export-mode) main {
-				padding: 1rem !important;
-			}
+				body:not(.export-mode) .faculty {
+					font-size: 0.75rem !important;
+				}
 
-			body:not(.export-mode) section {
-				margin: 2rem 0 !important;
-			}
-		}
+				body:not(.export-mode) .faculty-slogan {
+					font-size: 0.875rem !important;
+				}
 
-		@media (max-width: 768px) {
-			body:not(.export-mode) .header-bg {
-				padding: 2rem 0.75rem !important;
-			}
+				body:not(.export-mode) .section-title {
+					font-size: 1.25rem !important;
+				}
 
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.5rem !important;
-			}
+				body:not(.export-mode) main {
+					padding: 0.75rem !important;
+				}
 
-			body:not(.export-mode) .major {
-				font-size: 1.5rem !important;
-			}
+				body:not(.export-mode) section {
+					margin: 1.5rem 0 !important;
+				}
 
-			body:not(.export-mode) .english {
-				font-size: 1rem !important;
-			}
+				body:not(.export-mode) .card {
+					padding: 0.75rem !important;
+				}
 
-			body:not(.export-mode) .major-slogan {
-				font-size: 1rem !important;
-			}
+				body:not(.export-mode) .card h3 {
+					font-size: 1rem !important;
+				}
 
-			body:not(.export-mode) .faculty-slogan {
-				font-size: 1rem !important;
-			}
+				body:not(.export-mode) .card p {
+					font-size: 0.8rem !important;
+				}
 
-			body:not(.export-mode) .grid {
-				grid-template-columns: 1fr !important;
-				gap: 0.75rem !important;
+				body:not(.export-mode) .icon {
+					width: 32px !important;
+					height: 32px !important;
+				}
 			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.5rem !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 1rem !important;
-			}
-
-			body:not(.export-mode) .card h3 {
-				font-size: 1.125rem !important;
-			}
-
-			body:not(.export-mode) .card p {
-				font-size: 0.875rem !important;
-			}
-		}
-
-		@media (max-width: 640px) {
-			body:not(.export-mode) #infographic-content {
-				padding: 0.5rem !important;
-			}
-
-			body:not(.export-mode) .header-bg {
-				padding: 1.5rem 0.5rem !important;
-			}
-
-			body:not(.export-mode) .header-content h1 {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .major {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) .english {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .major-slogan {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .faculty {
-				font-size: 0.75rem !important;
-			}
-
-			body:not(.export-mode) .faculty-slogan {
-				font-size: 0.875rem !important;
-			}
-
-			body:not(.export-mode) .section-title {
-				font-size: 1.25rem !important;
-			}
-
-			body:not(.export-mode) main {
-				padding: 0.75rem !important;
-			}
-
-			body:not(.export-mode) section {
-				margin: 1.5rem 0 !important;
-			}
-
-			body:not(.export-mode) .card {
-				padding: 0.75rem !important;
-			}
-
-			body:not(.export-mode) .card h3 {
-				font-size: 1rem !important;
-			}
-
-			body:not(.export-mode) .card p {
-				font-size: 0.8rem !important;
-			}
-
-			body:not(.export-mode) .icon {
-				width: 32px !important;
-				height: 32px !important;
-			}
-		}
 		}
 	</style>
 </head>
@@ -523,7 +525,10 @@
 
 			<!-- SECTION: SO SÁNH NGÀNH -->
 			<section class="my-16">
-				<h2 class="section-title text-3xl text-center mb-10">AI "So Kè" Với Các Ngành Khác</h2>
+				<h2 class="section-title text-3xl text-center mb-10 flex items-center justify-center gap-3">
+					<i data-lucide="orbit" class="icon"></i>
+					Trí tuệ nhân tạo Giữa "Vũ Trụ" IT
+				</h2>
 				<div class="grid md:grid-cols-2 gap-8">
 					<div class="card p-6">
 						<div class="flex items-center mb-4"><i data-lucide="cpu" class="icon mr-4"></i>
